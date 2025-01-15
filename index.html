@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quoine Liu Demo</title>
+  <!-- 让移动端更好适配 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 引入外部CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== 左侧栏导航 (nav) ===== -->
+  <nav class="sidebar" id="sidebar" aria-label="Main Navigation">
+    <!-- 1) 用 <a> 包裹标题，使标题可点击 -->
+    <h1>
+      <a href="#" data-target="landing" class="title-link">Quoine</a>
+    </h1>
+
+    <ul class="nav-list" id="navList">
+      <li data-target="illustration">Practice: Unit 1</li>
+      <li data-target="sketchbook">Critical Reflection</li>
+      <li data-target="prints-zine">Course Contexts</li>
+      <li data-target="about">Artist Statemen</li>
+    </ul>
+
+    <div class="social">
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">IG</a>
+      <a href="mailto:xxx@example.com" target="_blank" rel="noopener noreferrer">Email</a>
+    </div>
+  </nav>
+
+  <!-- ===== 主内容区域 (main) ===== -->
+  <main class="main-content">
+
+    <!-- 
+      2) Landing (默认显示) 
+      给它设置 class="page-section active"，这样一进页面就显示这里。
+    --> 
+    <section id="landing" class="page-section active" aria-labelledby="landing-title">
+      <!-- 这里放你想展示的一堆图 -->
+      <div class="gallery">
+        <img src="static/image/1.jpg" alt="Landing Image 1" data-full="static/image/1.jpg">
+        <img src="static/image/2.jpg" alt="Landing Image 2" data-full="static/image/2.jpg">
+        <img src="static/image/3.jpg" alt="Landing Image 3" data-full="static/image/3.jpg">
+        <img src="static/image/4.jpg" alt="Landing Image 4" data-full="static/image/4.jpg">
+        <img src="static/image/5.jpg" alt="Landing Image 5" data-full="static/image/5.jpg">
+        <img src="static/image/6.jpg" alt="Landing Image 6" data-full="static/image/6.jpg">
+      </div>
+    </section>
+
+<!-- 原先 Illustration 面板 --> 
+<section id="illustration" class="page-section" aria-labelledby="illustration-title">
+  <h2 id="illustration-title">> Series / Track</h2>
+
+  <!-- 缩略图 -->
+  <div class="no-lightbox-gallery" id="illus-series-gallery">
+    <img src="static/image/series tittle.jpg" alt="Series 1" data-target="illustration-series-1">
+  </div>
+  
+  <h2 id="single-pieces-title">> Supporting Work / Single Pieces</h2>
+  <div class="gallery single-pieces-gallery">
+    <figure class="print-figure">
+      <img src="static/image/S1.jpg" alt="Series 1 - Page 1">
+      <figcaption>Back Home 1: Shrouded</figcaption>
+    </figure>
+    <figure class="print-figure">
+      <img src="static/image/S2.jpg" alt="Series 1 - Page 2">
+      <figcaption>Back Home 1: Revealed</figcaption>
+    </figure>
+    <figure class="print-figure">
+      <img src="static/image/S3.jpg" alt="Series 1 - Page 3">
+      <figcaption>Back Home 2: Rust</figcaption>
+    </figure>
+    <figure class="print-figure">
+      <img src="static/image/step1.jpg" alt="step1">
+      <figcaption>Step Bite Study 1</figcaption>
+    </figure>
+    <figure class="print-figure">
+      <img src="static/image/step2.jpg" alt="step2">
+      <figcaption>Step Bite Study 2</figcaption>
+    </figure>
+    <figure class="print-figure">
+      <img src="static/image/step3.jpg" alt="step3">
+      <figcaption>Step Bite Study 3</figcaption>
+    </figure>
+    <!-- 更多图... -->
+  </div>
+  
+
+</section>
+
+<!-- <p>这里是 Illustration 的主列表，只显示缩略图。</p>
+<img src="static/image/illus_thumb2.jpg" alt="Series 2" data-target="illustration-series-2"> -->
+<!-- 你可以继续添加更多系列 -->
+
+<!-- 二级页面 1：Series 1 的详细页面 -->
+<section id="illustration-series-1" class="page-section" aria-labelledby="series1-title">
+  <h3 id="series1-title">Track (Unit 1)</h3>
+  <h4 class="subtitle">(ongoing) Sigital Painting, Photopolymer Gravure</h4>
+  <p>
+    <br>In this project, I conducted extensive testing and practice, primarily focusing on etching techniques. I began by recording birdsong from various settings—urban areas, suburban zones, and forests—and selected different species to work with. After processing these recordings digitally, I transferred the resulting designs using polymer techniques. With Brian’s assistance, I experimented with multiple etching methods, refining the imagery until I achieved the result I had envisioned.<br>
+    <br>During this process, I experienced numerous forms of “communication.” Many classmates offered their insights on my work, gathering to discuss its level of visual information, final structure, and whether it was related to any audio tracks. To me, this indicated that the images themselves were conveying “sound,” and I, in turn, received “sound” in the form of audience feedback—which was exactly what I had hoped for.<br>
+    <br>However, I experimented with a wide range of colors, drawing inspiration from Monet’s use of hues in his sunrise paintings in an attempt to create different temporal atmospheres. Despite my efforts, I am still not entirely satisfied with the final outcome. I hope to have more time in the future to continue exploring and refining this work.<br>
+    <br></p>
+
+    <div class="gallery-complex">
+      <!-- ====== 第一层：大图入口 row ====== -->
+      <div class="gallery-top-row">
+        <!-- 大图入口的模板 -->
+        <div class="top-item" data-target="groupA">
+          <img src="static/image/sun1.jpg" alt="Top A" />
+        </div>
+        <div class="top-item" data-target="groupB">
+          <img src="static/image/ocean1.jpg" alt="Top B" />
+        </div>
+        <div class="top-item" data-target="groupC">
+          <img src="static/image/embos1.jpg" alt="Top C" />
+        </div>
+        <div class="top-item" data-target="groupD">
+          <img src="static/image/rain1.jpg" alt="Top D" />
+        </div>
+        <div class="top-item" data-target="groupE">
+          <img src="static/image/bw1.jpg" alt="Top E" />
+        </div>
+        <div class="top-item" data-target="groupF">
+          <img src="static/image/wr1.jpg" alt="Top F" />
+        </div>
+      </div>
+    
+      <!-- ====== Gallery Groups ====== -->
+      <!-- 用循环生成以下结构，可以减少代码冗余 -->
+      <!-- ====== 1 ====== -->
+      <div id="groupA" class="gallery-group">
+        <div class="gallery-middle-row">
+          <div class="middle-item" data-index="0" data-full="static/image/sun1.jpg">
+            <img src="static/image/sun1.jpg" alt="A1_thumb" />
+          </div>
+          <div class="middle-item" data-index="1" data-full="static/image/sun2.jpg">
+            <img src="static/image/sun2.jpg" alt="A2_thumb" />
+          </div>
+          <div class="middle-item" data-index="2" data-full="static/image/sun3.jpg">
+            <img src="static/image/sun3.jpg" alt="A3_thumb" />
+          </div>
+          <div class="middle-item" data-index="3" data-full="static/image/sun4.jpg">
+            <img src="static/image/sun4.jpg" alt="A4_thumb" />
+          </div>
+          <div class="middle-item" data-index="4" data-full="static/image/sun5.jpg">
+            <img src="static/image/sun5.jpg" alt="A5_thumb" />
+          </div>
+          <div class="middle-item" data-index="4" data-full="static/image/sun6.jpg">
+            <img src="static/image/sun6.jpg" alt="A6_thumb" />
+          </div>
+          <div class="middle-item" data-index="4" data-full="static/image/sun7.jpg">
+            <img src="static/image/sun7.jpg" alt="A7_thumb" />
+          </div>
+          <div class="middle-item" data-index="4" data-full="static/image/sun8.jpg">
+            <img src="static/image/sun8.jpg" alt="A8thumb" />
+          </div>
+        </div>
+        <div class="gallery-bottom-row">
+          <button class="viewer-prev">&larr;</button>
+          <img class="viewer-large" src="" alt="Current Large Image" />
+          <button class="viewer-next">&rarr;</button>
+        </div>
+      </div>
+      <!-- ====== 2 ====== -->
+      <div id="groupB" class="gallery-group">
+        <div class="gallery-middle-row">
+          <div class="middle-item" data-index="0" data-full="static/image/ocean1.jpg">
+            <img src="static/image/ocean1.jpg" alt="B1_thumb" />
+          </div>
+          <div class="middle-item" data-index="1" data-full="static/image/ocean2.jpg">
+            <img src="static/image/ocean2.jpg" alt="B2_thumb" />
+          </div>
+          <div class="middle-item" data-index="2" data-full="static/image/ocean3.jpg">
+            <img src="static/image/ocean3.jpg" alt="B3_thumb" />
+          </div>
+          <div class="middle-item" data-index="3" data-full="static/image/ocean4.jpg">
+            <img src="static/image/ocean4.jpg" alt="B4_thumb" />
+          </div>
+          <div class="middle-item" data-index="4" data-full="static/image/ocean5.jpg">
+            <img src="static/image/ocean5.jpg" alt="B5_thumb" />
+          </div>
+          <div class="middle-item" data-index="5" data-full="static/image/ocean6.jpg">
+            <img src="static/image/ocean6.jpg" alt="B6_thumb" />
+          </div>
+          <div class="middle-item" data-index="6" data-full="static/image/ocean7.jpg">
+            <img src="static/image/ocean7.jpg" alt="B7_thumb" />
+          </div>
+        </div>
+        <div class="gallery-bottom-row">
+          <button class="viewer-prev">&larr;</button>
+          <img class="viewer-large" src="" alt="Current Large Image" />
+          <button class="viewer-next">&rarr;</button>
+        </div>
+      </div>
+      <!-- ====== 3 ====== -->
+      <div id="groupC" class="gallery-group">
+        <div class="gallery-middle-row">
+          <div class="middle-item" data-index="0" data-full="static/image/embos1.jpg">
+            <img src="static/image/embos1.jpg" alt="C1_thumb" />
+          </div>
+          <div class="middle-item" data-index="1" data-full="static/image/embos2.jpg">
+            <img src="static/image/embos2.jpg" alt="C2_thumb" />
+          </div>
+          <div class="middle-item" data-index="2" data-full="static/image/embos3.jpg">
+            <img src="static/image/embos3.jpg" alt="C3_thumb" />
+          </div>
+          <div class="middle-item" data-index="3" data-full="static/image/embos4.jpg">
+            <img src="static/image/embos4.jpg" alt="C4_thumb" />
+          </div>
+          <div class="middle-item" data-index="4" data-full="static/image/embos5.jpg">
+            <img src="static/image/embos5.jpg" alt="C5_thumb" />
+          </div>
+          <div class="middle-item" data-index="5" data-full="static/image/embos6.jpg">
+            <img src="static/image/embos6.jpg" alt="C6_thumb" />
+          </div>
+          <div class="middle-item" data-index="6" data-full="static/image/embos7.jpg">
+            <img src="static/image/embos7.jpg" alt="C7_thumb" />
+          </div>
+        </div>
+        <div class="gallery-bottom-row">
+          <button class="viewer-prev">&larr;</button>
+          <img class="viewer-large" src="" alt="Current Large Image" />
+          <button class="viewer-next">&rarr;</button>
+        </div>
+      </div>
+      <!-- ====== 4 ====== -->
+      <div id="groupD" class="gallery-group">
+        <div class="gallery-middle-row">
+          <div class="middle-item" data-index="0" data-full="static/image/rain1.jpg">
+            <img src="static/image/rain1.jpg" alt="D1_thumb" />
+          </div>
+          <div class="middle-item" data-index="1" data-full="static/image/rain2.jpg">
+            <img src="static/image/rain2.jpg" alt="D2_thumb" />
+          </div>
+          <div class="middle-item" data-index="2" data-full="static/image/embos3.jpg">
+            <img src="static/image/rain3.jpg" alt="D3_thumb" />
+          </div>
+          <div class="middle-item" data-index="3" data-full="static/image/rain4.jpg">
+            <img src="static/image/rain4.jpg" alt="D4_thumb" />
+          </div>
+          <div class="middle-item" data-index="4" data-full="static/image/rain5.jpg">
+            <img src="static/image/rain5.jpg" alt="D5_thumb" />
+          </div>
+          <div class="middle-item" data-index="5" data-full="static/image/rain6.jpg">
+            <img src="static/image/rain6.jpg" alt="D6_thumb" />
+          </div>
+          <div class="middle-item" data-index="6" data-full="static/image/rain7.jpg">
+            <img src="static/image/rain7.jpg" alt="D7_thumb" />
+          </div>
+        </div>
+        <div class="gallery-bottom-row">
+          <button class="viewer-prev">&larr;</button>
+          <img class="viewer-large" src="" alt="Current Large Image" />
+          <button class="viewer-next">&rarr;</button>
+        </div>
+      </div>
+      <!-- ====== 5 ====== -->
+      <div id="groupE" class="gallery-group">
+        <div class="gallery-middle-row">
+          <div class="middle-item" data-index="0" data-full="static/image/bw1.jpg">
+            <img src="static/image/bw1.jpg" alt="E1_thumb" />
+          </div>
+          <div class="middle-item" data-index="1" data-full="static/image/bw2.jpg">
+            <img src="static/image/bw2.jpg" alt="E2_thumb" />
+          </div>
+          <div class="middle-item" data-index="2" data-full="static/image/embos3.jpg">
+            <img src="static/image/bw3.jpg" alt="E3_thumb" />
+          </div>
+          <div class="middle-item" data-index="3" data-full="static/image/bw4.jpg">
+            <img src="static/image/bw4.jpg" alt="E4_thumb" />
+          </div>
+          <div class="middle-item" data-index="4" data-full="static/image/bw5.jpg">
+            <img src="static/image/bw5.jpg" alt="E5_thumb" />
+          </div>
+          <div class="middle-item" data-index="5" data-full="static/image/bw6.jpg">
+            <img src="static/image/bw6.jpg" alt="E6_thumb" />
+          </div>
+          <div class="middle-item" data-index="6" data-full="static/image/bw7.jpg">
+            <img src="static/image/bw7.jpg" alt="E7_thumb" />
+          </div>
+        </div>
+        <div class="gallery-bottom-row">
+          <button class="viewer-prev">&larr;</button>
+          <img class="viewer-large" src="" alt="Current Large Image" />
+          <button class="viewer-next">&rarr;</button>
+        </div>
+      </div>
+      <!-- ====== 6 ====== -->
+      <div id="groupF" class="gallery-group">
+        <div class="gallery-middle-row">
+          <div class="middle-item" data-index="0" data-full="static/image/wr1.jpg">
+            <img src="static/image/wr1.jpg" alt="F1_thumb" />
+          </div>
+          <div class="middle-item" data-index="1" data-full="static/image/wr2.jpg">
+            <img src="static/image/wr2.jpg" alt="F2_thumb" />
+          </div>
+          <div class="middle-item" data-index="2" data-full="static/image/embos3.jpg">
+            <img src="static/image/wr3.jpg" alt="F3_thumb" />
+          </div>
+          <div class="middle-item" data-index="3" data-full="static/image/wr4.jpg">
+            <img src="static/image/wr4.jpg" alt="F4_thumb" />
+          </div>
+          <div class="middle-item" data-index="4" data-full="static/image/wr5.jpg">
+            <img src="static/image/wr5.jpg" alt="F5_thumb" />
+          </div>
+          <div class="middle-item" data-index="5" data-full="static/image/wr6.jpg">
+            <img src="static/image/wr6.jpg" alt="F6_thumb" />
+          </div>
+          <div class="middle-item" data-index="6" data-full="static/image/wr7.jpg">
+            <img src="static/image/wr7.jpg" alt="F7_thumb" />
+          </div>
+        </div>
+        <div class="gallery-bottom-row">
+          <button class="viewer-prev">&larr;</button>
+          <img class="viewer-large" src="" alt="Current Large Image" />
+          <button class="viewer-next">&rarr;</button>
+        </div>
+      </div>
+     <!-- end .gallery-complex -->
+    
+    <!-- “Back to Series” 按钮示例 -->
+    <button id="btnBackSeries1">Back</button>
+  </section>
+
+  </div>
+</section>
+    
+
+
+<!-- 二级页面 2：Series 2 的详细页面 -->
+<!--<section id="illustration-series-2" class="page-section" aria-labelledby="series2-title">
+  <h2 id="series2-title">Series 2 Title</h2>
+  <p>这里放 Series2 的大图、文字等。</p>
+  <div class="gallery">
+    <img src="static/image/series2_img1.jpg" alt="Series 2 - Page 1">
+  </div>
+
+  <button id="btnBackSeries2">Back to Series</button>
+</section> -->
+
+
+    <!-- 2) Sketchbook Page -->
+    <section id="sketchbook" class="page-section" aria-labelledby="sketchbook-title">
+      <h2 id="sketchbook-title">> Critical Reflection</h2>
+      <br>
+      <h3>Personal Insights</h3>
+      <p>
+        <br>The theme of Unit 1 gradually took shape from my long-standing interest in the relationship between nature and humans. My childhood in a rural village nestled among mountains in China, where I maintained close daily interactions with various flora and fauna. Since the lockdown during the pandemic, it offered me a new perspective on the human-nature relationship. It is a period marked by intense solitude and personal turbulence for me. Amid physical exhaustion and political restrictions, my only connection seemed to be with my pet parrot and houseplants. While they remained untouched by the massive social upheaval, this tranquility was underpinned by my financial situation. Meanwhile, I also witnessed how natural forces could override social constructs, and the social constructs press the individual life with the natural forces. This phenomenon is the perfect reflection about the complexities of living in the Anthropocene.<br>
+      <p>
+        <div class="image-block">
+          <figure>
+            <img src="static/image/Blinded.png" alt="Blinded" data-full="static/image/Blinded.png">
+            <figcaption>Roger Ballen, Blinded, photography, 2005</figcaption>
+          </figure>
+          <figure>
+            <img src="static/image/Bite.png" alt="Bite" data-full="static/image/Bite.png">
+            <figcaption>Roger Ballen, Bite, photography, 2007</figcaption>
+          </figure>
+          <figure>
+            <img src="static/image/Headless.png" alt="Headless" data-full="static/image/Headless.png">
+            <figcaption>Roger Ballen, Headless, photography, 2006</figcaption>
+          </figure>
+        </div>
+      <p>
+        <br>Since Michel Foucault's metaphor of knowledge's historicity and discontinuity as beach sand shaped by waves (The Order of Things), many eco-philosophers have critiqued anthropocentrism, advocating for a more egalitarian perceptual relationship between humans and the natural world. 
+        Although Joy introduced me to this concept, I inevitably remain only a partial practitioner of Posthumanism, as all my works are grounded in a mirrored “alterity.”
+        My initial experience of arriving in London alone and adapting to a drastically new environment paralleled the pandemic period, and also with only pets and plants as companions. 
+        
+        Since I have noticed Roger Ballen’s photographic works, particularly the metaphors he portrays in the relationship between South African communities and their pets. When I gaze at my companions whose inner worlds I cannot fully comprehend, as what animal philosopher Jacques Derrida has noted, “The gaze embodies the concept of alterity—the recognition of the other as distinct from oneself.” Derrida argues that the moment of being seen by his cat, which prompts a profound inquiry into self-awareness and identity, animals represent an absolute otherness that challenges human self-perception.  (The Animal That Therefore I Am). And I've come to realize that I cannot escape using 'the other' to narrate human stories, despite my attempts to transcend it.<br>
+      <p>
+        <div class="image-block special-layout">
+            <!-- 左列：放一个“容器”，内部再上下排两张图 -->
+          <div class="left-column">
+          <figure>
+            <img src="static/image/Grand Central Terminal.png" alt="G1" data-full="static/image/Grand Central Terminal.png">
+            <figcaption>Gipi, Grand Central Terminal. Rapporto da un pianeta estinto, 2009</figcaption>
+          </figure>
+          <figure>
+            <img src="static/image/J.png" alt="G1" data-full="static/image/J.png">
+            <figcaption>Jorge González, JACK LONDON, 2015</figcaption>
+          </figure>
+          </div>
+           <!-- 右列：放一张大图 -->
+          <figure class="right-figure">
+            <img src="static/image/Unastoria.png" alt="G2" data-full="static/image/Unastoria.png">
+            <figcaption>Gipi, O Strega!: Unastoria, 2015, Coconino Press/Fandango</figcaption>
+          </figure>
+        </div>
+      <p>
+        <br>This is an interesting phenomenon that I found my thought may have mixed with some existential reflections. Albert Camus' discussion of the struggle between individuals and the constraints of society. 
+        The dependent relationship between humans and flora or fauna in urban settings mirrors this conscious or unconscious resistance, or even perhaps escape. 
+        Yet it serves as a means of navigating social frameworks and redefining personal identity.<br>
+        <br>The individual's task, much like that of Sisyphus, is to navigate societal expectations through consciousness and resistance. Engaging with the collective unconscious of society, meanwhile finding ways to connect one's own values and beliefs. (Myth of Sisyphus)<br>
+        <br>This connects to the juxtaposition of the “superego” and the “id.”. In Tang Dynasty China, Zhang Zao who was a painter and had his famously stated, “外师造化，中得心源。” (Lidaiminghuaji). Means externally learn from nature, internally derive from the heart's source. For me, that means if I am to gain anything from the external world as express something of myself, it must the “id”. I would consider that the essence of art is the continued articulation and communication of the most primitive and authentic self, as a means of negotiating between social constraints and individual authenticity.<br>
+        <p>
+        <br>
+        <h3>Artistic Creation</h3>
+        <p>
+        <br>All these experiences and reflections have crystallized into three key themes: communication, connection, and symbiosis. <br>
+        <br>Moving forward, I aim to explore the theme through printmaking. Having access to learn about photoetching has been particularly precious. This technique itself embodies the Anthropocene – a fusion of modern technology and natural corrosion on the same metal plate.
+        I've always believed that visual picture is the way to transcend linguistic barriers, which is a universal language of communication. While I also write, I often feel that when certain things are expressed through words, they tend to “collapse” concepts into ordinary characters. 
+        I idealistically hope that a picture can be the very thing itself, relying more on its inherent categorical rationality as a subject. Since studying, I've been working to balance the distinct visual languages I use as a cartoonist, illustrator, and printmaker.<br>
+        <br>I chose “polymer” and “birdsong” for my first major theme, attempting to convey some experience through “sound”, evoking a synesthetic interplay between the visual and auditory.Ideally, this experience should feel the sensitive change about geographical boundaries and periods of time. And sound represents one of the most fundamental forms of communication before the text. <br>
+        <br>Birds – the chosen 'other' in this project – remain their mysterious migratory patterns and ubiquitous presence in both urban and rural soundscapes, creating a linear structure marked by strong regional characteristics and variations.I have accumulated extensive birdwatching records from China during my time in the wild. Upon arriving in London, I encountered an entirely new urban ecosystem where the coexistence between birds and humans in urban settings presents some intriguing differences.<br>
+        <br>Initially, I tried to create a narrative video in a fairy style about a pet’s life and death, emphasizing the human voice. But after tutorials, I realized this might have over emphasis the story.
+        Then inspired by William Kentridge’s prints and animated films, I tried combining birdsong with robotics as “the other”. However, I have not yet found a satisfying harmony balance in this approach.
+        Meanwhile, I am exploring another method that emphasizes the relationship between sound and space (environment), and how different entities receive sound differently. 
+        Victoria Arney, an artist who works with birdsong and sound waves, is concerned with the resonance of land and place. Her use of woodcut and decorative patterns on large canvases has left a profound impression on me.
+        Her practice led me to think about how diverse creatures and individuals might have different receiving experiences. I want these distinctions to manifest not only between humans and birds, not only biologic, but also among humans themselves, as the receiver, the audience with their own minds that can cryptically communicate.
+        <br>
+        <p>
+          <div class="image-block">
+            <figure>
+              <img src="static/image/SM.jpg" alt="V1" data-full="static/image/SM.jpg">
+              <figcaption>Victoria Arney, Spring March, March 29 2021, small monotype and etching overlay bird calls</figcaption>
+            </figure>
+            <figure>
+              <img src="static/image/MR.jpg" alt="V2" data-full="static/image/MR.jpg">
+              <figcaption>Victoria Arney, Made from a recording at 5.30 1 May 2023, 180 x 180 cm, woodcut on Kozo </figcaption>
+            </figure>
+          </div>
+        <p>
+          <br>After a few weeks of workshop inductions, I opted for polymer processes, incorporating my audio recordings of birds into a visual representation with a “minimalist cityscape” aesthetic. By featuring birds common in specific areas, I created symbolic imagery of different locations. Yet I also strive for an open interpretation, encouraging associations with subway tracks, reflections on the Thames, or lines of trees.
+          Discussions with classmates were fruitful: they commented on the quantity of visual information, the overall structure, and their guesses about the inclusion of audio tracks. Essentially, my images are “sound,” and from them, I received varied “sounds” or feedback from viewers—exactly the effect I intended.          
+          <br>
+        <p>
+          <div class="image-block">
+            <figure>
+              <img src="static/image/SR.png" alt="SR" data-full="static/image/SR.png">
+              <figcaption>Bettmann, Smoke Rising From Factory Smokestacks, Metal Print, Jan 18 1955</figcaption>
+            </figure>
+            <figure>
+              <img src="static/image/M1.jpg" alt="M1" data-full="static/image/M1.jpg">
+              <figcaption>Claude Monet, Seagulls over the Houses of Parliament, oil canvas, 92 x 82 cm, 1904, Pushkin Museum, Moscow, Russia</figcaption>
+            </figure>
+            <figure>
+              <img src="static/image/M2.jpg" alt="M2" data-full="static/image/M2.jpg">
+              <figcaption>Claude Monet, Houses of Parlilament, oil canvas, 1904</figcaption>
+            </figure>
+            <figure>
+              <img src="static/image/M3.jpg" alt="M3" data-full="static/image/M3.jpg">
+              <figcaption>Claude Monet, Houses of Parlilament, Fog Effect, oil canvas, 1903</figcaption>
+            </figure>
+            <figure>
+              <img src="static/image/M4.jpg" alt="M4" data-full="static/image/M4.jpg">
+              <figcaption>Claude Monet, Houses of Parliament, London, Sun Breaking Through, oil canvas, 1904, Musée d'Orsay, Paris, France</figcaption>
+            </figure>
+          </div>
+        <p>
+          <br> References:<br>
+          1.Foucault, M. (1970). The Order of Things: An Archaeology of the Human Sciences. London: Tavistock Publications. 
+          <br>
+          2.Jacques, D. (2008). The Animal That Therefore I Am. Frence: Éditions Galilée.
+          <br>
+          3.Camus, A. (1955). The Myth of Sisyphus. London: Hamish Hamilton Limited.
+          <br>
+          4.Yanyuan Z. (Tang). Lidai Minghua Ji(The records of famous paintings of different dynasties).
+          <br>
+        <p>
+    </section>
+
+    <!-- 3) Prints / Zine Page -->
+    <section id="prints-zine" class="page-section" aria-labelledby="prints-zine-title">
+      <h2 id="prints-zine-title">> Course Contexts</h2>
+
+      <div class="content-list">
+        <!-- 第1条：图在左、文字在右 -->
+        <div class="content-item">
+          <div class="item-image">
+            <figure>
+              <img src="static/image/SK1.jpg" alt="SK1" data-full="static/image/SK1.jpg">
+              <figcaption>Steffi Klenz,<br>Installation view of the series Tensed Muscles, <br>Hand-drawn coloured pencil drawing on plywood<br>with collaged C-Type prints, 2021<br>Image courtesy of Sid Motion Gallery and the artist.<br>Photo by Andy Keate, 2021</figcaption>
+            </figure>
+          </div>
+          <div class="item-text">
+            <p>
+              My first lecture at Camberwell was given by Steffi Klenz, an artist who combines “social photography” with data-based approaches. I found her formal compositions highly engaging. I often wonder: how can we get viewers to spend more time gazing at a single image? Or, to invert the question, why do I myself linger on certain images? To me, painting is fundamentally driven by visuals—structure, color, texture, and tangible qualities are all decisive factors in holding the viewer’s attention. I have always felt my work lacks a sense of design and compositional rigor, and Steffi’s interplay of points, lines, and planes adds a strong “formal beauty” to her images. She also stressed that her work is very basic in its focus on “communication” and “language,” referencing Freud’s idea that the body speaks. Meanwhile, I recall Wolfgang Tillmans mentioning in a past lecture that “I guess when one talks about art and making art it is by nature language driven. But visual art is not primarily driven by language and there is a dichotomy in that when one is, on the one hand, constantly forced to talk about it, and language seems to favor ideas, and, on the other hand, one also shouldn’t blindly follow any idea that comes to mind. It’s a difficult equilibrium.” 
+            <p>
+          </div>
+        </div>
+        <!-- 第2条：图在右、文字在左 -->
+        <div class="content-item reverse">
+          <div class="item-image">
+            <figure>
+              <img src="static/image/JL.jpg" alt="JL" data-full="static/image/JL.jpg">
+              <figcaption>Johanna Love, Der Engel Schwieg, <br>installation, laser etching with graphite and ink on paper,<br>individual paper sheets 120cm x 80cm,<br>installation sizes variable</figcaption>
+            </figure>
+          </div>
+          <div class="item-text">
+            <p>
+              Steffi Klenz highlighted the concept of “visual language,” and in her own work seeks a balance between natural language and the visual realm. Whether a piece is abstract or figurative, the final output is always figurative in some sense. Upon seeing it, viewers instinctively resort to “natural language” to identify the subject: “What is this? Why is it depicted in this way?” This relates to the issue of “information load.” If an artwork contains too much information, viewers may identify it in an instant and lose interest. If it contains too little, they might either dismiss it immediately or pause to repeatedly confirm their perceptions. For a creator aiming to resonate with the right audience, the second scenario is often more desirable.
+              Susan Sontag, in her essay Against Interpretation, notes that form and content in an artwork should not be separated, as over-interpretation can obscure the piece’s true essence. This mirrors the questions I contemplated during Johanna Love’s lecture and tutorials: How does one handle the amount of content in an artwork? The dust research creates a lot of content,, while I often find myself torn between pursuing an aesthetic framework or a cognitive one in my own practice.
+            </p>
+          </div>
+        </div>
+        <!-- 第3条：图在左、文字在右 -->
+        <div class="content-item">
+          <div class="item-image">
+            <figure>
+              <img src="static/image/AB1.png" alt="AB1" data-full="static/image/AB1.png">
+              <figcaption>Anna Barriball, Afterimage, Pastel, wax, paper,<br>graphite powder, Series of seven drawings,<br>22 x 15.4 cm / 8 5/8 x 6 in (unframed) each, 2021</figcaption>
+            </figure>
+          </div>
+          <div class="item-text">
+            <p>
+              Anna Barriballz’s explorations with various media expanded my perspective considerably. She values the physicality of materials and the aspect of time spent observing them. This made me reflect on how my images might convey these qualities. I was particularly struck by her “After Image” series. I like the feeling of holding a small piece work in one’s hand, and especially the layering of multiple levels of her works. In that series, each underlying graphite drawing becomes more visible with every layer of transparency, reflecting a focus on the drawing process, the materials, the interplay of light and darkness, and an awareness of space and time—all without emphasizing a specific “theme.”
+              I also spent some time experimenting with transparent layers in my own imagery, although I tend to lean toward a more interactive, comic-like style. And those research works don't do a good job of showing the end result. Still, may there is no single standard for how to approach media and imagery; it is an ongoing journey of exploration and revision. At the same time, I hope to avoid “ineffective thinking” and ensure that each attempt contributes to a deeper understanding of imagery and materials.
+            </p>
+          </div>
+        </div>
+      
+      </div>
+      
+    </section>
+
+    <!-- 5) About page (不默认显示) -->
+    <section id="about" class="page-section" aria-labelledby="about-title">
+      <h2 id="about-title">> Artist Statement</h2>
+    <br>
+    <img src="static/image/head.png" alt="Portrait" class="about-portrait" data-full="static/image/head.png">
+      <p>
+        <br>Liu Qiongyu<br>
+        <br>Is open to hearing stories and always will be.<br>
+        <br>In the Anthropocene era, I am searching for a series of posthumanist creations that explore the relationship between individuals and nature. The world is vast. I find myself captivated by narratives of all kinds, especially those unfolding in natural environments, where each life is both minuscule and significant, revealing patterns and mysteries intrinsic to life itself.<br>
+        <br>The human body is a reflection of this interconnectedness; my perception of nature builds an expansive web of connections within me. Returning to a vantage point rooted in my own being, I yearn for a link: Should we connect? And if we do, what should we become?<br>
+        <br>I intend to create artwork centered around the themes of communication, connection, and symbiosis. Through my paintings, I aim to explore how people, nature, and other living beings interact and coexist.<br>
+      </p>
+
+  </main> <!-- end .main-content -->
+
+  <!-- ===== LIGHTBOX OVERLAY ===== -->
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Show previous image">&#10094;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="Full view" />
+    <button class="lightbox-next" id="lightboxNext" aria-label="Show next image">&#10095;</button>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div>© Qiongyu (Quoine) Liu</div>
+    <div>All rights reserved.</div>
+    <!-- 可以用 <time> 来声明时间 -->
+    <div>Last updated: <time dateTime="2024-10">December 2024</time></div>
+  </footer>
+
+  <!-- ===== JS SCRIPTS ===== -->
+  <script src="scripts.js"></script>
+</body>
+</html>
