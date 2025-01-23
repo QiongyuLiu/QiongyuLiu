@@ -579,25 +579,15 @@ footer {
 
 /* ========== 响应式(示例) ========== */
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .sidebar {
-    position: static;
-    width: 100%;
-    padding: 1rem;
+    width: 14rem; 
   }
-
   .main-content {
-    margin-left: 0;
+    margin-left: 15rem; /* 对应 sidebar 宽度 */
   }
-
-  .viewer-large {
-    max-width: 90%;
-  }
-
-  .viewer-prev,
-  .viewer-next {
-    width: 30px;
-    height: 30px;
-    font-size: 1rem;
+  html, body {
+    -webkit-text-size-adjust: none; 
   }
 }
+
