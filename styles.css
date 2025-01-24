@@ -13,10 +13,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-html, body {
-  -webkit-text-size-adjust: none;
-  -ms-text-size-adjust: none;
-}
 
 /* 添加自定义字体 */
 @font-face {
