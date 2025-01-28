@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- 引入外部CSS -->
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
   <!-- ===== 左侧栏导航 (nav) ===== -->
@@ -24,8 +25,12 @@
     </ul>
 
     <div class="social">
-      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">IG</a>
-      <a href="mailto:xxx@example.com" target="_blank" rel="noopener noreferrer">Email</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="mailto:example@example.com">
+        <i class="fas fa-envelope"></i>
+    </a>
     </div>
   </nav>
 
@@ -50,58 +55,73 @@
 
 <!-- 原先 Illustration 面板 --> 
 <section id="illustration" class="page-section" aria-labelledby="illustration-title">
-  <h2 id="illustration-title">> Series / Track</h2>
+  <h2>&gt; Series</h2>
 
-  <!-- 缩略图 -->
+  <!-- 缩略图1 -->
   <div class="no-lightbox-gallery" id="illus-series-gallery">
-    <img src="static/image/series tittle.jpg" alt="Series 1" data-target="illustration-series-1">
+    <figure>
+      <img src="static/image/series tittle.jpg" alt="Series 1" data-target="illustration-series-1">
+      <figcaption>
+        <p>Track (Unit 1)</p>
+        <h4 class="subtitle">(ongoing) Digital Painting, Photopolymer Gravure</h4>
+      </figcaption>
+    </figure>
+    <!-- 缩略图2 -->
+    <figure>
+      <img src="static/image/series tittle2.jpg" alt="Series 2" data-target="illustration-series-2">
+      <figcaption>
+        <p>Back Home</p>
+        <h4 class="subtitle">Mixed-media</h4>
+      </figcaption>
+    </figure>
+      <!-- 缩略图3 -->
+    <figure>
+      <img src="static/image/step1.jpg" alt="Series 3" data-target="illustration-series-3">
+      <figcaption>
+        <p>Step-bite practice</p>
+        <h4 class="subtitle">Etching and Pastel</h4>
+      </figcaption>
+    </figure>
   </div>
+
+<!-- 你可以继续添加更多系列 -->
   
-  <h2 id="single-pieces-title">> Supporting Work / Single Pieces</h2>
+  <h2 id="single-pieces-title">&gt; Single Pieces</h2>
+  <h4 class="subtitle">Exploration and Experimentation with Different Printmaking Mediums</h4>
   <div class="gallery single-pieces-gallery">
     <figure class="print-figure">
-      <img src="static/image/S1.jpg" alt="Series 1 - Page 1">
-      <figcaption>Back Home 1: Shrouded</figcaption>
+      <img src="static/image/long.jpg" alt="long">
+      <figcaption>Howling Waves</figcaption>
     </figure>
     <figure class="print-figure">
-      <img src="static/image/S2.jpg" alt="Series 1 - Page 2">
-      <figcaption>Back Home 1: Revealed</figcaption>
+      <img src="static/image/mono1.jpg" alt="mono1">
+      <figcaption>Melt</figcaption>
     </figure>
-    <figure class="print-figure">
-      <img src="static/image/S3.jpg" alt="Series 1 - Page 3">
-      <figcaption>Back Home 2: Rust</figcaption>
-    </figure>
-    <figure class="print-figure">
-      <img src="static/image/step1.jpg" alt="step1">
-      <figcaption>Step Bite Study 1</figcaption>
-    </figure>
-    <figure class="print-figure">
-      <img src="static/image/step2.jpg" alt="step2">
-      <figcaption>Step Bite Study 2</figcaption>
-    </figure>
-    <figure class="print-figure">
-      <img src="static/image/step3.jpg" alt="step3">
-      <figcaption>Step Bite Study 3</figcaption>
-    </figure>
+      <figure class="print-figure">
+        <img src="static/image/W1.jpg" alt="W1">
+        <figcaption>Wind: Shrouded</figcaption>
+      </figure>
+      <figure class="print-figure">
+        <img src="static/image/W2.jpg" alt="W2">
+        <figcaption>Wind: Revealed</figcaption>
+      </figure>
+      
     <!-- 更多图... -->
   </div>
   
 
 </section>
 
-<!-- <p>这里是 Illustration 的主列表，只显示缩略图。</p>
-<img src="static/image/illus_thumb2.jpg" alt="Series 2" data-target="illustration-series-2"> -->
-<!-- 你可以继续添加更多系列 -->
+
 
 <!-- 二级页面 1：Series 1 的详细页面 -->
 <section id="illustration-series-1" class="page-section" aria-labelledby="series1-title">
-  <h3 id="series1-title">Track (Unit 1)</h3>
-  <h4 class="subtitle">(ongoing) Sigital Painting, Photopolymer Gravure</h4>
+  <h3>Track (Unit 1)</h3>
+  <h4 class="subtitle">(ongoing) Digital Painting, Photopolymer Gravure</h4>
+
   <p>
-    <br>In this project, I conducted extensive testing and practice, primarily focusing on etching techniques. I began by recording birdsong from various settings—urban areas, suburban zones, and forests—and selected different species to work with. After processing these recordings digitally, I transferred the resulting designs using polymer techniques. With Brian’s assistance, I experimented with multiple etching methods, refining the imagery until I achieved the result I had envisioned.<br>
-    <br>During this process, I experienced numerous forms of “communication.” Many classmates offered their insights on my work, gathering to discuss its level of visual information, final structure, and whether it was related to any audio tracks. To me, this indicated that the images themselves were conveying “sound,” and I, in turn, received “sound” in the form of audience feedback—which was exactly what I had hoped for.<br>
-    <br>However, I experimented with a wide range of colors, drawing inspiration from Monet’s use of hues in his sunrise paintings in an attempt to create different temporal atmospheres. Despite my efforts, I am still not entirely satisfied with the final outcome. I hope to have more time in the future to continue exploring and refining this work.<br>
-    <br></p>
+    <br>&gt; Work archive<br>
+ </p>
 
     <div class="gallery-complex">
       <!-- ====== 第一层：大图入口 row ====== -->
@@ -318,152 +338,363 @@
           <button class="viewer-next">&rarr;</button>
         </div>
       </div>
+    </div>
      <!-- end .gallery-complex -->
-    
-    <!-- “Back to Series” 按钮示例 -->
-    <button id="btnBackSeries1">Back</button>
-  </section>
+  <p>
+  <br>&gt; Process
+  <br>Experimented with and Practiced Various Printmaking Techniques and Modes of Expression, and ultimately Settled on Polymer.<br>
+  <br>
+  </p>
+  <div class="p-gallery">
+    <figure>
+      <img src="static/image/fish1.jpg" data-full="static/image/fish1.jpg" alt="P1">
+      <figcaption>Linoleum Print with Peel-Away Layer</figcaption>
+    </figure>
+    <figure>
+      <img src="static/image/fish2.jpg" data-full="static/image/fish2.jpg" alt="P2">
+      <figcaption>The Roc Soaring Beyond the Skies</figcaption>
+    </figure>
+    <figure>
+      <img src="static/image/fish3.jpg" data-full="static/image/fish3.jpg" alt="P3">
+      <figcaption>Crawling Sound Array in Screen Print</figcaption>
+    </figure>
+    <figure>
+      <img src="static/image/mono.jpg" data-full="static/image/mono.jpg" alt="P3">
+      <figcaption>Sound-Exploding Mono Print on Tracing Paper</figcaption>
+    </figure>
+  </div>  
+  <p><br>
+    <br>First Recorded the Common Birdsongs from Different Areas (Urban, Suburban, and Forest)<br>
+    <br>
+  </p>
+  <div class="p-gallery">
+    <figure>
+      <img src="static/image/map2.jpg" data-full="static/image/map2.jpg" alt="M2">
+      <figcaption>London Birdwatching Log</figcaption>
+    </figure>
+    <figure>
+      <img src="static/image/map1.jpg" data-full="static/image/map1.jpg" alt="M1">
+      <figcaption>Eastern Birdwatching Log</figcaption>
+    </figure>
+  </div>  
+  <p><br>
+    <br>Selected different types, processed them on the computer by denoising, cutting, editing, and arranging the audio tracks, and finally composed them into soundtracks that achieved the visual effect I envisioned.<br>
+    <br> Processed the audio by applying a discrete Fourier transform for each frame, extracting spectrograms to visualize the sound data.<br>
+    <br>Technical reference: https://www.youtube.com/watch?v=-Yxj3yfvY-4<br>
+    <br>
+  </p>
+  <div class="p-gallery">
+    <figure>
+      <img src="static/image/map4.jpg" data-full="static/image/map4.jpg" alt="P3">
+      <figcaption>Visual Processing</figcaption>
+    </figure>
+    <figure>
+      <img src="static/image/map3.jpg" data-full="static/image/map3.jpg" alt="P3">
+      <figcaption>Corresponding</figcaption>
+    </figure>
+  </div>  
+  <p>
+    <br>
+    In a sense, I tend to lean toward a minimalist cityscape when working on the composition, forming impressions of sound-originating areas. <br>
+    <br>However, I wish to maintain an openness in interpretation, inspiring more reflections on scenes of industrialization and nature, such as subway tracks, the reflection of the Thames, or rows of trees.<br>
+    <br>
+  </p>
+  <div class="p-gallery">
+    <figure>
+      <img src="static/image/P1.jpg" data-full="static/image/P1.jpg" alt="P1">
+      <figcaption>Printed Film Positive</figcaption>
+    </figure>
+  </div>  
+    <p><br>
+      <br>Transferred the patterns, experimented with different etching techniques with Brian's support, until achieving the desired result.<br>
+      <br>
+    </p>
+  <div class="p-gallery">
+    <figure>
+      <img src="static/image/P2.jpg" data-full="static/image/P2.jpg" alt="P2">
+      <figcaption>Original Plate Processed through Exposure</figcaption>
+    </figure>
+    <figure>
+      <img src="static/image/P4.jpg" data-full="static/image/P4.jpg" alt="P4">
+      <figcaption>Over etching & Aquatint</figcaption>
+    </figure>
+    <figure>
+      <img src="static/image/P3.jpg" data-full="static/image/P3.jpg" alt="P3">
+      <figcaption>Over etching & Big ground</figcaption>
+    </figure>
+  </div>  
 
-  </div>
+  <p>
+    <br>&gt; Pop Up Show<br>
+  </p>
+  <div class="p-gallery">
+    <img src="static/image/1.jpg" data-full="static/image/1.jpg" alt="S1">
+    <img src="static/image/2.jpg" data-full="static/image/2.jpg" alt="S2">
+    <img src="static/image/4.jpg" data-full="static/image/4.jpg" alt="S4">
+    <img src="static/image/3.jpg" data-full="static/image/3.jpg" alt="S3">
+  </div>  
+    <p>
+      <br>
+      During this process, I discovered many meaningful ways to communicate and exchange ideas. I received a variety of comments on my artwork.<br>
+      <br>The tech teachers provided valuable insights and suggestions regarding the handling of visuals, while my classmates gathered to discuss the amount of information within the compositions and their final structures.<br>
+      <br>I truly enjoyed hearing viewers speculate whether the visuals were related to the audio tracks, as well as their interpretations of the artwork's themes.<br>
+      <br>My work represents "sound," and simultaneously, I received many different “voices” from the audience. This, I believe, is precisely what I hoped to achieve.<br>
+      
+      <br>During the exhibition, Jo and Leo shared their perspectives on displaying, curating, and selecting my work. Their input taught me a great deal, as I had almost no prior knowledge in this area. I also came to realize how crucial the presentation of an exhibition is for delivering an intended experience to the audience—something that cannot be ignored.<br>
+      
+      <br>My smaller pieces were displayed on different walls and in various areas, which, I believe, successfully conveyed the sense of spatiality I aimed for.<br>
+      
+      <br>In another instance, I combined one of my artworks with a classmate’s fabric project and hid it in a separate space. It served as a small interaction and was somehow fun to explore.
+      <br>
+    </p>
+
 </section>
+
+
     
 
 
 <!-- 二级页面 2：Series 2 的详细页面 -->
-<!--<section id="illustration-series-2" class="page-section" aria-labelledby="series2-title">
-  <h2 id="series2-title">Series 2 Title</h2>
-  <p>这里放 Series2 的大图、文字等。</p>
-  <div class="gallery">
-    <img src="static/image/series2_img1.jpg" alt="Series 2 - Page 1">
+<section id="illustration-series-2" class="page-section" aria-labelledby="series2-title">
+  <h3>Back Home</h3>
+  <h4 class="subtitle">Mixed-media</h4>
+  <p>
+    <br>My initial attempts at exploring different methods of expression.<br>
+    <br>Began with the idea of telling a story about life and death through a narratively driven video in a comic style.<br>
+    <br>In this work, I chose to emphasize the human voice.<br>
+  </p>
+  <div class="video-wrapper">
+    <iframe 
+    src="https://player.bilibili.com/player.html?isOutside=true&aid=113357407389008&bvid=BV1qL1cYDEcu&cid=26435585414&p=1&autoplay=0" 
+    allowfullscreen="true">
+  </iframe>
   </div>
+  <p><br>
+    <br>After the tutorial, I realized that this approach still seemed to collapse my intended meaning to some extent.<br>
+    <br>Attempted to shift away from the idea of bluntly telling a story.<br>
+    <br>Meanwhile, birdsong was combined with robots as 'the other' to create this series, during which my interest in working with transparent media grew.<br>
+    <br>However, I have yet to find a satisfying sense of harmony in this approach, so the video project has been put on hold for now.<br>
+  </p>
+  <div class="p-gallery">
+    <figure>
+      <img src="static/image/S1.jpg" data-full="static/image/S1.jpg" alt="P1">
+      <figcaption>Back Home 1: Shrouded</figcaption>
+    </figure>
+    <figure>
+      <img src="static/image/S2.jpg" data-full="static/image/S2.jpg" alt="P2">
+      <figcaption>Back Home 1: Revealed</figcaption>
+    </figure>
+    <figure>
+      <img src="static/image/S3.jpg" data-full="static/image/S3.jpg" alt="P3">
+      <figcaption>Back Home 2: Rust</figcaption>
+    </figure>
+  </div>  
+</section> 
 
-  <button id="btnBackSeries2">Back to Series</button>
-</section> -->
+<!-- 二级页面 3：Series 3 的详细页面 -->
+<section id="illustration-series-3" class="page-section" aria-labelledby="series3-title">
+  <h3>Step-bite Practice</h3>
+  <h4 class="subtitle">Etching and Pastel</h4>
+  <p>
+    <br>我最先关于不同的表达手法的尝试。<br><br>
+  </p>
+  <div class="p-gallery">
+    <figure class="print-figure">
+      <img src="static/image/step1.jpg" alt="step1">
+      <figcaption>Step Bite Study 1</figcaption>
+    </figure>
+    <figure class="print-figure">
+      <img src="static/image/step2.jpg" alt="step2">
+      <figcaption>Step Bite Study 2</figcaption>
+    </figure>
+    <figure class="print-figure">
+      <img src="static/image/step3.jpg" alt="step3">
+      <figcaption>Step Bite Study 3</figcaption>
+    </figure>
+  </div>  
+</section> 
 
 
-    <!-- 2) Sketchbook Page -->
-    <section id="sketchbook" class="page-section" aria-labelledby="sketchbook-title">
-      <h2 id="sketchbook-title">> Critical Reflection</h2>
+  <!-- 2) Sketchbook Page -->
+  <section id="sketchbook" class="page-section" aria-labelledby="sketchbook-title">
+    <h2 id="sketchbook-title">&gt;  Critical Reflection</h2>
+    <h3><br>&gt; Introspections on the Foundations of Creation</h3>
+    <p>
+      <br>I have long been interested in the relationship between nature and man. My childhood in a rural village nestled among mountains in China, where I had close daily interactions with various flora and fauna.<br>
+      <br>Since the lockdown during the pandemic, it has given me a new perspective on the relationship between man and nature. It is a period of intense loneliness and personal turmoil for me. In the midst of physical exhaustion and political restrictions, my only connection seemed to be with my pet parrot and houseplants. While they remained untouched by the massive social upheaval, this tranquility was underpinned by my financial situation. Meanwhile, I also witnessed how natural forces could override social constructs, and how social constructs overwhelmed individual lives with natural forces. This phenomenon is a perfect reflection of the complexities of living in the Anthropocene.<br>
+      <br>Since Michel Foucault's The Order of Things (1970) introduced the metaphor of historicity and the discontinuity of knowledge as resembling beach sand shaped by waves, many eco-philosophers have critiqued anthropocentrism and argued for a more egalitarian perceptual relationship between humans and the natural world.<br>
+      <br>Although Joy introduced me to this concept, I remain, perhaps inevitably, a partial practitioner of posthumanism, as my work is rooted in a mirrored "alterity". Meanwhile, she also recommended a book by James Bridle, Ways of Being (2022), which explores the nonhuman world "suddenly alive with intelligence and agency" while humanity is "utterly entangled with the more-than-human world". He argues that we must learn to live with the world rather than trying to dominate it.<br>
+    </p>
+    <div class="image-block">
+      <figure>
+        <img src="static/image/JB1.jpg" alt="JB1" data-full="static/image/JB1.jpg">
+        <figcaption>James Bridle, Radar Ornithology (Sage I-III), 3 x Live radar data, tablet computer, plexiglass, 2018</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/JB2.jpg" alt="JB2" data-full="static/image/JB2.jpg">
+        <figcaption>James Bridle, Radar Ornithology (Sage I-III), 3 x Live radar data, tablet computer, plexiglass, 2018</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/JB3.png" alt="JB3" data-full="static/image/JB3.png">
+        <figcaption>James Bridle, My delight on a shining night, Single-channel digital video, 2018</figcaption>
+      </figure>
+    </div>
+    <p><br>
+      <br>For his work, the future lies in the relationships and connections between the human and non-human worlds. For me, my initial experience of arriving in London alone and adapting to a drastically new environment paralleled the pandemic period, and also with only pets and plants as companions. the "non-human" part must be them.<br>
+      <br>In focusing on animals, I have been noticing Roger Ballen's photographic work, particularly the metaphors he portrays in the relationship between South African communities and their pets. When I look at my companions, whose inner worlds I cannot fully comprehend, as the animal philosopher Jacques Derrida noted in The Animal That Therefore I Am (2008), "the gaze embodies the concept of alterity-the recognition of the other as different from oneself." He argues that the moment of being seen by his cat, which prompts a profound inquiry into self-awareness and identity, animals represent an absolute otherness that challenges human self-awareness.<br>
+    </p>
+    <div class="image-block">
+      <figure>
+        <img src="static/image/Blinded.png" alt="Blinded" data-full="static/image/Blinded.png">
+        <figcaption>Roger Ballen, Blinded, photography, 2005</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/Bite.png" alt="Bite" data-full="static/image/Bite.png">
+        <figcaption>Roger Ballen, Bite, photography, 2007</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/Headless.png" alt="Headless" data-full="static/image/Headless.png">
+        <figcaption>Roger Ballen, Headless, photography, 2006</figcaption>
+      </figure>
+    </div>
+    <p><br>
+      <br>And I've come to realize that I cannot escape using 'the other' to narrate human stories, despite my attempts to transcend it.<br>
+      <br>This is an interesting phenomenon that I found my thinking may have mixed with some existential reflections. Albert Camus' discussion in The Myth of Sisyphus (1955) of the struggle between the individual and the constraints of society. The dependent relationship between humans and flora or fauna in urban environments reflects this conscious or unconscious resistance, or even perhaps escape, yet it serves as a means of navigating social frameworks and redefining personal identity. The individual's task, much like that of Sisyphus, is to navigate societal expectations through consciousness and resistance. Engaging with the collective unconscious of society, meanwhile finding ways to connect one's own values and beliefs.<br>
+      <br>This is related to the juxtaposition of the "superego" and the "id. In Tang Dynasty China, Zhang Zao has a famous saying, "外师造化，中得心源，" (Lidai Minghua Ji). It means to learn externally from nature and internally from the source of the heart. For me, this means that if I want to get something from the outside world as an expression of myself, it has to be the "Id". I would argue that the essence of art is the continued articulation and communication of the most primal and authentic self as a means of negotiating between social constraints and individual authenticity.<br>
+    </p>
+    
+    <h3><br>&gt; Sound Practice</h3>
+    <p>
+      <br>The theme of Unit 1 gradually took shape. <br>
+      <br>My goal is to create a sense of communication through sound, an experience that activates the perception of visual-auditory illusions. This experience is designed to transcend geographical and temporal boundaries, presenting a visible representation of changes in time and space. Sound, as the most accessible means of communication beyond text, serves as the foundation for this exploration.<br>
+      <br>Then I learned from William Kentridge's work and animated films, which offered a direct and pure approach to storytelling through sound. Making videos was fun; I loved seeing things come to life through movement. However, I have yet to find a satisfying harmonic balance in this approach.<br>
+    </p>
+    <div class="image-block">
+      <figure>
+        <img src="static/image/WK1.png" alt="WK1" data-full="static/image/WK1.png">
+        <img src="static/image/WK2.png" alt="WK2" data-full="static/image/WK2.png">
+        <img src="static/image/WK3.png" alt="WK3" data-full="static/image/WK3.png">
+        <figcaption>William Kentridge, Experiment Sketching, video</figcaption>
+      </figure>
+    </div>
+    <p>
+      <br>Meanwhile, I am exploring another method that emphasizes the relationship between sound and space (environment), and how different entities receive sound differently. <br>
+      <br>As I sought out more posthumanist work, Suzanne Anker's creations inspired me to think more deeply about how to "write" layers of information into an image. This shifted my focus to embedding meaning and complexity in visual forms, enriching the dialogue between sound and image.<br>
+    </p>
+    <div class="image-block">
+      <figure>
+        <img src="static/image/SA1.jpg" alt="SA1" data-full="static/image/SA1.jpg">
+        <figcaption>Suzanne Anker, Codex Genome - Constellation (Symbiotic Planet), Silkscreen and pigment on frosted mylar, 24” x 36” </figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/SA2.jpg" alt="SA2" data-full="static/image/SA2.jpg">
+        <figcaption>Suzanne Anker, Codex Genome - Scriptography, Silkscreen and pigment on frosted mylar, 24” x 36” </figcaption>
+      </figure>
+    </div>
+
+    <h3><br><br>&gt; The Subject of "The Other": Birds</h3>
+    <p>
+      <br>Birds retain their mysterious migratory patterns and ubiquitous presence in both urban and rural soundscapes, creating a linear structure marked by strong regional characteristics and variations.
+      <br>I want to explore how birds inhabit both human-dominated environments like cities and nature-dominated spaces like forests, using them as a medium to symmetrically break the dichotomy between these two contrasting realms. Additionally, my personal records of birdwatching in the wild provide a rich archive of observations, and moving to London introduced me to a completely new ecological setting. The coexistence of birds and humans in urban spaces highlights regional contrasts, offering a fresh perspective.<br>Human birdwatching, in a way, acts as an anchor point. That fleeting moment becomes a snapshot, forever defining not only the place but also your state of mind at the time—how you felt and how you viewed life.<br>
+      <br>Through my work, I experiment with various methods to emphasize the relationship between sound and space (or environment) and explore how different entities perceive sound. This notion of difference is not only about humans and birds but also about the diversity among humans themselves.<br>
+      <br>I was fortunate to be recommended the works of Victoria Arney, who a master of capturing the resonance of land and place, an artist who works with birdsong and sound waves, is concerned with the resonance of land and place.Her use of large-scale wooden carvings and decorative patterns on vast canvases left a profound impression on me, encouraging me to think deeply about integrating material, scale, and meaning in my own practice.Her use of woodcut and decorative patterns on large canvases has left a profound impression on me.<br>
+      <br>Her practice led me to think about how diverse creatures and individuals might have different receiving experiences. I want these distinctions to manifest not only between humans and birds, not only biologic, but also among humans themselves, as the receiver, the audience with their own minds that can cryptically communicate.<br>
+    </p>
+    <div class="image-block">
+      <figure>
+        <img src="static/image/SM.jpg" alt="V1" data-full="static/image/SM.jpg">
+        <figcaption>Victoria Arney, Spring March, March 29 2021, small monotype and etching overlay bird calls</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/MR.jpg" alt="V2" data-full="static/image/MR.jpg">
+        <figcaption>Victoria Arney, Made from a recording at 5.30 1 May 2023, 180 x 180 cm, woodcut on Kozo </figcaption>
+      </figure>
+    </div>
+    
+    <h3><br>&gt; Etching Print</h3>
+    <p>
+      <br>Moving forward, I aim to explore the theme through printmaking. Having access to learn about photoetching has been particularly precious. This technique itself embodies the Anthropocene – a fusion of modern technology and natural corrosion on the same metal plate.<br>
+    </p>
+    <div class="image-block special-layout">
+        <!-- 左列：放一个“容器”，内部再上下排两张图 -->
+      <div class="left-column">
+      <figure>
+        <img src="static/image/Grand Central Terminal.png" alt="G1" data-full="static/image/Grand Central Terminal.png">
+        <figcaption>Gipi, Grand Central Terminal. Rapporto da un pianeta estinto, 2009</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/J.png" alt="G1" data-full="static/image/J.png">
+        <figcaption>Jorge González, JACK LONDON, 2015</figcaption>
+      </figure>
+      </div>
+        <!-- 右列：放一张大图 -->
+      <figure class="right-figure">
+        <img src="static/image/Unastoria.png" alt="G2" data-full="static/image/Unastoria.png">
+        <figcaption>Gipi, O Strega!: Unastoria, 2015, Coconino Press/Fandango</figcaption>
+      </figure>
+    </div>
+  <p><br>
+      <br>I've always believed that visual picture is the way to transcend linguistic barriers, which is a universal language of communication. While I also write, I often feel that when certain things are expressed through words, they tend to “collapse” concepts into ordinary characters. <br>
+      <br>I idealistically hope that a picture can be the very thing itself, relying more on its inherent categorical rationality as a subject. Since studying, I've been working to balance the distinct visual languages I use as a cartoonist, illustrator, and printmaker.<br>
+      <br>I chose “polymer” and “birdsong” for my first major theme, attempting to convey some experience through “sound”, evoking a synesthetic interplay between the visual and auditory.Ideally, this experience should feel the sensitive change about geographical boundaries and periods of time. And sound represents one of the most fundamental forms of communication before the text. <br>
+    </p>
+    <br>
+    <h3>&gt; Symbiosis, Connection, and Communication</h3>
+    <p>
+      <br>All these experiences and reflections have crystallized into three key themes: communication, connection, and symbiosis. <br>
+      <br>After a few weeks of workshop inductions, I opted for polymer processes, incorporating my audio recordings of birds into a visual representation with a “minimalist cityscape” aesthetic. By featuring birds common in specific areas, I created symbolic imagery of different locations. Yet I also strive for an open interpretation, encouraging associations with subway tracks, reflections on the Thames, or lines of trees.
+      Discussions with classmates were fruitful: they commented on the quantity of visual information, the overall structure, and their guesses about the inclusion of audio tracks. Essentially, my images are “sound,” and from them, I received varied “sounds” or feedback from viewers—exactly the effect I intended.          
       <br>
-      <h3>Personal Insights</h3>
-      <p>
-        <br>The theme of Unit 1 gradually took shape from my long-standing interest in the relationship between nature and humans. My childhood in a rural village nestled among mountains in China, where I maintained close daily interactions with various flora and fauna. Since the lockdown during the pandemic, it offered me a new perspective on the human-nature relationship. It is a period marked by intense solitude and personal turbulence for me. Amid physical exhaustion and political restrictions, my only connection seemed to be with my pet parrot and houseplants. While they remained untouched by the massive social upheaval, this tranquility was underpinned by my financial situation. Meanwhile, I also witnessed how natural forces could override social constructs, and the social constructs press the individual life with the natural forces. This phenomenon is the perfect reflection about the complexities of living in the Anthropocene.<br>
-      <p>
-        <div class="image-block">
-          <figure>
-            <img src="static/image/Blinded.png" alt="Blinded" data-full="static/image/Blinded.png">
-            <figcaption>Roger Ballen, Blinded, photography, 2005</figcaption>
-          </figure>
-          <figure>
-            <img src="static/image/Bite.png" alt="Bite" data-full="static/image/Bite.png">
-            <figcaption>Roger Ballen, Bite, photography, 2007</figcaption>
-          </figure>
-          <figure>
-            <img src="static/image/Headless.png" alt="Headless" data-full="static/image/Headless.png">
-            <figcaption>Roger Ballen, Headless, photography, 2006</figcaption>
-          </figure>
-        </div>
-      <p>
-        <br>Since Michel Foucault's metaphor of knowledge's historicity and discontinuity as beach sand shaped by waves (The Order of Things), many eco-philosophers have critiqued anthropocentrism, advocating for a more egalitarian perceptual relationship between humans and the natural world. 
-        Although Joy introduced me to this concept, I inevitably remain only a partial practitioner of Posthumanism, as all my works are grounded in a mirrored “alterity.”
-        My initial experience of arriving in London alone and adapting to a drastically new environment paralleled the pandemic period, and also with only pets and plants as companions. 
-        
-        Since I have noticed Roger Ballen’s photographic works, particularly the metaphors he portrays in the relationship between South African communities and their pets. When I gaze at my companions whose inner worlds I cannot fully comprehend, as what animal philosopher Jacques Derrida has noted, “The gaze embodies the concept of alterity—the recognition of the other as distinct from oneself.” Derrida argues that the moment of being seen by his cat, which prompts a profound inquiry into self-awareness and identity, animals represent an absolute otherness that challenges human self-perception.  (The Animal That Therefore I Am). And I've come to realize that I cannot escape using 'the other' to narrate human stories, despite my attempts to transcend it.<br>
-      <p>
-        <div class="image-block special-layout">
-            <!-- 左列：放一个“容器”，内部再上下排两张图 -->
-          <div class="left-column">
-          <figure>
-            <img src="static/image/Grand Central Terminal.png" alt="G1" data-full="static/image/Grand Central Terminal.png">
-            <figcaption>Gipi, Grand Central Terminal. Rapporto da un pianeta estinto, 2009</figcaption>
-          </figure>
-          <figure>
-            <img src="static/image/J.png" alt="G1" data-full="static/image/J.png">
-            <figcaption>Jorge González, JACK LONDON, 2015</figcaption>
-          </figure>
-          </div>
-           <!-- 右列：放一张大图 -->
-          <figure class="right-figure">
-            <img src="static/image/Unastoria.png" alt="G2" data-full="static/image/Unastoria.png">
-            <figcaption>Gipi, O Strega!: Unastoria, 2015, Coconino Press/Fandango</figcaption>
-          </figure>
-        </div>
-      <p>
-        <br>This is an interesting phenomenon that I found my thought may have mixed with some existential reflections. Albert Camus' discussion of the struggle between individuals and the constraints of society. 
-        The dependent relationship between humans and flora or fauna in urban settings mirrors this conscious or unconscious resistance, or even perhaps escape. 
-        Yet it serves as a means of navigating social frameworks and redefining personal identity.<br>
-        <br>The individual's task, much like that of Sisyphus, is to navigate societal expectations through consciousness and resistance. Engaging with the collective unconscious of society, meanwhile finding ways to connect one's own values and beliefs. (Myth of Sisyphus)<br>
-        <br>This connects to the juxtaposition of the “superego” and the “id.”. In Tang Dynasty China, Zhang Zao who was a painter and had his famously stated, “外师造化，中得心源。” (Lidaiminghuaji). Means externally learn from nature, internally derive from the heart's source. For me, that means if I am to gain anything from the external world as express something of myself, it must the “id”. I would consider that the essence of art is the continued articulation and communication of the most primitive and authentic self, as a means of negotiating between social constraints and individual authenticity.<br>
-        <p>
-        <br>
-        <h3>Artistic Creation</h3>
-        <p>
-        <br>All these experiences and reflections have crystallized into three key themes: communication, connection, and symbiosis. <br>
-        <br>Moving forward, I aim to explore the theme through printmaking. Having access to learn about photoetching has been particularly precious. This technique itself embodies the Anthropocene – a fusion of modern technology and natural corrosion on the same metal plate.
-        I've always believed that visual picture is the way to transcend linguistic barriers, which is a universal language of communication. While I also write, I often feel that when certain things are expressed through words, they tend to “collapse” concepts into ordinary characters. 
-        I idealistically hope that a picture can be the very thing itself, relying more on its inherent categorical rationality as a subject. Since studying, I've been working to balance the distinct visual languages I use as a cartoonist, illustrator, and printmaker.<br>
-        <br>I chose “polymer” and “birdsong” for my first major theme, attempting to convey some experience through “sound”, evoking a synesthetic interplay between the visual and auditory.Ideally, this experience should feel the sensitive change about geographical boundaries and periods of time. And sound represents one of the most fundamental forms of communication before the text. <br>
-        <br>Birds – the chosen 'other' in this project – remain their mysterious migratory patterns and ubiquitous presence in both urban and rural soundscapes, creating a linear structure marked by strong regional characteristics and variations.I have accumulated extensive birdwatching records from China during my time in the wild. Upon arriving in London, I encountered an entirely new urban ecosystem where the coexistence between birds and humans in urban settings presents some intriguing differences.<br>
-        <br>Initially, I tried to create a narrative video in a fairy style about a pet’s life and death, emphasizing the human voice. But after tutorials, I realized this might have over emphasis the story.
-        Then inspired by William Kentridge’s prints and animated films, I tried combining birdsong with robotics as “the other”. However, I have not yet found a satisfying harmony balance in this approach.
-        Meanwhile, I am exploring another method that emphasizes the relationship between sound and space (environment), and how different entities receive sound differently. 
-        Victoria Arney, an artist who works with birdsong and sound waves, is concerned with the resonance of land and place. Her use of woodcut and decorative patterns on large canvases has left a profound impression on me.
-        Her practice led me to think about how diverse creatures and individuals might have different receiving experiences. I want these distinctions to manifest not only between humans and birds, not only biologic, but also among humans themselves, as the receiver, the audience with their own minds that can cryptically communicate.
-        <br>
-        <p>
-          <div class="image-block">
-            <figure>
-              <img src="static/image/SM.jpg" alt="V1" data-full="static/image/SM.jpg">
-              <figcaption>Victoria Arney, Spring March, March 29 2021, small monotype and etching overlay bird calls</figcaption>
-            </figure>
-            <figure>
-              <img src="static/image/MR.jpg" alt="V2" data-full="static/image/MR.jpg">
-              <figcaption>Victoria Arney, Made from a recording at 5.30 1 May 2023, 180 x 180 cm, woodcut on Kozo </figcaption>
-            </figure>
-          </div>
-        <p>
-          <br>After a few weeks of workshop inductions, I opted for polymer processes, incorporating my audio recordings of birds into a visual representation with a “minimalist cityscape” aesthetic. By featuring birds common in specific areas, I created symbolic imagery of different locations. Yet I also strive for an open interpretation, encouraging associations with subway tracks, reflections on the Thames, or lines of trees.
-          Discussions with classmates were fruitful: they commented on the quantity of visual information, the overall structure, and their guesses about the inclusion of audio tracks. Essentially, my images are “sound,” and from them, I received varied “sounds” or feedback from viewers—exactly the effect I intended.          
-          <br>
-        <p>
-          <div class="image-block">
-            <figure>
-              <img src="static/image/SR.png" alt="SR" data-full="static/image/SR.png">
-              <figcaption>Bettmann, Smoke Rising From Factory Smokestacks, Metal Print, Jan 18 1955</figcaption>
-            </figure>
-            <figure>
-              <img src="static/image/M1.jpg" alt="M1" data-full="static/image/M1.jpg">
-              <figcaption>Claude Monet, Seagulls over the Houses of Parliament, oil canvas, 92 x 82 cm, 1904, Pushkin Museum, Moscow, Russia</figcaption>
-            </figure>
-            <figure>
-              <img src="static/image/M2.jpg" alt="M2" data-full="static/image/M2.jpg">
-              <figcaption>Claude Monet, Houses of Parlilament, oil canvas, 1904</figcaption>
-            </figure>
-            <figure>
-              <img src="static/image/M3.jpg" alt="M3" data-full="static/image/M3.jpg">
-              <figcaption>Claude Monet, Houses of Parlilament, Fog Effect, oil canvas, 1903</figcaption>
-            </figure>
-            <figure>
-              <img src="static/image/M4.jpg" alt="M4" data-full="static/image/M4.jpg">
-              <figcaption>Claude Monet, Houses of Parliament, London, Sun Breaking Through, oil canvas, 1904, Musée d'Orsay, Paris, France</figcaption>
-            </figure>
-          </div>
-        <p>
-          <br> References:<br>
-          1.Foucault, M. (1970). The Order of Things: An Archaeology of the Human Sciences. London: Tavistock Publications. 
-          <br>
-          2.Jacques, D. (2008). The Animal That Therefore I Am. Frence: Éditions Galilée.
-          <br>
-          3.Camus, A. (1955). The Myth of Sisyphus. London: Hamish Hamilton Limited.
-          <br>
-          4.Yanyuan Z. (Tang). Lidai Minghua Ji(The records of famous paintings of different dynasties).
-          <br>
-        <p>
-    </section>
+    </p>
+      <div class="image-block">
+        <figure>
+          <img src="static/image/SR.png" alt="SR" data-full="static/image/SR.png">
+          <figcaption>Bettmann, Smoke Rising From Factory Smokestacks, Metal Print, Jan 18 1955</figcaption>
+        </figure>
+        <figure>
+          <img src="static/image/M1.jpg" alt="M1" data-full="static/image/M1.jpg">
+          <figcaption>Claude Monet, Seagulls over the Houses of Parliament, oil canvas, 92 x 82 cm, 1904, Pushkin Museum, Moscow, Russia</figcaption>
+        </figure>
+        <figure>
+          <img src="static/image/M2.jpg" alt="M2" data-full="static/image/M2.jpg">
+          <figcaption>Claude Monet, Houses of Parlilament, oil canvas, 1904</figcaption>
+        </figure>
+        <figure>
+          <img src="static/image/M3.jpg" alt="M3" data-full="static/image/M3.jpg">
+          <figcaption>Claude Monet, Houses of Parlilament, Fog Effect, oil canvas, 1903</figcaption>
+        </figure>
+        <figure>
+          <img src="static/image/M4.jpg" alt="M4" data-full="static/image/M4.jpg">
+          <figcaption>Claude Monet, Houses of Parliament, London, Sun Breaking Through, oil canvas, 1904, Musée d'Orsay, Paris, France</figcaption>
+        </figure>
+      </div>
+    <p><br>
+      <br>Bibliographic references: <br>
+      1. Foucault, M. (1970). The Order of Things: An Archaeology of the Human Sciences. London: Tavistock Publications. 
+      <br>
+      2. Jacques, D. (2008). The Animal That Therefore I Am. Frence: Éditions Galilée.
+      <br>
+      3.Camus, A. (1955). The Myth of Sisyphus. London: Hamish Hamilton Limited.
+      <br>
+      4. Yanyuan Z. (Tang). Lidai Minghua Ji(The records of famous paintings of different dynasties).
+      <br>
+      5. Reed, D. A. (2017). Hearing: An Introduction to Psychological and Physiological Acoustics, 6th Ed. Boca Raton.
+      <br>
+      6. Robert J. D. (2000). Comparative Hearing: Birds and Reptiles: 13 (Springer Handbook of Auditory Research, 13). Springer.
+      <br>
+      7. Edward R. (2001). The Visual Display of Quantitative Information, 2nd Ed.
+      <br>
+      9. Christof M, Brandon L. (2001). Writing Aloud: The Sonics of Language. Errant Bodies.
+      <br>
+      10. Su Xiu, Zhu Xi. Progress in research of birdsong. Journal of Zhejiang Forestry College, no. 3, 2006, pp. 323-327
+      <br>
+      
+    </p>
+  </section>
 
     <!-- 3) Prints / Zine Page -->
     <section id="prints-zine" class="page-section" aria-labelledby="prints-zine-title">
-      <h2 id="prints-zine-title">> Course Contexts</h2>
+      <h2 id="prints-zine-title">&gt;  Course Contexts</h2>
 
       <div class="content-list">
         <!-- 第1条：图在左、文字在右 -->
@@ -476,7 +707,7 @@
           </div>
           <div class="item-text">
             <p>
-              My first lecture at Camberwell was given by Steffi Klenz, an artist who combines “social photography” with data-based approaches. I found her formal compositions highly engaging. I often wonder: how can we get viewers to spend more time gazing at a single image? Or, to invert the question, why do I myself linger on certain images? To me, painting is fundamentally driven by visuals—structure, color, texture, and tangible qualities are all decisive factors in holding the viewer’s attention. I have always felt my work lacks a sense of design and compositional rigor, and Steffi’s interplay of points, lines, and planes adds a strong “formal beauty” to her images. She also stressed that her work is very basic in its focus on “communication” and “language,” referencing Freud’s idea that the body speaks. Meanwhile, I recall Wolfgang Tillmans mentioning in a past lecture that “I guess when one talks about art and making art it is by nature language driven. But visual art is not primarily driven by language and there is a dichotomy in that when one is, on the one hand, constantly forced to talk about it, and language seems to favor ideas, and, on the other hand, one also shouldn’t blindly follow any idea that comes to mind. It’s a difficult equilibrium.” 
+              My first lecture at Camberwell was given by Steffi Klenz, an artist who combines “social photography” with data-based approaches. I found her formal compositions highly engaging. I often wonder: how can we get viewers to spend more time gazing at a single image? Or, to invert the question, why do I myself linger on certain images? To me, painting is fundamentally driven by visuals—structure, color, texture, and tangible qualities are all decisive factors in holding the viewer’s attention. I have always felt my work lacks a sense of design and compositional rigor, and Steffi’s interplay of points, lines, and planes adds a strong “formal beauty” to her images. She also stressed that her work is very basic in its focus on “communication” and “language,” referencing Freud’s idea that the body speaks. Meanwhile, I recall Wolfgang Tillmans mentioning in a past lecture that “I guess when one talks about art and making art it is by nature language driven. But visual art is not primarily driven by language and there is a dichotomy in that when one is, on the one hand, constantly forced to talk about it, and language seems to favor ideas, and, on the other hand, one also shouldn’t blindly follow any idea that comes to mind. It’s a difficult equilibrium.” <br><br>
             <p>
           </div>
         </div>
@@ -543,9 +774,13 @@
     <div>© Qiongyu (Quoine) Liu</div>
     <div>All rights reserved.</div>
     <!-- 可以用 <time> 来声明时间 -->
-    <div>Last updated: <time dateTime="2024-10">December 2024</time></div>
-  </footer>
-
+    <div>Last updated: <time dateTime="2025-01">January 2025</time></div>
+    <!-- Back 和 Next 按钮 -->
+    <!--<div id="navigation-buttons">
+      <button id="backButton">Back</button>
+      <button id="nextButton">Next→</button>
+    </div>
+  </footer>-->
   <!-- ===== JS SCRIPTS ===== -->
   <script src="scripts.js"></script>
 </body>

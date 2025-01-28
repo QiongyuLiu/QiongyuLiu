@@ -6,6 +6,22 @@ const pages = document.querySelectorAll('.page-section');
 const printsNav = document.getElementById('printsNav');
 const titleLink = document.querySelector('.title-link');
 
+// 获取 sidebar 的所有主菜单按钮
+// 假设页面切换由 navItems 控制
+navItems.forEach(item => {
+  item.addEventListener('click', () => {
+    // 切换页面逻辑
+    document.querySelectorAll('.page-section').forEach(section => {
+      section.classList.remove('active');
+    });
+    const targetId = item.dataset.target;
+    document.getElementById(targetId).classList.add('active');
+
+    // 页面立即滚动到顶端
+    window.scrollTo(0, 0);
+  });
+});
+
 // Lightbox
 const lightboxOverlay = document.getElementById('lightboxOverlay');
 const lightboxImg = document.getElementById('lightboxImg');
@@ -76,45 +92,27 @@ titleLink.addEventListener('click', (e) => {
 let lightboxIndex = 0;        // 当前图片在画廊中的索引
 let lightboxGallery = [];     // 当前点击的 gallery 所有img
 
-// 给所有 .gallery img 添加点击 -> 打开lightbox
-const galleryImages = document.querySelectorAll('.gallery img');
+// 定义所有需要支持灯箱功能的图片选择器
+const gallerySelectors = ['.gallery img', '.p-gallery img', '.viewer-large', '.image-block img'];
+const galleryImages = document.querySelectorAll(gallerySelectors.join(', ')); // 合并选择器
+
+// 给所有选择器中的图片绑定点击事件
 galleryImages.forEach(img => {
   img.addEventListener('click', (e) => {
-    const parentGallery = e.target.closest('.gallery');
-    lightboxGallery = Array.from(parentGallery.querySelectorAll('img'));
-    lightboxIndex = lightboxGallery.indexOf(e.target);
-    openLightbox();
-  });
-});
-// 给第三层 .viewer-large 添加点击事件 -> 使用全局灯箱
-const viewerLargeImages = document.querySelectorAll('.viewer-large');
-viewerLargeImages.forEach(img => {
-  img.addEventListener('click', (e) => {
-    const src = e.target.src; // 获取当前大图的 src
-    if (src) {
-      lightboxGallery = [e.target]; // 仅包含当前图片
-      lightboxIndex = 0; // 设置索引为当前唯一的图片
-      openLightbox(); // 调用全局打开灯箱的函数
+    const parentGallery = e.target.closest('.gallery, .p-gallery, .image-block'); // 找到父容器（适配多个类型）
+    
+    if (parentGallery) {
+      // 从父容器中获取所有图片
+      lightboxGallery = Array.from(parentGallery.querySelectorAll('img'));
+    } else {
+      // 如果没有父容器，比如 .viewer-large，单独处理
+      lightboxGallery = [e.target];
     }
-  });
-});
-// 给 image-block 中的所有图片添加点击事件
-const imageBlockImages = document.querySelectorAll('.image-block img');
-imageBlockImages.forEach(img => {
-  img.addEventListener('click', (e) => {
-    // 1) 找到它所在的父容器 (如果有 .image-block 之类)
-    const parentBlock = e.target.closest('.image-block');
-    // 2) 收集 parentBlock 里的所有 <img>
-    const blockImgs = Array.from(parentBlock.querySelectorAll('img'));
-    // 3) 把它们赋给全局
-    lightboxGallery = blockImgs;
-    // 4) 找到点击的是第几张
-    lightboxIndex = blockImgs.indexOf(e.target);
-    // 5) 最后调用 openLightbox() (不带参数)
-    openLightbox();
-  });
-});
 
+    lightboxIndex = lightboxGallery.indexOf(e.target); // 获取当前点击图片的索引
+    openLightbox(); // 打开灯箱
+  });
+});
 
 // 打开Lightbox
 function openLightbox() {
