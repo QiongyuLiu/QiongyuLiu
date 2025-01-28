@@ -1,0 +1,605 @@
+/* ========== RESET & BASIC SETUP ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== CUSTOM FONTS ========== */
+@font-face {
+  font-family: 'Cargo1';
+  src: url('static/font/ABCDiatypeVariable-Trial.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cargo2';
+  src: url('static/font/ABCDiatypeMonoVariable-Trial.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cargo3';
+  src: url('static/font/Cargo-DiatypePlusVariable.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cargo4';
+  src: url('static/font/Cargo-DiatypePlusVariable-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 隐藏仅供屏幕阅读器的文本 */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ========== SIDEBAR NAV ========== */
+.sidebar {
+  position: fixed;
+  left: 0.2rem;
+  width: 260px;
+  height: 100vh;
+  background: #fff;
+  padding: 3rem 1.5rem;
+}
+.sidebar h1 {
+  font-size: 2.6rem;
+  margin-top: -0.5rem;
+  margin-bottom: 3.4rem;
+  line-height: 3;
+  font-family: 'Cargo3';
+  font-weight: 500;
+}
+/* 标题链接的基本样式 */
+.title-link {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.title-link:hover {
+  text-decoration: none;
+}
+
+.nav-list {
+  list-style: none;
+}
+.nav-list li {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-family: 'Cargo3';
+  cursor: pointer;
+  color: #515151;
+  transition: color 0.2s ease;
+}
+.nav-list li:hover {
+  color: #000;
+}
+.nav-list li.active {
+  font-weight: bold;
+  color: #000;
+}
+
+/* 社交图标 */
+.social {
+  margin-top: 5rem;
+}
+.social a {
+  display: inline-block;
+  margin-right: 1.5rem;
+  color: #444;
+  font-size: 1.5rem;
+}
+
+/* ========== MAIN CONTENT AREA ========== */
+.main-content {
+  margin-left: 375px;
+  margin-top: 0.4rem;
+  padding: 1.5rem;
+  flex: 1;
+  max-width: 1300px;
+}
+
+/* ========== PAGE SECTIONS (通用隐藏+激活) ========== */
+.page-section {
+  display: none;
+  margin-bottom: 3rem;
+}
+.page-section.active {
+  display: block;
+}
+
+/* ========== ABOUT PAGE CUSTOM LAYOUT ========== */
+.about-page {
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+.page-section.about-page.active {
+  display: flex; /* active 时变成 flex */
+}
+.about-portrait {
+  width: 200px;
+  height: auto;
+  border-radius: 15px;
+}
+.about-text {
+  font-size: 1.2rem !important;
+  font-family: 'Cargo3' !important;;
+  color: #515151 !important;;
+}
+.page-section h2 {
+  font-size: 2.1rem;
+  font-weight: 500;
+  font-family: 'Cargo3', sans-serif;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+.page-section h3 {
+  font-family: 'Cargo3', sans-serif;
+  font-size: 1.7rem;
+  color: #333;
+  font-weight: 100;
+  margin-top: -0.53rem;
+}
+.subtitle {
+  font-family: 'Cargo2', sans-serif;
+  font-size: 0.93rem;
+  color: #AAA;
+  font-weight: 100;
+  margin-top: -0.45rem;
+}
+.page-section p {
+  font-size: 1.5rem;
+  font-family: 'Cargo3', sans-serif;
+  font-weight: 100;
+  color: #444;
+  margin-top: -0.85rem;
+}
+
+/* ========== GALLERY LAYOUT ========== */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.gallery img {
+  display: block;
+  height: auto;
+  max-width: 600px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+/* 单图无lightbox模式 */
+#illus-series-gallery {
+  display: flex; /* 确保使用 flex 布局，如果之前未定义 */
+  flex-wrap: wrap;
+  gap: 3rem;
+  max-width: 90%;
+}
+#illus-series-gallery figcaption {
+  margin-top: 1rem; /* 调整图片与说明之间的距离 */
+}
+#illus-series-gallery img {
+  max-width: 100%;
+  max-height: 300px; /* 设置图片的最高高度 */
+  height: auto; /* 保持图片比例 */
+  cursor: pointer;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+  object-fit: cover; /* 确保图片在容器内覆盖且保持比例 */
+}
+
+#single-pieces-title {
+  margin-top: 3rem;
+}
+.single-pieces-gallery {
+  margin-top: 1.5rem;
+}
+
+/* 复杂画廊: 大图入口 + 小图列表 + 大图查看 */
+.gallery-complex {
+  width: 100%;
+}
+.gallery-group {
+  display: none;
+}
+.gallery-group.active {
+  display: block;
+}
+.gallery-top-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.top-item {
+  cursor: pointer;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果，可选 */
+}
+.top-item img {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+}
+.gallery-middle-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.middle-item {
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: background 0.2s;
+}
+.middle-item.active {
+  background: rgba(0, 0, 0, 0.1);
+}
+.middle-item img {
+  width: 80px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* 第三层：大图 + 左右按钮 */
+.gallery-bottom-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem auto;
+  position: relative;
+}
+.viewer-large {
+  display: block;
+  margin: 0 auto;
+  max-width: 1000px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.viewer-prev, .viewer-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #ccc;
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease, background 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+.viewer-prev { left: 0; }
+.viewer-next { right: 0; }
+/* 悬停时左右按钮可见 */
+.gallery-bottom-row:hover .viewer-prev,
+.gallery-bottom-row:hover .viewer-next {
+  opacity: 1;
+  pointer-events: auto;
+}
+@media (max-width: 768px) {
+  .viewer-large {
+    max-width: 90%;
+  }
+  .viewer-prev,
+  .viewer-next {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+}
+.p-gallery {
+  display: flex; /* 使用 Flexbox 布局 */
+  flex-wrap: wrap; /* 如果空间不足，允许图片换行 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  gap: 1rem; /* 图片之间的间距 */
+}
+
+.p-gallery img {
+  max-width: 500px; /* 限制每张图片的最大宽度 */
+  height: auto; /* 保持图片宽高比 */
+  border-radius: 15px; /* 图片圆角，可选 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果，可选 */
+  cursor: pointer;
+}
+
+/* 视频 */
+.video-wrapper {
+  display: grid; /* 使用 Grid 布局 */
+  place-items: center; /* 水平和垂直居中 */
+  overflow: hidden; /* 确保子元素不会超出容器 */
+  border-radius: 15px; /* 添加圆角 */
+  max-width: 25rem; /* 限制最大宽度 */
+  height: 25rem; /* 固定高度 */
+  margin: 0 auto; /* 让整个 .video-wrapper 水平居中 */
+}
+.video-wrapper iframe {
+  width: 100%; /* 让 iframe 宽度适配父容器 */
+  height: 100%; /* 让 iframe 高度适配父容器 */
+  border: none; /* 移除边框 */
+  border-radius: inherit; /* 继承父容器的圆角 */
+}
+
+/* ========== 图文块排版 ========== */
+.image-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.image-block figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0; 
+}
+.image-block img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.image-block figcaption {
+  margin-top: 0.5rem;
+  margin-bottom: -0.8rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* 使用Grid布局的特殊容器 */
+.image-block.special-layout {
+  display: grid !important; /* 强制覆盖原有flex */
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.left-column img,
+.right-figure img {
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 图文列表排版 */
+.content-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  margin: 1rem auto;
+  max-width: 1200px;
+}
+.content-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.content-item.reverse {
+  flex-direction: row-reverse;
+}
+.item-image img {
+  display: block;
+  max-width: 350px;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.item-text {
+  flex: 1;
+}
+.item-text a {
+  color: #000;
+  text-decoration: underline;
+  font-weight: 400;
+}
+.item-text a:hover {
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+  .content-item {
+    flex-direction: column !important;
+  }
+  .item-image img {
+    max-width: 100%;
+  }
+}
+
+/* ========== LIGHTBOX OVERLAY & ANIMATION ========== */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation-fill-mode: forwards;
+}
+.lightbox-overlay.active {
+  display: flex;
+  animation: overlayFadeIn 0.3s ease;
+}
+@keyframes overlayFadeIn {
+  from { background: rgba(0,0,0,0); }
+  to   { background: rgba(0,0,0,0.8); }
+}
+.lightbox-close, .lightbox-prev, .lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  color: #fff;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  opacity: 0.7;
+}
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  opacity: 1;
+}
+.lightbox-close {
+  top: 5%;
+  right: 5%;
+  transform: none;
+  font-size: 2.2rem;
+}
+.lightbox-prev {
+  left: 2%;
+}
+.lightbox-next {
+  right: 2%;
+}
+.lightbox-img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 4px;
+  animation-fill-mode: forwards;
+}
+@keyframes scaleUp {
+  from { transform: scale(0.7); }
+  to   { transform: scale(1); }
+}
+.lightbox-overlay.active .lightbox-img {
+  animation: scaleUp 0.3s ease;
+}
+.lightbox-prev.hidden,
+.lightbox-next.hidden {
+  display: none;
+}
+
+/* ========== PRINTS PAGE PINNED NAV ========== */
+.prints-nav {
+  position: fixed;
+  bottom: 0;
+  left: 260px;
+  right: 0;
+  padding: 1rem 3rem;
+  background: #fff;
+  display: none;
+  z-index: 888;
+  box-shadow: 0 -1px 2px rgba(0,0,0,0.1);
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1rem;
+}
+.prints-nav.active {
+  display: flex;
+}
+.prints-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+.prints-nav a:hover {
+  color: #000;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  margin-left: 260px;
+  padding: 1rem 3rem;
+  color: #999;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Back 和 Next 按钮容器样式 */
+/* #navigation-buttons {
+  position: fixed;
+  bottom: 2rem;
+  left: 1.5rem;
+  background: none;
+  font-family: 'Cargo2', sans-serif;
+  display: flex;
+  gap: 1rem;
+}
+/* 按钮基本样式 */
+/* #navigation-buttons button {
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 4px;
+  color: #999;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* 隐藏 Back 和 Next 按钮 */
+/* #navigation-buttons.hidden {
+  display: none;
+}
+
+/* ========== RESPONSIVE EXAMPLE ========== */
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    padding: 1rem;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+  .viewer-large {
+    max-width: 90%;
+  }
+  .viewer-prev, .viewer-next {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+}
