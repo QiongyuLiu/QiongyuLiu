@@ -70,7 +70,6 @@ body {
   font-family: 'Cargo3';
   font-weight: 500;
 }
-/* 标题链接的基本样式 */
 .title-link {
   color: #000;
   text-decoration: none;
@@ -79,7 +78,6 @@ body {
 .title-link:hover {
   text-decoration: none;
 }
-
 .nav-list {
   list-style: none;
 }
@@ -98,7 +96,6 @@ body {
   font-weight: bold;
   color: #000;
 }
-
 /* 社交图标 */
 .social {
   margin-top: 5rem;
@@ -144,8 +141,8 @@ body {
 }
 .about-text {
   font-size: 1.2rem !important;
-  font-family: 'Cargo3' !important;;
-  color: #515151 !important;;
+  font-family: 'Cargo3' !important;
+  color: #515151 !important;
 }
 .page-section h2 {
   font-size: 2.1rem;
@@ -195,24 +192,23 @@ body {
 
 /* 单图无lightbox模式 */
 #illus-series-gallery {
-  display: flex; /* 确保使用 flex 布局，如果之前未定义 */
+  display: flex; 
   flex-wrap: wrap;
   gap: 3rem;
   max-width: 90%;
 }
 #illus-series-gallery figcaption {
-  margin-top: 1rem; /* 调整图片与说明之间的距离 */
+  margin-top: 1rem; 
 }
 #illus-series-gallery img {
   max-width: 100%;
-  max-height: 300px; /* 设置图片的最高高度 */
-  height: auto; /* 保持图片比例 */
+  max-height: 300px; 
+  height: auto; 
   cursor: pointer;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
-  object-fit: cover; /* 确保图片在容器内覆盖且保持比例 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  object-fit: cover; 
 }
-
 #single-pieces-title {
   margin-top: 3rem;
 }
@@ -239,7 +235,7 @@ body {
   cursor: pointer;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果，可选 */
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
 }
 .top-item img {
   width: 200px;
@@ -265,7 +261,6 @@ body {
   height: auto;
   object-fit: cover;
 }
-
 /* 第三层：大图 + 左右按钮 */
 .gallery-bottom-row {
   display: flex;
@@ -306,54 +301,43 @@ body {
 }
 .viewer-prev { left: 0; }
 .viewer-next { right: 0; }
-/* 悬停时左右按钮可见 */
 .gallery-bottom-row:hover .viewer-prev,
 .gallery-bottom-row:hover .viewer-next {
   opacity: 1;
   pointer-events: auto;
 }
-@media (max-width: 768px) {
-  .viewer-large {
-    max-width: 90%;
-  }
-  .viewer-prev,
-  .viewer-next {
-    width: 30px;
-    height: 30px;
-    font-size: 1rem;
-  }
-}
-.p-gallery {
-  display: flex; /* 使用 Flexbox 布局 */
-  flex-wrap: wrap; /* 如果空间不足，允许图片换行 */
-  justify-content: center; /* 水平居中 */
-  align-items: center; /* 垂直居中 */
-  gap: 1rem; /* 图片之间的间距 */
-}
 
+/* ========== P-GALLERY ========== */
+.p-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  align-items: center; 
+  gap: 1rem; 
+}
 .p-gallery img {
-  max-width: 500px; /* 限制每张图片的最大宽度 */
-  height: auto; /* 保持图片宽高比 */
-  border-radius: 15px; /* 图片圆角，可选 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果，可选 */
+  max-width: 500px; 
+  height: auto; 
+  border-radius: 15px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 
-/* 视频 */
+/* ========== VIDEO WRAPPER ========== */
 .video-wrapper {
-  display: grid; /* 使用 Grid 布局 */
-  place-items: center; /* 水平和垂直居中 */
-  overflow: hidden; /* 确保子元素不会超出容器 */
-  border-radius: 15px; /* 添加圆角 */
-  max-width: 25rem; /* 限制最大宽度 */
-  height: 25rem; /* 固定高度 */
-  margin: 0 auto; /* 让整个 .video-wrapper 水平居中 */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 15px;
+  max-width: 25rem; 
+  height: 25rem; 
+  margin: 0 auto; 
 }
 .video-wrapper iframe {
-  width: 100%; /* 让 iframe 宽度适配父容器 */
-  height: 100%; /* 让 iframe 高度适配父容器 */
-  border: none; /* 移除边框 */
-  border-radius: inherit; /* 继承父容器的圆角 */
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: inherit;
 }
 
 /* ========== 图文块排版 ========== */
@@ -385,7 +369,7 @@ body {
 
 /* 使用Grid布局的特殊容器 */
 .image-block.special-layout {
-  display: grid !important; /* 强制覆盖原有flex */
+  display: grid !important; 
   grid-template-columns: 1fr 1fr;
   align-items: center;
   max-width: 1200px;
@@ -439,22 +423,12 @@ body {
 .item-text a:hover {
   text-decoration: none;
 }
-@media (max-width: 768px) {
-  .content-item {
-    flex-direction: column !important;
-  }
-  .item-image img {
-    max-width: 100%;
-  }
-}
 
 /* ========== LIGHTBOX OVERLAY & ANIMATION ========== */
 .lightbox-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
   background: rgba(0,0,0,0.8);
   display: none;
   justify-content: center;
@@ -558,48 +532,38 @@ footer {
   justify-content: space-between;
 }
 
-/* Back 和 Next 按钮容器样式 */
-/* #navigation-buttons {
-  position: fixed;
-  bottom: 2rem;
-  left: 1.5rem;
-  background: none;
-  font-family: 'Cargo2', sans-serif;
-  display: flex;
-  gap: 1rem;
-}
-/* 按钮基本样式 */
-/* #navigation-buttons button {
-  padding: 0.5rem 1rem;
-  font-size: 1.5rem;
-  border: none;
-  border-radius: 4px;
-  color: #999;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+/* 
+  ========== 小屏幕适配 (max-width: 600px) ==========
+  - 仅在小于等于600px的屏幕时生效，留给手机。 
+  - iPad (768px 及以上) 不会触发此规则，所以排版会更像桌面端。
+*/
+@media (max-width: 600px) {
 
-/* 隐藏 Back 和 Next 按钮 */
-/* #navigation-buttons.hidden {
-  display: none;
-}
-
-/* ========== RESPONSIVE EXAMPLE ========== */
-@media (max-width: 768px) {
   .sidebar {
     position: static;
     width: 100%;
     padding: 1rem;
   }
+
   .main-content {
     margin-left: 0;
   }
+
   .viewer-large {
     max-width: 90%;
   }
+
   .viewer-prev, .viewer-next {
     width: 30px;
     height: 30px;
     font-size: 1rem;
+  }
+
+  /* 其他想在手机端精简或堆叠的布局，也可以在这里补充 */
+  .content-item {
+    flex-direction: column !important;
+  }
+  .item-image img {
+    max-width: 100%;
   }
 }
