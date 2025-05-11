@@ -9,123 +9,446 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
   <!-- ===== 左侧栏导航 (nav) ===== -->
   <nav class="sidebar" id="sidebar" aria-label="Main Navigation">
     <!-- 1) 用 <a> 包裹标题，使标题可点击 -->
     <h1>
-      <a href="#" data-target="landing" class="title-link">Quoine</a>
+      <a href="#" data-target="landing" class="title-link">QUOINE</a>
     </h1>
 
     <ul class="nav-list" id="navList">
-      <li data-target="illustration">Practice: Unit 1</li>
-      <li data-target="sketchbook">Critical Reflection</li>
-      <li data-target="prints-zine">Course Contexts</li>
+      <li data-target="Practice">Practice</li>
+      <li data-target="Unit1">Unit 1</li>
+      <li data-target="Unit2">Unit 2</li>
       <li data-target="about">Artist Statement</li>
     </ul>
 
     <div class="social">
       <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-instagram"></i>
-    </a>
-    <a href="mailto:example@example.com">
+      </a>
+      <a href="mailto:example@example.com">
         <i class="fas fa-envelope"></i>
-    </a>
+      </a>
     </div>
+
+    <div id="subNavButtons" class="sub-nav">
+    <button id="btnBackSub">Back</button>
+    <button id="btnNextSub">Next&nbsp;→</button>
+    </div>
+
   </nav>
 
-  <!-- ===== 主内容区域 (main) ===== -->
-  <main class="main-content">
+<!-- ===== 主内容区域 (main) ===== -->
+<main class="main-content">
 
-    <!-- 
-      2) Landing (默认显示) 
-      给它设置 class="page-section active"，这样一进页面就显示这里。
-    --> 
-    <section id="landing" class="page-section active" aria-labelledby="landing-title">
-      <!-- 这里放你想展示的一堆图 -->
-      <div class="gallery">
-        <img src="static/image/1.jpg" alt="Landing Image 1" data-full="static/image/1.jpg">
-        <img src="static/image/2.jpg" alt="Landing Image 2" data-full="static/image/2.jpg">
-        <img src="static/image/31.jpg" alt="Landing Image 31" data-full="static/image/31.jpg">
-        <img src="static/image/4.jpg" alt="Landing Image 4" data-full="static/image/4.jpg">
-        <img src="static/image/51.jpg" alt="Landing Image 5" data-full="static/image/51.jpg">
-        <img src="static/image/3.jpg" alt="Landing Image 6" data-full="static/image/3.jpg">
-        <img src="static/image/5.jpg" alt="Landing Image 7" data-full="static/image/5.jpg">
-        <img src="static/image/6.jpg" alt="Landing Image 8" data-full="static/image/6.jpg">
+<!-- 1) Landing Page --> 
+<section id="landing" class="page-section active" aria-labelledby="landing-title">
+  <!-- 这里放你想展示的一堆图 -->
+  <div class="gallery">
+    <img src="static/image/1.jpg" alt="Landing Image 1" data-full="static/image/1.jpg">
+    <img src="static/image/2.jpg" alt="Landing Image 2" data-full="static/image/2.jpg">
+    <img src="static/image/31.jpg" alt="Landing Image 31" data-full="static/image/31.jpg">
+    <img src="static/image/4.jpg" alt="Landing Image 4" data-full="static/image/4.jpg">
+    <img src="static/image/51.jpg" alt="Landing Image 5" data-full="static/image/51.jpg">
+    <img src="static/image/3.jpg" alt="Landing Image 6" data-full="static/image/3.jpg">
+    <img src="static/image/5.jpg" alt="Landing Image 7" data-full="static/image/5.jpg">
+    <img src="static/image/6.jpg" alt="Landing Image 8" data-full="static/image/6.jpg">
 
-      </div>
-    </section>
-
-<!-- 原先 Illustration 面板 --> 
-<section id="illustration" class="page-section" aria-labelledby="illustration-title">
-  <h2>&gt; Series</h2>
-
-  <!-- 缩略图1 -->
-  <div class="no-lightbox-gallery" id="illus-series-gallery">
-    <figure>
-      <img src="static/image/series tittle.jpg" alt="Series 1" data-target="illustration-series-1">
-      <figcaption>
-        <p>Track (Unit 1)</p>
-        <h4 class="subtitle">(ongoing) Digital Painting, Photopolymer Gravure</h4>
-      </figcaption>
-    </figure>
-    <!-- 缩略图2 -->
-    <figure>
-      <img src="static/image/series tittle2.jpg" alt="Series 2" data-target="illustration-series-2">
-      <figcaption>
-        <p>Back Home</p>
-        <h4 class="subtitle">Mixed-media</h4>
-      </figcaption>
-    </figure>
-      <!-- 缩略图3 -->
-    <figure>
-      <img src="static/image/step1.jpg" alt="Series 3" data-target="illustration-series-3">
-      <figcaption>
-        <p>Step-bite practice</p>
-        <h4 class="subtitle">Etching and Pastel</h4>
-      </figcaption>
-    </figure>
   </div>
-
-<!-- 你可以继续添加更多系列 -->
-  
-  <h2 id="single-pieces-title">&gt; Single Pieces</h2>
-  <h4 class="subtitle">Exploration and Experimentation with Different Printmaking Mediums</h4>
-  <div class="gallery single-pieces-gallery">
-    <figure class="print-figure">
-      <img src="static/image/long.jpg" alt="long">
-      <figcaption>Howling Waves</figcaption>
-    </figure>
-    <figure class="print-figure">
-      <img src="static/image/mono1.jpg" alt="mono1">
-      <figcaption>Melt</figcaption>
-    </figure>
-      <figure class="print-figure">
-        <img src="static/image/W1.jpg" alt="W1">
-        <figcaption>Wind: Shrouded</figcaption>
-      </figure>
-      <figure class="print-figure">
-        <img src="static/image/W2.jpg" alt="W2">
-        <figcaption>Wind: Revealed</figcaption>
-      </figure>
-      
-    <!-- 更多图... -->
-  </div>
-  
-
 </section>
 
+<!-- 1) Practice Page --> 
+  <section id="Practice" class="page-section" aria-labelledby="Practice-title">
+    <h2>&gt; Series</h2>
 
+    <!-- 缩略图1 -->
+    <div class="no-lightbox-gallery" id="illus-series-gallery">
+      <figure>
+        <img src="static/image/series tittle.jpg" alt="Series 1" data-target="Practice-series-1">
+        <figcaption>
+          <p>Track (Unit 1)</p>
+          <h4 class="subtitle">(ongoing) Digital Painting, Photopolymer Gravure</h4>
+        </figcaption>
+      </figure>
+      <figure>
+      <img src="static/image/series tittle1.jpg" alt="Series 4" data-target="Practice-series-4">
+      <figcaption>
+        <p>Gravity of Fallen (Unit 2)</p>
+        <h4 class="subtitle">(ongoing) Digital Painting, Screen Photo Etching</h4>
+      </figcaption>
+      </figure>
+      <!-- 缩略图2 --><br>
+      <figure>
+        <img src="static/image/series tittle2.jpg" alt="Series 2" data-target="Practice-series-2">
+        <figcaption>
+          <p>Back Home</p>
+          <h4 class="subtitle">Mixed-media</h4>
+        </figcaption>
+      </figure>
+        <!-- 缩略图3 -->
+      <figure>
+        <img src="static/image/step1.jpg" alt="Series 3" data-target="Practice-series-3">
+        <figcaption>
+          <p>Step-bite practice</p>
+          <h4 class="subtitle">Etching and Pastel</h4>
+        </figcaption>
+      </figure>
+    </div>
 
-<!-- 二级页面 1：Series 1 的详细页面 -->
-<section id="illustration-series-1" class="page-section" aria-labelledby="series1-title">
-  <h3>Track (Unit 1)</h3>
-  <h4 class="subtitle">(ongoing) Digital Painting, Photopolymer Gravure</h4>
+  <!-- 你可以继续添加更多系列 -->
+    
+    <h2 id="single-pieces-title">&gt; Single Pieces</h2>
+    <h4 class="subtitle">Exploration and Experimentation with Different Printmaking Mediums</h4>
+    <div class="gallery single-pieces-gallery">
+      <figure class="print-figure">
+        <img src="static/image/long.jpg" alt="long">
+        <figcaption>Howling Waves, monoprint and pigment powder, 29 x 42cm</figcaption>
+      </figure>
+      <figure class="print-figure">
+        <img src="static/image/mono1.jpg" alt="mono1">
+        <figcaption>Melt, monoprint,  29 x 42cm</figcaption>
+      </figure>
+        <figure class="print-figure">
+          <img src="static/image/W1.jpg" alt="W1">
+          <figcaption>Wind: Shrouded, lithograph , 18.5 x 27.5cm</figcaption>
+        </figure>
+        <figure class="print-figure">
+          <img src="static/image/W2.jpg" alt="W2">
+          <figcaption>Wind: Revealed, lithograph with a silkscreen-printed tracing paper overlay, 18.5 x 27.5cm</figcaption>
+        </figure>
+        
+      <!-- 更多图... -->
+    </div>
+    
 
-  <p><br>
-    <br>An attempt at auditory visualization, a practice in Photopolymer etching.<br>
-    <br>&gt; Work archive<br><br>
- </p>
+  </section>
+
+  <!-- 二级页面 A：Series 1 的详细页面 -->
+  <section id="Practice-series-1" class="page-section" aria-labelledby="series1-title">
+    <h3>Track (Unit 1)</h3>
+    <h4 class="subtitle">(ongoing) Digital Painting, Photopolymer Gravure</h4>
+
+    <p>
+    <br>An attempt at auditory visualization, a practice in Photopolymer etching.
+    <br>
+    <br>
+    </p>
+    <br>
+    <div class="gallery-complex">
+      <!-- ====== 第一层：大图入口 row ====== -->
+      <div class="gallery-top-row">
+        <!-- 大图入口的模板 -->
+        <div class="top-item" data-target="groupA">
+          <img src="static/image/sun1.jpg" alt="Top A" />
+        </div>
+        <div class="top-item" data-target="groupB">
+          <img src="static/image/ocean1.jpg" alt="Top B" />
+        </div>
+        <div class="top-item" data-target="groupD">
+          <img src="static/image/rain1.jpg" alt="Top D" />
+        </div>
+        <div class="top-item" data-target="groupC">
+          <img src="static/image/embos1.jpg" alt="Top C" />
+        </div>
+        <div class="top-item" data-target="groupE">
+          <img src="static/image/bw7.jpg" alt="Top E" />
+        </div>
+      </div>
+    
+      <!-- ====== Gallery Groups ====== -->
+      <!-- 用循环生成以下结构，可以减少代码冗余 -->
+      <!-- ====== 1 ====== -->
+      <div id="groupA" class="gallery-group">
+        <div class="gallery-middle-row">
+          <div class="middle-item" data-index="0" data-full="static/image/sun1.jpg">
+            <img src="static/image/sun1.jpg" alt="A1_thumb" />
+          </div>
+          <div class="middle-item" data-index="1" data-full="static/image/sun2.jpg">
+            <img src="static/image/sun2.jpg" alt="A2_thumb" />
+          </div>
+          <div class="middle-item" data-index="2" data-full="static/image/sun3.jpg">
+            <img src="static/image/sun3.jpg" alt="A3_thumb" />
+          </div>
+          <div class="middle-item" data-index="3" data-full="static/image/sun4.jpg">
+            <img src="static/image/sun4.jpg" alt="A4_thumb" />
+          </div>
+          <div class="middle-item" data-index="4" data-full="static/image/sun5.jpg">
+            <img src="static/image/sun5.jpg" alt="A5_thumb" />
+          </div>
+          <div class="middle-item" data-index="4" data-full="static/image/sun6.jpg">
+            <img src="static/image/sun6.jpg" alt="A6_thumb" />
+          </div>
+          <div class="middle-item" data-index="4" data-full="static/image/sun7.jpg">
+            <img src="static/image/sun7.jpg" alt="A7_thumb" />
+          </div>
+          <div class="middle-item" data-index="4" data-full="static/image/sun8.jpg">
+            <img src="static/image/sun8.jpg" alt="A8thumb" />
+          </div>
+        </div>
+        <div class="gallery-bottom-row">
+          <button class="viewer-prev">&larr;</button>
+          <img class="viewer-large" src="" alt="Current Large Image" />
+          <button class="viewer-next">&rarr;</button>
+        </div>
+      </div>
+      <!-- ====== 2 ====== -->
+      <div id="groupB" class="gallery-group">
+        <div class="gallery-middle-row">
+          <div class="middle-item" data-index="0" data-full="static/image/ocean1.jpg">
+            <img src="static/image/ocean1.jpg" alt="B1_thumb" />
+          </div>
+          <div class="middle-item" data-index="1" data-full="static/image/ocean2.jpg">
+            <img src="static/image/ocean2.jpg" alt="B2_thumb" />
+          </div>
+          <div class="middle-item" data-index="2" data-full="static/image/ocean3.jpg">
+            <img src="static/image/ocean3.jpg" alt="B3_thumb" />
+          </div>
+          <div class="middle-item" data-index="3" data-full="static/image/ocean4.jpg">
+            <img src="static/image/ocean4.jpg" alt="B4_thumb" />
+          </div>
+          <div class="middle-item" data-index="4" data-full="static/image/ocean5.jpg">
+            <img src="static/image/ocean5.jpg" alt="B5_thumb" />
+          </div>
+          <div class="middle-item" data-index="5" data-full="static/image/ocean6.jpg">
+            <img src="static/image/ocean6.jpg" alt="B6_thumb" />
+          </div>
+          <div class="middle-item" data-index="6" data-full="static/image/ocean7.jpg">
+            <img src="static/image/ocean7.jpg" alt="B7_thumb" />
+          </div>
+        </div>
+        <div class="gallery-bottom-row">
+          <button class="viewer-prev">&larr;</button>
+          <img class="viewer-large" src="" alt="Current Large Image" />
+          <button class="viewer-next">&rarr;</button>
+        </div>
+      </div>
+      <!-- ====== 3 ====== -->
+      <div id="groupC" class="gallery-group">
+        <div class="gallery-middle-row">
+          <div class="middle-item" data-index="0" data-full="static/image/embos1.jpg">
+            <img src="static/image/embos1.jpg" alt="C1_thumb" />
+          </div>
+          <div class="middle-item" data-index="1" data-full="static/image/embos2.jpg">
+            <img src="static/image/embos2.jpg" alt="C2_thumb" />
+          </div>
+          <div class="middle-item" data-index="2" data-full="static/image/embos3.jpg">
+            <img src="static/image/embos3.jpg" alt="C3_thumb" />
+          </div>
+          <div class="middle-item" data-index="3" data-full="static/image/embos4.jpg">
+            <img src="static/image/embos4.jpg" alt="C4_thumb" />
+          </div>
+          <div class="middle-item" data-index="4" data-full="static/image/embos5.jpg">
+            <img src="static/image/embos5.jpg" alt="C5_thumb" />
+          </div>
+          <div class="middle-item" data-index="5" data-full="static/image/embos6.jpg">
+            <img src="static/image/embos6.jpg" alt="C6_thumb" />
+          </div>
+          <div class="middle-item" data-index="6" data-full="static/image/embos7.jpg">
+            <img src="static/image/embos7.jpg" alt="C7_thumb" />
+          </div>
+          <div class="middle-item" data-index="7" data-full="static/image/wr1.jpg">
+            <img src="static/image/wr1.jpg" alt="C8_thumb" />
+          </div>
+          <div class="middle-item" data-index="8" data-full="static/image/wr2.jpg">
+            <img src="static/image/wr2.jpg" alt="C9_thumb" />
+          </div>
+          <div class="middle-item" data-index="9" data-full="static/image/wr3.jpg">
+            <img src="static/image/wr3.jpg" alt="C10_thumb" />
+          </div>
+          <div class="middle-item" data-index="10" data-full="static/image/wr4.jpg">
+            <img src="static/image/wr4.jpg" alt="C11_thumb" />
+          </div>
+        </div>
+        <div class="gallery-bottom-row">
+          <button class="viewer-prev">&larr;</button>
+          <img class="viewer-large" src="" alt="Current Large Image" />
+          <button class="viewer-next">&rarr;</button>
+        </div>
+      </div>
+      <!-- ====== 4 ====== -->
+      <div id="groupD" class="gallery-group">
+        <div class="gallery-middle-row">
+          <div class="middle-item" data-index="0" data-full="static/image/rain1.jpg">
+            <img src="static/image/rain1.jpg" alt="D1_thumb" />
+          </div>
+          <div class="middle-item" data-index="1" data-full="static/image/rain2.jpg">
+            <img src="static/image/rain2.jpg" alt="D2_thumb" />
+          </div>
+          <div class="middle-item" data-index="2" data-full="static/image/rain3.jpg">
+            <img src="static/image/rain3.jpg" alt="D3_thumb" />
+          </div>
+          <div class="middle-item" data-index="3" data-full="static/image/rain4.jpg">
+            <img src="static/image/rain4.jpg" alt="D4_thumb" />
+          </div>
+          <div class="middle-item" data-index="4" data-full="static/image/rain5.jpg">
+            <img src="static/image/rain5.jpg" alt="D5_thumb" />
+          </div>
+          <div class="middle-item" data-index="5" data-full="static/image/rain6.jpg">
+            <img src="static/image/rain6.jpg" alt="D6_thumb" />
+          </div>
+          <div class="middle-item" data-index="6" data-full="static/image/rain7.jpg">
+            <img src="static/image/rain7.jpg" alt="D7_thumb" />
+          </div>
+        </div>
+        <div class="gallery-bottom-row">
+          <button class="viewer-prev">&larr;</button>
+          <img class="viewer-large" src="" alt="Current Large Image" />
+          <button class="viewer-next">&rarr;</button>
+        </div>
+      </div>
+      <!-- ====== 5 ====== -->
+      <div id="groupE" class="gallery-group">
+        <div class="gallery-middle-row">
+          <div class="middle-item" data-index="0" data-full="static/image/bw7.jpg">
+            <img src="static/image/bw7.jpg" alt="E7_thumb" />
+          </div>
+          <div class="middle-item" data-index="1" data-full="static/image/bw1.jpg">
+            <img src="static/image/bw1.jpg" alt="E1_thumb" />
+          </div>
+          <div class="middle-item" data-index="2" data-full="static/image/bw2.jpg">
+            <img src="static/image/bw2.jpg" alt="E2_thumb" />
+          </div>
+          <div class="middle-item" data-index="3" data-full="static/image/bw3.jpg">
+            <img src="static/image/bw3.jpg" alt="E3_thumb" />
+          </div>
+          <div class="middle-item" data-index="4" data-full="static/image/bw4.jpg">
+            <img src="static/image/bw4.jpg" alt="E4_thumb" />
+          </div>
+          <div class="middle-item" data-index="5" data-full="static/image/bw5.jpg">
+            <img src="static/image/bw5.jpg" alt="E5_thumb" />
+          </div>
+          <div class="middle-item" data-index="6" data-full="static/image/bw6.jpg">
+            <img src="static/image/bw6.jpg" alt="E6_thumb" />
+          </div>
+          <div class="middle-item" data-index="7" data-full="static/image/bw9.jpg">
+            <img src="static/image/bw9.jpg" alt="E8_thumb" />
+          </div>
+        </div>
+        <div class="gallery-bottom-row">
+          <button class="viewer-prev">&larr;</button>
+          <img class="viewer-large" src="" alt="Current Large Image" />
+          <button class="viewer-next">&rarr;</button>
+        </div>
+      </div>
+    </div>
+
+    <p><br>
+    <br>Note:
+    <br>
+    </p>
+
+    <div class="gallery single-pieces-gallery">
+      <figure class="print-figure">
+        <img src="static/image/sample1.png" alt="sample1">
+        <figcaption>Track - 1, Etiching, 9 x 18cm</figcaption>
+      </figure>
+      <figure class="print-figure">
+        <img src="static/image/sample2.png" alt="sample2">
+        <figcaption>Track - 2, Etiching, 9 x 17cm</figcaption>
+      </figure>
+        <figure class="print-figure">
+          <img src="static/image/sample3.png" alt="sample3">
+          <figcaption>Wind: Shrouded, lithograph , 18.5 x 27.5cm</figcaption>
+        </figure>
+        <figure class="print-figure">
+          <img src="static/image/sample4.png" alt="sample4">
+          <figcaption>Wind: Revealed, lithograph with a silkscreen-printed tracing paper overlay, 18.5 x 27.5cm</figcaption>
+        </figure>
+
+  </section>
+
+  <!-- 二级页面 B：Series 2 的详细页面 -->
+  <section id="Practice-series-2" class="page-section" aria-labelledby="series2-title">
+    <h3>Back Home</h3>
+    <h4 class="subtitle">Mixed-media</h4>
+    <p>
+      <br>My initial attempts at exploring different methods of expression.<br>
+      <br>Began with the idea of telling a story about life and death through a narratively driven video in a comic style.<br>
+      <br>In this work, I chose to emphasize the human voice.<br>
+    </p>
+    <div class="video-wrapper">
+      <iframe 
+      src="https://player.bilibili.com/player.html?isOutside=true&aid=113357407389008&bvid=BV1qL1cYDEcu&cid=26435585414&p=1&autoplay=0" 
+      allowfullscreen="true">
+    </iframe>
+    </div>
+    <p><br>
+      <br>After the tutorial, I realized that this approach still seemed to collapse my intended meaning to some extent.<br>
+      <br>Attempted to shift away from the idea of bluntly telling a story.<br>
+      <br>Meanwhile, birdsong was combined with robots as 'the other' to create this series.<br>
+    </p>
+    <video width="640" height="360" controls style="display:block; margin:0 auto;">
+      <source src="static/image/12small.mp4" type="video/mp4">
+      If the browser does not support the <code>video</code> tag, this line will be displayed here.
+    </video>
+    <p><br>
+      <br>And during this time my interest in working with transparent media grew.
+      <br>
+    </p>
+    <div class="p-gallery">
+      <figure>
+        <img src="static/image/S1.jpg" data-full="static/image/S1.jpg" alt="P1">
+        <figcaption>Back Home 1: Shrouded</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/S2.jpg" data-full="static/image/S2.jpg" alt="P2">
+        <figcaption>Back Home 1: Revealed</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/S4.jpg" data-full="static/image/S4.jpg" alt="P1">
+        <figcaption>2: Shrouded</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/S5.jpg" data-full="static/image/S5.jpg" alt="P2">
+        <figcaption>2: Revealed</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/S3.jpg" data-full="static/image/S3.jpg" alt="P3">
+        <figcaption>Back Home 2: Rust</figcaption>
+      </figure>
+    </div>  
+  </section> 
+
+  <!-- 二级页面 C：Series 3 的详细页面 -->
+  <section id="Practice-series-3" class="page-section" aria-labelledby="series3-title">
+    <h3>Step-bite Practice</h3>
+    <h4 class="subtitle">Etching and Pastel</h4>
+    <p>
+      <br>An (Incomplete) Record of Technique Practices<br><br>
+    </p>
+    <div class="p-gallery">
+      <figure class="print-figure">
+        <img src="static/image/step1.jpg" alt="step1">
+
+      </figure>
+      <figure class="print-figure">
+        <img src="static/image/step2.jpg" alt="step2">
+  >
+      </figure>
+      <figure class="print-figure">
+        <img src="static/image/step3.jpg" alt="step3">
+
+      </figure>
+      <figure class="print-figure">
+        <img src="static/image/step4.jpg" alt="step4">
+
+      </figure>
+    </div>  
+  </section> 
+
+    <!-- 二级页面 A：Series 4 的详细页面 -->
+  <section id="Practice-series-4" class="page-section" aria-labelledby="series1-title">
+    <h3>Gravity of Fallen (Unit 2)</h3>
+    <h4 class="subtitle">(ongoing) Digital Painting, Screen Photo Etching</h4>
+
+    <p>
+    <br>Building on the last project — expanding into a bigger image from birdsongs and music.
+    <br>
+    <br>
+    </p>
 
     <div class="gallery-complex">
       <!-- ====== 第一层：大图入口 row ====== -->
@@ -324,205 +647,144 @@
         </div>
       </div>
     </div>
-     <!-- end .gallery-complex -->
-  <p><br>
-  <br>&gt; Process<br>
-  <br>Experimented with and Practiced Various Printmaking Techniques and Modes of Expression, and ultimately Settled on Polymer.<br>
-  <br>
-  </p>
-  <div class="p-gallery">
-    <figure>
-      <img src="static/image/fish1.jpg" data-full="static/image/fish1.jpg" alt="P1">
-      <figcaption>Linoleum Print with Peel-Away Layer</figcaption>
+
+
+  </section>
+
+
+<!-- 2) Unit1 Page -->
+<section id="Unit1" class="page-section" aria-labelledby="unit-title">
+  <h2 id="Unit1-title">&gt; Unit 1</h2>
+
+  <div class="unit-gallery" id="unitGallery">
+    <figure class="anchor-tl"  data-target="sectionA">
+      <img src="static/image/1-1.png" alt="Process">
+      <figcaption><p>Process</p></figcaption>
     </figure>
-    <figure>
-      <img src="static/image/fish2.jpg" data-full="static/image/fish2.jpg" alt="P2">
-      <figcaption>The Roc Soaring Beyond the Skies</figcaption>
+
+    <figure class="anchor-tr" data-target="sectionB">
+      <img src="static/image/1-2.png" alt="Critical">
+      <figcaption><p>Critical Reflection</p></figcaption>
     </figure>
-    <figure>
-      <img src="static/image/fish3.jpg" data-full="static/image/fish3.jpg" alt="P3">
-      <figcaption>Crawling Sound Array in Screen Print</figcaption>
+
+    <figure class="anchor-bl" data-target="sectionC">
+      <img src="static/image/1-3.png" alt="Contexts">
+      <figcaption><p>Critical Reflection</p></figcaption>
     </figure>
-    <figure>
-      <img src="static/image/mono.jpg" data-full="static/image/mono.jpg" alt="P3">
-      <figcaption>Sound-Exploding Mono Print on Tracing Paper</figcaption>
+
+    <figure class="anchor-center" data-target="sectionD">
+      <img src="static/image/1-4.png" alt="Pop-up">
+      <figcaption><p>Pop-up Show</p></figcaption>
     </figure>
-  </div>  
-  <p><br>
-    <br>First recorded common birdsongs from different environments (urban, suburban, and forest).<br>
+  </div>
+  
+</section>
+
+
+  <!-- 二级页面 A) Process 界面 -->
+  <section id="sectionA"  class="page-section">
+    <h3>Process</h3>
+    <h4 class="subtitle">(Unit 1) Main Project - Track</h4>
+
+    <p>
+    <br>Experimented with and practiced various printmaking techniques and modes of expression, and ultimately settled on polymer.<br>
     <br>
-  </p>
-  <div class="p-gallery">
-    <figure>
-      <img src="static/image/map2.jpg" data-full="static/image/map2.jpg" alt="M2">
-      <figcaption>London Birdwatching Log</figcaption>
-    </figure>
-    <figure>
-      <img src="static/image/map1.jpg" data-full="static/image/map1.jpg" alt="M1">
-      <figcaption>Eastern Birdwatching Log</figcaption>
-    </figure>
-  </div>  
-  <p><br>
-    <br>Then selected various types, processed them on a computer—denoising, cutting, editing, and arranging the audio tracks. <br>
-    <br>Finally, composed them into spectrograms that visually represented my envisioned effect.<br>
-    <br>Processed the audio by applying a discrete Fourier transform for each frame, extracting spectrograms to visualize the sound data.<br>
-    <br>Technical reference: https://www.youtube.com/watch?v=-Yxj3yfvY-4<br>
-    <br>
-  </p>
-  <div class="p-gallery">
-    <figure>
-      <img src="static/image/map4.jpg" data-full="static/image/map4.jpg" alt="P3">
-      <figcaption>Visual Processing</figcaption>
-    </figure>
-    <figure>
-      <img src="static/image/map3.jpg" data-full="static/image/map3.jpg" alt="P3">
-      <figcaption>Corresponding</figcaption>
-    </figure>
-  </div>  
-  <p><br>
-    <br>
-    In a sense, I tend to lean toward a minimalist cityscape when working on the composition, forming impressions of sound-originating areas. <br>
-    <br>However, I wish to maintain an openness in interpretation, inspiring more reflections on scenes of industrialization and nature, such as subway tracks, the reflection of the Thames, or rows of trees.<br>
-    <br>
-  </p>
-  <div class="p-gallery">
-    <figure>
-      <img src="static/image/P1.jpg" data-full="static/image/P1.jpg" alt="P1">
-      <figcaption>Printed Film Positive</figcaption>
-    </figure>
-  </div>  
+    </p>
+
+    <div class="p-gallery">
+      <figure>
+        <img src="static/image/fish1.jpg" data-full="static/image/fish1.jpg" alt="P1">
+        <figcaption>Linoleum Print with Peel-Away Layer</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/fish2.jpg" data-full="static/image/fish2.jpg" alt="P2">
+        <figcaption>The Roc Soaring Beyond the Skies</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/fish3.jpg" data-full="static/image/fish3.jpg" alt="P3">
+        <figcaption>Crawling Sound Array in Screen Print</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/mono.jpg" data-full="static/image/mono.jpg" alt="P3">
+        <figcaption>Sound-Exploding Mono Print on Tracing Paper</figcaption>
+      </figure>
+    </div>
+
+    <p><br>
+      <br>First recorded common birdsongs from different environments (urban, suburban, and forest).<br>
+      <br>
+    </p>
+
+    <div class="p-gallery">
+      <figure>
+        <img src="static/image/map2.jpg" data-full="static/image/map2.jpg" alt="M2">
+        <figcaption>London Birdwatching Log</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/map1.jpg" data-full="static/image/map1.jpg" alt="M1">
+        <figcaption>Eastern Birdwatching Log</figcaption>
+      </figure>
+    </div>
+
+    <p><br>
+      <br>Then selected various types, processed them on a computer—denoising, cutting, editing, and arranging the audio tracks. <br>
+      <br>Finally, composed them into spectrograms that visually represented my envisioned effect.<br>
+      <br>Processed the audio by applying a discrete Fourier transform for each frame, extracting spectrograms to visualize the sound data.<br>
+      <br>Technical reference: https://www.youtube.com/watch?v=-Yxj3yfvY-4<br>
+      <br>
+    </p>
+
+    <div class="p-gallery">
+      <figure>
+        <img src="static/image/map4.jpg" data-full="static/image/map4.jpg" alt="P3">
+        <figcaption>Visual Processing</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/map3.jpg" data-full="static/image/map3.jpg" alt="P3">
+        <figcaption>Corresponding</figcaption>
+      </figure>
+    </div>
+
+    <p><br>
+      <br>
+      In a sense, I tend to lean toward a minimalist cityscape when working on the composition, forming impressions of sound-originating areas. <br>
+      <br>However, I wish to maintain an openness in interpretation, inspiring more reflections on scenes of industrialization and nature, such as subway tracks, the reflection of the Thames, or rows of trees.<br>
+      <br>
+    </p>
+
+    <div class="p-gallery">
+      <figure>
+        <img src="static/image/P1.jpg" data-full="static/image/P1.jpg" alt="P1">
+        <figcaption>Printed Film Positive</figcaption>
+      </figure>
+    </div>
+
     <p><br>
       <br>Transferred the patterns, experimented with different etching techniques with Brian's support, until achieving the desired result.<br>
       <br>
     </p>
-  <div class="p-gallery">
-    <figure>
-      <img src="static/image/P2.jpg" data-full="static/image/P2.jpg" alt="P2">
-      <figcaption>Original Plate Processed through Exposure</figcaption>
-    </figure>
-    <figure>
-      <img src="static/image/P4.jpg" data-full="static/image/P4.jpg" alt="P4">
-      <figcaption>Over etching & Aquatint</figcaption>
-    </figure>
-    <figure>
-      <img src="static/image/P3.jpg" data-full="static/image/P3.jpg" alt="P3">
-      <figcaption>Over etching & Big ground</figcaption>
-    </figure>
-  </div>  
 
-  <p>
-    <br>&gt; Pop Up Show<br><br>
-  </p>
-  <div class="p-gallery">
-    <img src="static/image/1.jpg" data-full="static/image/1.jpg" alt="S1">
-    <img src="static/image/2.jpg" data-full="static/image/2.jpg" alt="S2">
-    <img src="static/image/4.jpg" data-full="static/image/4.jpg" alt="S4">
-    <img src="static/image/3.jpg" data-full="static/image/3.jpg" alt="S3">
-  </div>  
-    <p>
-      <br>
-      During this process, I discovered many meaningful ways to communicate and exchange ideas. I received a variety of comments on my artwork.<br>
-      <br>The tech teachers provided valuable insights and suggestions regarding the handling of visuals, while my classmates gathered to discuss the amount of information within the compositions and their final structures.<br>
-      <br>I truly enjoyed hearing viewers speculate whether the visuals were related to the audio tracks, as well as their interpretations of the artwork's themes.<br>
-      <br>My work represents "sound," and simultaneously, I received many different “voices” from the audience. This, I believe, is precisely what I hoped to achieve.<br>
-      
-      <br>During the exhibition, Jo and Leo shared their perspectives on displaying, curating, and selecting my work. Their input taught me a great deal, as I had almost no prior knowledge in this area. I also came to realize how crucial the presentation of an exhibition is for delivering an intended experience to the audience—something that cannot be ignored.<br>
-      
-      <br>My smaller pieces were displayed on different walls and in various areas, which, I believe, successfully conveyed the sense of spatiality I aimed for.<br>
-      
-      <br>In another instance, I combined one of my artworks with a classmate’s fabric project and hid it in a separate space. It served as a small interaction and was somehow fun to explore.
-      <br>
-    </p>
+    <div class="p-gallery">
+      <figure>
+        <img src="static/image/P2.jpg" data-full="static/image/P2.jpg" alt="P2">
+        <figcaption>Original Plate Processed through Exposure</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/P4.jpg" data-full="static/image/P4.jpg" alt="P4">
+        <figcaption>Over etching & Aquatint</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/P3.jpg" data-full="static/image/P3.jpg" alt="P3">
+        <figcaption>Over etching & Big ground</figcaption>
+      </figure>
+    </div>
 
-</section>
+  </section>
+  <!-- 二级页面 B) Critical Reflection 界面 -->
+  <section id="sectionB"  class="page-section">
+    <h3>Critical Reflection</h3>
+    <h4 class="subtitle">(Unit 1)</h4>
 
-
-    
-
-
-<!-- 二级页面 2：Series 2 的详细页面 -->
-<section id="illustration-series-2" class="page-section" aria-labelledby="series2-title">
-  <h3>Back Home</h3>
-  <h4 class="subtitle">Mixed-media</h4>
-  <p>
-    <br>My initial attempts at exploring different methods of expression.<br>
-    <br>Began with the idea of telling a story about life and death through a narratively driven video in a comic style.<br>
-    <br>In this work, I chose to emphasize the human voice.<br>
-  </p>
-  <div class="video-wrapper">
-    <iframe 
-    src="https://player.bilibili.com/player.html?isOutside=true&aid=113357407389008&bvid=BV1qL1cYDEcu&cid=26435585414&p=1&autoplay=0" 
-    allowfullscreen="true">
-  </iframe>
-  </div>
-  <p><br>
-    <br>After the tutorial, I realized that this approach still seemed to collapse my intended meaning to some extent.<br>
-    <br>Attempted to shift away from the idea of bluntly telling a story.<br>
-    <br>Meanwhile, birdsong was combined with robots as 'the other' to create this series.<br>
-  </p>
-  <video width="640" height="360" controls style="display:block; margin:0 auto;">
-    <source src="static/image/12small.mp4" type="video/mp4">
-    If the browser does not support the <code>video</code> tag, this line will be displayed here.
-  </video>
-  <p><br>
-    <br>And during this time my interest in working with transparent media grew.
-    <br>
-  </p>
-  <div class="p-gallery">
-    <figure>
-      <img src="static/image/S1.jpg" data-full="static/image/S1.jpg" alt="P1">
-      <figcaption>Back Home 1: Shrouded</figcaption>
-    </figure>
-    <figure>
-      <img src="static/image/S2.jpg" data-full="static/image/S2.jpg" alt="P2">
-      <figcaption>Back Home 1: Revealed</figcaption>
-    </figure>
-    <figure>
-      <img src="static/image/S4.jpg" data-full="static/image/S4.jpg" alt="P1">
-      <figcaption>2: Shrouded</figcaption>
-    </figure>
-    <figure>
-      <img src="static/image/S5.jpg" data-full="static/image/S5.jpg" alt="P2">
-      <figcaption>2: Revealed</figcaption>
-    </figure>
-    <figure>
-      <img src="static/image/S3.jpg" data-full="static/image/S3.jpg" alt="P3">
-      <figcaption>Back Home 2: Rust</figcaption>
-    </figure>
-  </div>  
-</section> 
-
-<!-- 二级页面 3：Series 3 的详细页面 -->
-<section id="illustration-series-3" class="page-section" aria-labelledby="series3-title">
-  <h3>Step-bite Practice</h3>
-  <h4 class="subtitle">Etching and Pastel</h4>
-  <p>
-    <br>An (Incomplete) Record of Technique Practices<br><br>
-  </p>
-  <div class="p-gallery">
-    <figure class="print-figure">
-      <img src="static/image/step1.jpg" alt="step1">
-
-    </figure>
-    <figure class="print-figure">
-      <img src="static/image/step2.jpg" alt="step2">
->
-    </figure>
-    <figure class="print-figure">
-      <img src="static/image/step3.jpg" alt="step3">
-
-    </figure>
-    <figure class="print-figure">
-      <img src="static/image/step4.jpg" alt="step4">
-
-    </figure>
-  </div>  
-</section> 
-
-
-  <!-- 2) Sketchbook Page -->
-  <section id="sketchbook" class="page-section" aria-labelledby="sketchbook-title">
-    <h2 id="sketchbook-title">&gt;  Critical Reflection</h2>
     <h3><br>&gt; Introspections on the Foundations of Creation: Symbiosis, Connection, and Communication</h3>
     <p>
       <br>All these experiences and reflections have crystallized into three key themes. <br>
@@ -531,6 +793,7 @@
       <br>Since Michel Foucault's The Order of Things (1970) introduced the metaphor of historicity and the discontinuity of knowledge as resembling beach sand shaped by waves, many eco-philosophers have critiqued anthropocentrism and argued for a more egalitarian perceptual relationship between humans and the natural world.<br>
       <br>Although Joy introduced me to this concept, I remain, perhaps inevitably, a partial practitioner of posthumanism, as my work is rooted in a mirrored "alterity". Meanwhile, she also recommended a book by James Bridle, Ways of Being (2022), which explores the nonhuman world "suddenly alive with intelligence and agency" while humanity is "utterly entangled with the more-than-human world". He argues that we must learn to live with the world rather than trying to dominate it.<br>
     </p>
+    <br>
     <div class="image-block">
       <figure>
         <img src="static/image/JB1.jpg" alt="JB1" data-full="static/image/JB1.jpg">
@@ -549,6 +812,7 @@
       <br>For his work, the future lies in the relationships and connections between the human and non-human worlds. For me, my initial experience of arriving in London alone and adapting to a drastically new environment paralleled the pandemic period, and also with only pets and plants as companions. the "non-human" part must be them.<br>
       <br>In focusing on animals, I have been noticing Roger Ballen's photographic work, particularly the metaphors he portrays in the relationship between South African communities and their pets. When I look at my companions, whose inner worlds I cannot fully comprehend, as the animal philosopher Jacques Derrida noted in The Animal That Therefore I Am (2008), "the gaze embodies the concept of alterity-the recognition of the other as different from oneself." He argues that the moment of being seen by his cat, which prompts a profound inquiry into self-awareness and identity, animals represent an absolute otherness that challenges human self-awareness.<br>
     </p>
+    <br>
     <div class="image-block">
       <figure>
         <img src="static/image/Blinded.png" alt="Blinded" data-full="static/image/Blinded.png">
@@ -575,6 +839,7 @@
       <br>My goal is to create a sense of communication through sound, an experience that activates the perception of visual-auditory illusions. This experience is designed to transcend geographical and temporal boundaries, presenting a visible representation of changes in time and space. Sound, as the most accessible means of communication beyond text, serves as the foundation for this exploration.<br>
       <br>Then I learned from William Kentridge's work and animated films, which offered a direct and pure approach to storytelling through sound. Making videos was an enjoyable process; I loved seeing things come to life through movement. However, I have yet to find a satisfying harmonic balance in this approach.<br>
     </p>
+    <br>
     <div class="image-block">
       <figure>
         <img src="static/image/WK1.png" alt="WK1" data-full="static/image/WK1.png">
@@ -587,6 +852,7 @@
       <br>Meanwhile, I am exploring another method that emphasizes the relationship between sound and space (environment), and how different entities receive sound differently. <br>
       <br>As I sought out more posthumanist work, Suzanne Anker's creations inspired me to think more deeply about how to "write" layers of information into an image. This shifted my focus to embedding meaning and complexity in visual forms, enriching the dialogue between sound and image.<br>
     </p>
+    <br>
     <div class="image-block">
       <figure>
         <img src="static/image/SA1.jpg" alt="SA1" data-full="static/image/SA1.jpg">
@@ -605,6 +871,7 @@
       <br>Human birdwatching, in a way, acts as an anchor point. That fleeting moment becomes a snapshot, forever defining not only the place and birds but also your state of mind at the time—how you felt and how you viewed life.<br>
       <br>In my work I want to experiment with different ways of emphasising the relationship between sound and space (or environment), and to explore how different beings perceive sound. This notion of difference is not limited to humans and birds, but extends to the diversity among humans themselves: like John Cage, he advocated random procedures in music, incorporating found sounds, noise and alternative instruments into his compositions.<br>
     </p>
+    <br>
     <div class="image-block">
       <figure>
         <img src="static/image/JC1.png" alt="JC1" data-full="static/image/JC1.png">
@@ -619,6 +886,7 @@
       <br>I was fortunate to be introduced to the work of Victoria Arney, an artist deeply concerned with the resonance of land and place. Her practice of capturing birdsong and sound waves using sonograms inspired me to think about how sound waves are received differently by different species and individuals. Her use of large-scale woodcuts and decorative patterns on large canvases made a deep impression on me and encouraged me to consider how material, scale, and meaning might intersect in my own work.<br>
       <br>If John Cage and Suzanne Anker made me realise that I could and should visualise the informational qualities of sound, Victoria Arney's approach to sound waves made me see sound almost as a raw material, rather than just a component used exclusively in video. And I begin to consider how different creatures and individuals might experience the reception of both information. I hope to reflect these differences not only between humans and birds, or on a biological level, but also between humans themselves - as receivers, as audiences with distinct minds capable of nuanced communication.<br>
     </p>
+    <br>
     <div class="image-block">
       <figure>
         <img src="static/image/SM.jpg" alt="V1" data-full="static/image/SM.jpg">
@@ -629,13 +897,13 @@
         <figcaption>Victoria Arney, Made from a recording at 5.30 1 May 2023, 180 x 180 cm, woodcut on Kozo </figcaption>
       </figure>
     </div>
-    
     <h3><br>&gt; Etching Print</h3>
     <p>
       <br>One of the valuable opportunities I encountered after arriving at Camberwell was access to resources that allowed me to learn and use photoetching. This technique is remarkable in its profoundly Anthropocene nature: a fusion of modern technology and natural corrosion, materialised on a single metal plate.<br>
       <br>I have always believed that drawing is a way of communicating with the world without a specific language. Although I also write, I often feel that when something is expressed through words, it collapses into ordinary letters and characters and loses its essence. Ideally, I hope that a painting can be what it means, relying on its own intrinsic rationality as a subject.<br>
       <br>The resources available in London have allowed me to delve deeper into this concept. Inspired by the colours of Impressionism, I have printed many layers and different tones on the plates to create atmospheres that reflect different times of day. However, I am not entirely satisfied with the final result and hope to have more time to explore a sense of balance. Not just the connection between sound, and I want to focus more on printmaking and exploring materials, working on larger pieces.<br>
     </p>
+    <br>
     <div class="image-block">
       <figure>
         <img src="static/image/SR.png" alt="SR" data-full="static/image/SR.png">
@@ -658,27 +926,26 @@
         <figcaption>Claude Monet, Houses of Parliament, London, Sun Breaking Through, oil canvas, 1904, Musée d'Orsay, Paris, France</figcaption>
       </figure>
     </div>
-    
     <br>  
     <br>
     <div class="image-block special-layout">
-      <!-- 左列：放一个“容器”，内部再上下排两张图 -->
-    <div class="left-column">
-    <figure>
-      <img src="static/image/Grand Central Terminal.png" alt="G1" data-full="static/image/Grand Central Terminal.png">
-      <figcaption>Gipi, Grand Central Terminal. Rapporto da un pianeta estinto, 2009</figcaption>
-    </figure>
-    <figure>
-      <img src="static/image/J.png" alt="G1" data-full="static/image/J.png">
-      <figcaption>Jorge González, JACK LONDON, 2015</figcaption>
-    </figure>
+        <!-- 左列：放一个“容器”，内部再上下排两张图 -->
+      <div class="left-column">
+      <figure>
+        <img src="static/image/Grand Central Terminal.png" alt="G1" data-full="static/image/Grand Central Terminal.png">
+        <figcaption>Gipi, Grand Central Terminal. Rapporto da un pianeta estinto, 2009</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/J.png" alt="G1" data-full="static/image/J.png">
+        <figcaption>Jorge González, JACK LONDON, 2015</figcaption>
+      </figure>
+      </div>
+        <!-- 右列：放一张大图 -->
+      <figure class="right-figure">
+        <img src="static/image/Unastoria.png" alt="G2" data-full="static/image/Unastoria.png">
+        <figcaption>Gipi, O Strega!: Unastoria, 2015, Coconino Press/Fandango</figcaption>
+      </figure>
     </div>
-      <!-- 右列：放一张大图 -->
-    <figure class="right-figure">
-      <img src="static/image/Unastoria.png" alt="G2" data-full="static/image/Unastoria.png">
-      <figcaption>Gipi, O Strega!: Unastoria, 2015, Coconino Press/Fandango</figcaption>
-    </figure>
-  </div>
     <p><br>
       <br>Bibliographic references: <br>
       1. Foucault, M. (1970). The Order of Things: An Archaeology of the Human Sciences. London: Tavistock Publications. 
@@ -705,64 +972,360 @@
       <br>
       12. Paul R. (2011). Sensuous Geographies: Body, Sense and Place. London: Routledge.
       <br>
-      
     </p>
+
+  </section>
+  <!-- 二级页面 C) Course Contexts 界面 -->
+  <section id="sectionC"  class="page-section">
+    <h3>Course Contexts</h3>
+    <h4 class="subtitle">(Unit 1)</h4>
+
+    <div class="content-list">
+      <!-- 第1条：图在左、文字在右 -->
+      <br>
+      <div class="content-item">
+        <div class="item-image">
+          <figure>
+            <img src="static/image/SK1.jpg" alt="SK1" data-full="static/image/SK1.jpg">
+            <figcaption>Steffi Klenz,<br>Installation view of the series Tensed Muscles, <br>Hand-drawn coloured pencil drawing on plywood<br>with collaged C-Type prints, 2021<br>Image courtesy of Sid Motion Gallery and the artist.<br>Photo by Andy Keate, 2021</figcaption>
+          </figure>
+        </div>
+        <div class="item-text">
+          <p>
+            My first lecture at Camberwell was given by Steffi Klenz, an artist who combines “social photography” with data-based approaches. I found her formal compositions highly engaging. I often wonder: how can we get viewers to spend more time gazing at a single image? Or, to invert the question, why do I myself linger on certain images? To me, painting is fundamentally driven by visuals—structure, color, texture, and tangible qualities are all decisive factors in holding the viewer’s attention. I have always felt my work lacks a sense of design and compositional rigor, and Steffi’s interplay of points, lines, and planes adds a strong “formal beauty” to her images. She also stressed that her work is very basic in its focus on “communication” and “language,” referencing Freud’s idea that the body speaks. Meanwhile, I recall Wolfgang Tillmans mentioning in a past lecture that “I guess when one talks about art and making art it is by nature language driven. But visual art is not primarily driven by language and there is a dichotomy in that when one is, on the one hand, constantly forced to talk about it, and language seems to favor ideas, and, on the other hand, one also shouldn’t blindly follow any idea that comes to mind. It’s a difficult equilibrium.” <br><br>
+          </p>
+        </div>
+      </div>
+      <!-- 第2条：图在右、文字在左 -->
+      <div class="content-item reverse">
+        <div class="item-image">
+          <figure>
+            <img src="static/image/JL.jpg" alt="JL" data-full="static/image/JL.jpg">
+            <figcaption>Johanna Love, Der Engel Schwieg, <br>installation, laser etching with graphite and ink on paper,<br>individual paper sheets 120cm x 80cm,<br>installation sizes variable</figcaption>
+          </figure>
+        </div>
+        <div class="item-text">
+          <p>
+            Steffi Klenz highlighted the concept of “visual language,” and in her own work seeks a balance between natural language and the visual realm. Whether a piece is abstract or figurative, the final output is always figurative in some sense. Upon seeing it, viewers instinctively resort to “natural language” to identify the subject: “What is this? Why is it depicted in this way?” This relates to the issue of “information load.” If an artwork contains too much information, viewers may identify it in an instant and lose interest. If it contains too little, they might either dismiss it immediately or pause to repeatedly confirm their perceptions. For a creator aiming to resonate with the right audience, the second scenario is often more desirable.
+            Susan Sontag, in her essay Against Interpretation, notes that form and content in an artwork should not be separated, as over-interpretation can obscure the piece’s true essence. This mirrors the questions I contemplated during Johanna Love’s lecture and tutorials: How does one handle the amount of content in an artwork? The dust research creates a lot of content,, while I often find myself torn between pursuing an aesthetic framework or a cognitive one in my own practice.<br><br>
+          </p>
+        </div>
+      </div>
+      <!-- 第3条：图在左、文字在右 -->
+      <div class="content-item">
+        <div class="item-image">
+          <figure>
+            <img src="static/image/AB1.png" alt="AB1" data-full="static/image/AB1.png">
+            <figcaption>Anna Barriball, Afterimage, Pastel, wax, paper,<br>graphite powder, Series of seven drawings,<br>22 x 15.4 cm / 8 5/8 x 6 in (unframed) each, 2021</figcaption>
+          </figure>
+        </div>
+        <div class="item-text">
+          <p>
+            Anna Barriballz’s explorations with various media expanded my perspective considerably. She values the physicality of materials and the aspect of time spent observing them. This made me reflect on how my images might convey these qualities. I was particularly struck by her “After Image” series. I like the feeling of holding a small piece work in one’s hand, and especially the layering of multiple levels of her works. In that series, each underlying graphite drawing becomes more visible with every layer of transparency, reflecting a focus on the drawing process, the materials, the interplay of light and darkness, and an awareness of space and time—all without emphasizing a specific “theme.”
+            I also spent some time experimenting with transparent layers in my own imagery, although I tend to lean toward a more interactive, comic-like style. And those research works don't do a good job of showing the end result. Still, may there is no single standard for how to approach media and imagery; it is an ongoing journey of exploration and revision. At the same time, I hope to avoid “ineffective thinking” and ensure that each attempt contributes to a deeper understanding of imagery and materials.
+          </p>
+        </div>
+      </div>
+    
+    </div>
+  </section>
+  <!-- 二级页面 D) Pop-up Show 界面 -->
+  <section id="sectionD"  class="page-section">
+    <h3>Pop-Up Show</h3>
+    <h4 class="subtitle">(Unit 1) Studio</h4>
+    <br>
+    <div class="p-gallery">
+      <img src="static/image/1.jpg" data-full="static/image/1.jpg" alt="S1">
+      <img src="static/image/2.jpg" data-full="static/image/2.jpg" alt="S2">
+      <img src="static/image/4.jpg" data-full="static/image/4.jpg" alt="S4">
+      <img src="static/image/3.jpg" data-full="static/image/3.jpg" alt="S3">
+    </div> 
+  
+    <p>
+      <br>
+      During this process, I discovered many meaningful ways to communicate and exchange ideas. I received a variety of comments on my artwork.<br>
+      <br>The tech teachers provided valuable insights and suggestions regarding the handling of visuals, while my classmates gathered to discuss the amount of information within the compositions and their final structures.<br>
+      <br>I truly enjoyed hearing viewers speculate whether the visuals were related to the audio tracks, as well as their interpretations of the artwork's themes.<br>
+      <br>My work represents "sound," and simultaneously, I received many different “voices” from the audience. This, I believe, is precisely what I hoped to achieve.<br>
+      
+      <br>During the exhibition, Jo and Leo shared their perspectives on displaying, curating, and selecting my work. Their input taught me a great deal, as I had almost no prior knowledge in this area. I also came to realize how crucial the presentation of an exhibition is for delivering an intended experience to the audience—something that cannot be ignored.<br>
+      
+      <br>My smaller pieces were displayed on different walls and in various areas, which, I believe, successfully conveyed the sense of spatiality I aimed for.<br>
+      
+      <br>In another instance, I combined one of my artworks with a classmate’s fabric project and hid it in a separate space. It served as a small interaction and was somehow fun to explore.
+      <br>
+    </p>
+
   </section>
 
-    <!-- 3) Prints / Zine Page -->
-    <section id="prints-zine" class="page-section" aria-labelledby="prints-zine-title">
-      <h2>&gt; Course Contexts</h2>
-      <h3><br>&gt;  Visuals and Materials</h3>
-      <div class="content-list">
-        <!-- 第1条：图在左、文字在右 -->
-        <br>
-        <div class="content-item">
-          <div class="item-image">
-            <figure>
-              <img src="static/image/SK1.jpg" alt="SK1" data-full="static/image/SK1.jpg">
-              <figcaption>Steffi Klenz,<br>Installation view of the series Tensed Muscles, <br>Hand-drawn coloured pencil drawing on plywood<br>with collaged C-Type prints, 2021<br>Image courtesy of Sid Motion Gallery and the artist.<br>Photo by Andy Keate, 2021</figcaption>
-            </figure>
-          </div>
-          <div class="item-text">
-            <p>
-              My first lecture at Camberwell was given by Steffi Klenz, an artist who combines “social photography” with data-based approaches. I found her formal compositions highly engaging. I often wonder: how can we get viewers to spend more time gazing at a single image? Or, to invert the question, why do I myself linger on certain images? To me, painting is fundamentally driven by visuals—structure, color, texture, and tangible qualities are all decisive factors in holding the viewer’s attention. I have always felt my work lacks a sense of design and compositional rigor, and Steffi’s interplay of points, lines, and planes adds a strong “formal beauty” to her images. She also stressed that her work is very basic in its focus on “communication” and “language,” referencing Freud’s idea that the body speaks. Meanwhile, I recall Wolfgang Tillmans mentioning in a past lecture that “I guess when one talks about art and making art it is by nature language driven. But visual art is not primarily driven by language and there is a dichotomy in that when one is, on the one hand, constantly forced to talk about it, and language seems to favor ideas, and, on the other hand, one also shouldn’t blindly follow any idea that comes to mind. It’s a difficult equilibrium.” <br><br>
-            </p>
-          </div>
-        </div>
-        <!-- 第2条：图在右、文字在左 -->
-        <div class="content-item reverse">
-          <div class="item-image">
-            <figure>
-              <img src="static/image/JL.jpg" alt="JL" data-full="static/image/JL.jpg">
-              <figcaption>Johanna Love, Der Engel Schwieg, <br>installation, laser etching with graphite and ink on paper,<br>individual paper sheets 120cm x 80cm,<br>installation sizes variable</figcaption>
-            </figure>
-          </div>
-          <div class="item-text">
-            <p>
-              Steffi Klenz highlighted the concept of “visual language,” and in her own work seeks a balance between natural language and the visual realm. Whether a piece is abstract or figurative, the final output is always figurative in some sense. Upon seeing it, viewers instinctively resort to “natural language” to identify the subject: “What is this? Why is it depicted in this way?” This relates to the issue of “information load.” If an artwork contains too much information, viewers may identify it in an instant and lose interest. If it contains too little, they might either dismiss it immediately or pause to repeatedly confirm their perceptions. For a creator aiming to resonate with the right audience, the second scenario is often more desirable.
-              Susan Sontag, in her essay Against Interpretation, notes that form and content in an artwork should not be separated, as over-interpretation can obscure the piece’s true essence. This mirrors the questions I contemplated during Johanna Love’s lecture and tutorials: How does one handle the amount of content in an artwork? The dust research creates a lot of content,, while I often find myself torn between pursuing an aesthetic framework or a cognitive one in my own practice.<br><br>
-            </p>
-          </div>
-        </div>
-        <!-- 第3条：图在左、文字在右 -->
-        <div class="content-item">
-          <div class="item-image">
-            <figure>
-              <img src="static/image/AB1.png" alt="AB1" data-full="static/image/AB1.png">
-              <figcaption>Anna Barriball, Afterimage, Pastel, wax, paper,<br>graphite powder, Series of seven drawings,<br>22 x 15.4 cm / 8 5/8 x 6 in (unframed) each, 2021</figcaption>
-            </figure>
-          </div>
-          <div class="item-text">
-            <p>
-              Anna Barriballz’s explorations with various media expanded my perspective considerably. She values the physicality of materials and the aspect of time spent observing them. This made me reflect on how my images might convey these qualities. I was particularly struck by her “After Image” series. I like the feeling of holding a small piece work in one’s hand, and especially the layering of multiple levels of her works. In that series, each underlying graphite drawing becomes more visible with every layer of transparency, reflecting a focus on the drawing process, the materials, the interplay of light and darkness, and an awareness of space and time—all without emphasizing a specific “theme.”
-              I also spent some time experimenting with transparent layers in my own imagery, although I tend to lean toward a more interactive, comic-like style. And those research works don't do a good job of showing the end result. Still, may there is no single standard for how to approach media and imagery; it is an ongoing journey of exploration and revision. At the same time, I hope to avoid “ineffective thinking” and ensure that each attempt contributes to a deeper understanding of imagery and materials.
-            </p>
-          </div>
-        </div>
-      
+<!-- 3) Unit2 Page -->
+<section id="Unit2" class="page-section" aria-labelledby="Unit2-title">
+  <h2 id="Unit2-title">&gt; Unit 2</h2>
+
+  <div class="unit-gallery" id="unitGallery">
+    <figure class="anchor-21"  data-target="sectionE">
+      <img src="static/image/img160-3.png" alt="Process2">
+      <figcaption><p>Process</p></figcaption>
+    </figure>
+
+    <figure class="anchor-22" data-target="sectionF">
+      <img src="static/image/img160-6.png" alt="Critical2">
+      <figcaption><p>Critical Reflection</p></figcaption>
+    </figure>
+
+  </div>
+
+</section>
+
+  <!-- 二级页面 E) Process2 界面 -->
+  <section id="sectionE"  class="page-section">
+    <h3>Process</h3>
+    <h4 class="subtitle">(Unit 2) Main Project - Gravity of Fallen</h4>
+
+    <p>
+    <br>Experimented with woodcut, laser cut, and screen photo etching — exploring how different surfaces and mark-making processes respond to sound textures and fragmented natural rhythms.<br>
+    <br>
+    </p>
+
+    <div class="p2-gallery">
+      <figure>
+        <img src="static/image/sketch1.jpg" data-full="static/image/sketch1.jpg" alt="P1">
+        <figcaption>Linoleum Print with Peel-Away Layer</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/sketch2.jpg" data-full="static/image/sketch2.jpg" alt="P2">
+        <figcaption>The Roc Soaring Beyond the Skies</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/sketch3.jpg" data-full="static/image/sketch3.jpg" alt="P3">
+        <figcaption>Crawling Sound Array in Screen Print</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/sketch4.jpg" data-full="static/image/sketch4.jpg" alt="P3">
+        <figcaption>Sound-Exploding Mono Print on Tracing Paper</figcaption>
+      </figure>
+    </div>
+
+    <p>
+    <br>This time, I wanted to more deliberately approach the theme of 'landscape' — not just as something to be seen, but through how a place can be experienced sonically."<br>
+
+    <br>By recording calls and mixing them with ambient urban sounds, I’m trying to construct a sonic terrain—one that doesn’t rely on visual representation, but still conveys a sense of place. These soundtracks are not just background—they directly inform the rhythm and density of the printed image.<br>
+    <br>
+    </p>
+    <div class="p-gallery">
+      <figure>
+        <img src="static/image/M1.png" data-full="static/image/M1.png" alt="M1">
+        <figcaption>Silksreen Demo</figcaption>
+      </figure>
+    </div>
+    <p>
+    <br>I’m interested in the idea that landscape is not only what we see, but what we hear, repeatedly, every day, often without noticing. Animals, for me, are an entry point into this idea—not as metaphor, but as very real “neighbors” and sound-sources embedded in daily life.<br>
+
+    <br>Formally, I’m working on translating those rhythms and textures of sound into visual structures—through repetition, interruption, and fragmentation in the composition.<br>
+
+    <br>Some of the animals barking frequencies are converted into waveform drawings, then printed using etching or screenprint techniques, turning sound into something tactile: noise as trace, voice as mark.<br>
+
+    <br>I’m also experimenting with layering these sound-based forms to create visual fields that function almost like sonic topographies—each layer becoming a kind of auditory cross-section of a space.<br>
+    <br>
+    </p>
+
+  </section>
+
+  <!-- 二级页面 F) Critical Reflection 界面 -->
+  <section id="sectionF"  class="page-section">
+    <h3>Critical Reflection</h3>
+    <h4 class="subtitle">(Unit 2)</h4>
+
+    <h3><br>&gt; Introspections on the Foundations of Creation: Symbiosis, Connection, and Communication</h3>
+    <p>
+      <br>This time I approached the theme of "landscape" not just as something to be seen, but through how a place can be experienced sonically. I’m particularly interested in birds—not as symbols, but as actual, living presences that exist alongside us, especially in urban environments where nature still exists, but only in fragmented, leftover forms.<br>
+      <br>In cities, birds are often the last remaining trace of the natural world we pretend isn't there. A sparrow bursting from a bush, a crow on a power line—they’re part of a kind of micro-landscape that’s always around us but rarely acknowledged. By recording their calls and mixing them with ambient urban sounds, I’m trying to construct a sonic terrain—one that doesn’t rely on visual representation, but still conveys a sense of place. These soundtracks are not just background—they directly inform the rhythm and density of the printed image.<br>
+      <br>I’m interested in the idea that landscape is not only what we see, but what we hear, repeatedly, every day, often without noticing. Birds, for me, are an entry point into this idea—not as metaphor, but as very real “neighbors” and sound-sources embedded in daily life.<br>
+      <br>Formally, I’m working on translating those rhythms and textures of sound into visual structures—through repetition, interruption, and fragmentation in the composition. Some of the birdsong frequencies are converted into waveform drawings, then printed using etching or screenprint techniques, turning sound into something tactile: noise as trace, voice as mark.<br>
+      <br>I’m also experimenting with layering these sound-based forms to create visual fields that function almost like sonic topographies—each layer becoming a kind of auditory cross-section of a space.<br>
+    </p>
+    <br>
+    <div class="image-block">
+      <figure>
+        <img src="static/image/JB1.jpg" alt="JB1" data-full="static/image/JB1.jpg">
+        <figcaption>James Bridle, Radar Ornithology (Sage I-III), 3 x Live radar data, tablet computer, plexiglass, 2018</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/JB2.jpg" alt="JB2" data-full="static/image/JB2.jpg">
+        <figcaption>James Bridle, Radar Ornithology (Sage I-III), 3 x Live radar data, tablet computer, plexiglass, 2018</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/JB3.png" alt="JB3" data-full="static/image/JB3.png">
+        <figcaption>James Bridle, My delight on a shining night, Single-channel digital video, 2018</figcaption>
+      </figure>
+    </div>
+    <p><br>
+      <br>For his work, the future lies in the relationships and connections between the human and non-human worlds. For me, my initial experience of arriving in London alone and adapting to a drastically new environment paralleled the pandemic period, and also with only pets and plants as companions. the "non-human" part must be them.<br>
+      <br>In focusing on animals, I have been noticing Roger Ballen's photographic work, particularly the metaphors he portrays in the relationship between South African communities and their pets. When I look at my companions, whose inner worlds I cannot fully comprehend, as the animal philosopher Jacques Derrida noted in The Animal That Therefore I Am (2008), "the gaze embodies the concept of alterity-the recognition of the other as different from oneself." He argues that the moment of being seen by his cat, which prompts a profound inquiry into self-awareness and identity, animals represent an absolute otherness that challenges human self-awareness.<br>
+    </p>
+    <br>
+    <div class="image-block">
+      <figure>
+        <img src="static/image/Blinded.png" alt="Blinded" data-full="static/image/Blinded.png">
+        <figcaption>Roger Ballen, Blinded, photography, 2005</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/Bite.png" alt="Bite" data-full="static/image/Bite.png">
+        <figcaption>Roger Ballen, Bite, photography, 2007</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/Headless.png" alt="Headless" data-full="static/image/Headless.png">
+        <figcaption>Roger Ballen, Headless, photography, 2006</figcaption>
+      </figure>
+    </div>
+    <p><br>
+      <br>And I've come to realize that I cannot escape using 'the other' to narrate human stories, despite my attempts to transcend it.<br>
+      <br>This is an interesting phenomenon that I found my thinking may have mixed with some existential reflections. Albert Camus' discussion in The Myth of Sisyphus (1955) of the struggle between the individual and the constraints of society. The dependent relationship between humans and flora or fauna in urban environments reflects this conscious or unconscious resistance, or even perhaps escape, yet it serves as a means of navigating social frameworks and redefining personal identity. The individual's task, much like that of Sisyphus, is to navigate societal expectations through consciousness and resistance. Engaging with the collective unconscious of society, meanwhile finding ways to connect one's own values and beliefs.<br>
+      <br>This is related to the juxtaposition of the "superego" and the "id. In Tang Dynasty China, Zhang Zao has a famous saying, "外师造化，中得心源，" (Lidai Minghua Ji). It means to learn externally from nature and internally from the source of the heart. For me, this means that if I want to get something from the outside world as an expression of myself, it has to be the "Id". I would argue that the essence of art is the continued articulation and communication of the most primal and authentic self as a means of negotiating between social constraints and individual authenticity.<br>
+    </p>
+    
+    <h3><br>&gt; Sound Practice</h3>
+    <p>
+      <br>The visual theme of Unit 1 gradually took shape.<br>
+      <br>My goal is to create a sense of communication through sound, an experience that activates the perception of visual-auditory illusions. This experience is designed to transcend geographical and temporal boundaries, presenting a visible representation of changes in time and space. Sound, as the most accessible means of communication beyond text, serves as the foundation for this exploration.<br>
+      <br>Then I learned from William Kentridge's work and animated films, which offered a direct and pure approach to storytelling through sound. Making videos was an enjoyable process; I loved seeing things come to life through movement. However, I have yet to find a satisfying harmonic balance in this approach.<br>
+    </p>
+    <br>
+    <div class="image-block">
+      <figure>
+        <img src="static/image/WK1.png" alt="WK1" data-full="static/image/WK1.png">
+        <img src="static/image/WK2.png" alt="WK2" data-full="static/image/WK2.png">
+        <img src="static/image/WK3.png" alt="WK3" data-full="static/image/WK3.png">
+        <figcaption>William Kentridge, Experiment Sketching, video</figcaption>
+      </figure>
+    </div>
+    <p><br>
+      <br>Meanwhile, I am exploring another method that emphasizes the relationship between sound and space (environment), and how different entities receive sound differently. <br>
+      <br>As I sought out more posthumanist work, Suzanne Anker's creations inspired me to think more deeply about how to "write" layers of information into an image. This shifted my focus to embedding meaning and complexity in visual forms, enriching the dialogue between sound and image.<br>
+    </p>
+    <br>
+    <div class="image-block">
+      <figure>
+        <img src="static/image/SA1.jpg" alt="SA1" data-full="static/image/SA1.jpg">
+        <figcaption>Suzanne Anker, Codex Genome - Constellation (Symbiotic Planet), Silkscreen and pigment on frosted mylar, 24” x 36” </figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/SA2.jpg" alt="SA2" data-full="static/image/SA2.jpg">
+        <figcaption>Suzanne Anker, Codex Genome - Scriptography, Silkscreen and pigment on frosted mylar, 24” x 36” </figcaption>
+      </figure>
+    </div>
+
+    <h3><br><br>&gt; The Subject of "The Other": Birds</h3>
+    <p>
+      <br>Birds retain their mysterious migratory patterns and ubiquitous presence in both urban and rural soundscapes, creating a linear structure marked by strong regional characteristics and variations.<br>
+      <br>I want to explore how birds inhabit both human-dominated environments like cities and nature-dominated spaces like forests, using them as a medium to symmetrically break the dichotomy between these two contrasting realms. Additionally, my personal records of birdwatching in the wild provide a rich archive of observations, and moving to London introduced me to a completely new ecological setting. The coexistence of birds and humans in urban spaces highlights regional contrasts, offering a fresh perspective.<br>
+      <br>Human birdwatching, in a way, acts as an anchor point. That fleeting moment becomes a snapshot, forever defining not only the place and birds but also your state of mind at the time—how you felt and how you viewed life.<br>
+      <br>In my work I want to experiment with different ways of emphasising the relationship between sound and space (or environment), and to explore how different beings perceive sound. This notion of difference is not limited to humans and birds, but extends to the diversity among humans themselves: like John Cage, he advocated random procedures in music, incorporating found sounds, noise and alternative instruments into his compositions.<br>
+    </p>
+    <br>
+    <div class="image-block">
+      <figure>
+        <img src="static/image/JC1.png" alt="JC1" data-full="static/image/JC1.png">
+        <figcaption>John Cage, Global Village 1-36, Aquatint, on two sheets of smoked Roma Fabriano-Brown paper, the full sheets, 1989</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/JC2.png" alt="JC2" data-full="static/image/JC2.png">
+        <figcaption>John Cage,Wheather-ed II, 1984, Four color letterpress on Simili Japon Paper, 1984</figcaption>
+      </figure>
+    </div>
+    <p><br>
+      <br>I was fortunate to be introduced to the work of Victoria Arney, an artist deeply concerned with the resonance of land and place. Her practice of capturing birdsong and sound waves using sonograms inspired me to think about how sound waves are received differently by different species and individuals. Her use of large-scale woodcuts and decorative patterns on large canvases made a deep impression on me and encouraged me to consider how material, scale, and meaning might intersect in my own work.<br>
+      <br>If John Cage and Suzanne Anker made me realise that I could and should visualise the informational qualities of sound, Victoria Arney's approach to sound waves made me see sound almost as a raw material, rather than just a component used exclusively in video. And I begin to consider how different creatures and individuals might experience the reception of both information. I hope to reflect these differences not only between humans and birds, or on a biological level, but also between humans themselves - as receivers, as audiences with distinct minds capable of nuanced communication.<br>
+    </p>
+    <br>
+    <div class="image-block">
+      <figure>
+        <img src="static/image/SM.jpg" alt="V1" data-full="static/image/SM.jpg">
+        <figcaption>Victoria Arney, Spring March, March 29 2021, small monotype and etching overlay bird calls</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/MR.jpg" alt="V2" data-full="static/image/MR.jpg">
+        <figcaption>Victoria Arney, Made from a recording at 5.30 1 May 2023, 180 x 180 cm, woodcut on Kozo </figcaption>
+      </figure>
+    </div>
+    <h3><br>&gt; Etching Print</h3>
+    <p>
+      <br>One of the valuable opportunities I encountered after arriving at Camberwell was access to resources that allowed me to learn and use photoetching. This technique is remarkable in its profoundly Anthropocene nature: a fusion of modern technology and natural corrosion, materialised on a single metal plate.<br>
+      <br>I have always believed that drawing is a way of communicating with the world without a specific language. Although I also write, I often feel that when something is expressed through words, it collapses into ordinary letters and characters and loses its essence. Ideally, I hope that a painting can be what it means, relying on its own intrinsic rationality as a subject.<br>
+      <br>The resources available in London have allowed me to delve deeper into this concept. Inspired by the colours of Impressionism, I have printed many layers and different tones on the plates to create atmospheres that reflect different times of day. However, I am not entirely satisfied with the final result and hope to have more time to explore a sense of balance. Not just the connection between sound, and I want to focus more on printmaking and exploring materials, working on larger pieces.<br>
+    </p>
+    <br>
+    <div class="image-block">
+      <figure>
+        <img src="static/image/SR.png" alt="SR" data-full="static/image/SR.png">
+        <figcaption>Bettmann, Smoke Rising From Factory Smokestacks, Metal Print, Jan 18 1955</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/M1.jpg" alt="M1" data-full="static/image/M1.jpg">
+        <figcaption>Claude Monet, Seagulls over the Houses of Parliament, oil canvas, 92 x 82 cm, 1904, Pushkin Museum, Moscow, Russia</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/M2.jpg" alt="M2" data-full="static/image/M2.jpg">
+        <figcaption>Claude Monet, Houses of Parlilament, oil canvas, 1904</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/M3.jpg" alt="M3" data-full="static/image/M3.jpg">
+        <figcaption>Claude Monet, Houses of Parlilament, Fog Effect, oil canvas, 1903</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/M4.jpg" alt="M4" data-full="static/image/M4.jpg">
+        <figcaption>Claude Monet, Houses of Parliament, London, Sun Breaking Through, oil canvas, 1904, Musée d'Orsay, Paris, France</figcaption>
+      </figure>
+    </div>
+    <br>  
+    <br>
+    <div class="image-block special-layout">
+        <!-- 左列：放一个“容器”，内部再上下排两张图 -->
+      <div class="left-column">
+      <figure>
+        <img src="static/image/Grand Central Terminal.png" alt="G1" data-full="static/image/Grand Central Terminal.png">
+        <figcaption>Gipi, Grand Central Terminal. Rapporto da un pianeta estinto, 2009</figcaption>
+      </figure>
+      <figure>
+        <img src="static/image/J.png" alt="G1" data-full="static/image/J.png">
+        <figcaption>Jorge González, JACK LONDON, 2015</figcaption>
+      </figure>
       </div>
-      
-    </section>
+        <!-- 右列：放一张大图 -->
+      <figure class="right-figure">
+        <img src="static/image/Unastoria.png" alt="G2" data-full="static/image/Unastoria.png">
+        <figcaption>Gipi, O Strega!: Unastoria, 2015, Coconino Press/Fandango</figcaption>
+      </figure>
+    </div>
+    <p><br>
+      <br>Bibliographic references: <br>
+      1. Foucault, M. (1970). The Order of Things: An Archaeology of the Human Sciences. London: Tavistock Publications. 
+      <br>
+      2. Jacques, D. (2008). The Animal That Therefore I Am. Frence: Éditions Galilée.
+      <br>
+      3.Camus, A. (1955). The Myth of Sisyphus. London: Hamish Hamilton Limited.
+      <br>
+      4. Yanyuan Z. (Tang). Lidai Minghua Ji(The records of famous paintings of different dynasties).
+      <br>
+      5. Reed, D. A. (2017). Hearing: An Introduction to Psychological and Physiological Acoustics, 6th Ed. Boca Raton.
+      <br>
+      6. Robert J. D. (2000). Comparative Hearing: Birds and Reptiles: 13 (Springer Handbook of Auditory Research, 13). Springer.
+      <br>
+      7. Edward R. (2001). The Visual Display of Quantitative Information, 2nd Ed.
+      <br>
+      8. Tania K. (2014). Drawing Water: Drawing as a Mechanism for Exploration. Fruitmarket Gallery.
+      <br>
+      9. Christof M, Brandon L. (2001). Writing Aloud: The Sonics of Language. Errant Bodies.
+      <br>
+      10. Su Xiu, Zhu Xi. Progress in research of birdsong. Journal of Zhejiang Forestry College, no. 3, 2006, pp. 323-327
+      <br>
+      11. Karin V. M. (1993). The Sound of Painting: Music in Modern Art. London: Prestel. 128pp.
+      <br>
+      12. Paul R. (2011). Sensuous Geographies: Body, Sense and Place. London: Routledge.
+      <br>
+    </p>
+
+  </section>
 
 <!-- 5) About page (不默认显示) -->
 <section id="about" class="page-section" aria-labelledby="about-title">
@@ -794,7 +1357,7 @@
     <div>© Qiongyu (Quoine) Liu</div>
     <div>All rights reserved.</div>
     <!-- 可以用 <time> 来声明时间 -->
-    <div>Last updated: <time dateTime="2025-01">January 2025</time></div>
+    <div>Last updated: <time dateTime="2025-05">May 2025</time></div>
     <!-- Back 和 Next 按钮 -->
     <!--<div id="navigation-buttons">
       <button id="backButton">Back</button>

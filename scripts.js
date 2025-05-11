@@ -1,299 +1,258 @@
 /***********************************************/
 /* ============ DOM SELECTOR 缓存 ============ */
-// 导航&页面
-const navItems = document.querySelectorAll('#navList li');
-const pages = document.querySelectorAll('.page-section');
+// 导航 & 页面
+const navItems  = document.querySelectorAll('#navList li');
+const pages     = document.querySelectorAll('.page-section');
 const printsNav = document.getElementById('printsNav');
 const titleLink = document.querySelector('.title-link');
 
-// 获取 sidebar 的所有主菜单按钮
-// 假设页面切换由 navItems 控制
-navItems.forEach(item => {
-  item.addEventListener('click', () => {
-    // 切换页面逻辑
-    document.querySelectorAll('.page-section').forEach(section => {
-      section.classList.remove('active');
-    });
-    const targetId = item.dataset.target;
-    document.getElementById(targetId).classList.add('active');
-
-    // 页面立即滚动到顶端
-    window.scrollTo(0, 0);
-  });
-});
+// 侧栏『Back / Next』按钮
+const subNav     = document.getElementById('subNavButtons');
+const btnBackSub = document.getElementById('btnBackSub');
+const btnNextSub = document.getElementById('btnNextSub');
 
 // Lightbox
 const lightboxOverlay = document.getElementById('lightboxOverlay');
-const lightboxImg = document.getElementById('lightboxImg');
-const lightboxClose = document.getElementById('lightboxClose');
-const lightboxPrev = document.getElementById('lightboxPrev');
-const lightboxNext = document.getElementById('lightboxNext');
+const lightboxImg     = document.getElementById('lightboxImg');
+const lightboxClose   = document.getElementById('lightboxClose');
+const lightboxPrev    = document.getElementById('lightboxPrev');
+const lightboxNext    = document.getElementById('lightboxNext');
 
-// Illustration 二级返回按钮
+// Practice 二级返回按钮
 const btnBackSeries1 = document.getElementById('btnBackSeries1');
 const btnBackSeries2 = document.getElementById('btnBackSeries2');
 
 /***********************************************/
-/* ========== 1) NAVIGATION & PAGE SWITCHING ========== */
-
-// 关闭Lightbox函数
-function closeLightbox() {
-  lightboxOverlay.classList.remove('active');
-  lightboxImg.src = '';
+/* ========== 0) PAGE‑STATE PERSISTENCE ======= */
+function savePageState(){
+  const activeSection = document.querySelector('.page-section.active');
+  if(activeSection) sessionStorage.setItem('activeSectionId', activeSection.id);
+  sessionStorage.setItem('scrollY', window.scrollY);
 }
-
-// 点击lightbox空白处关闭
-lightboxOverlay.addEventListener('click', (e) => {
-  if (e.target === lightboxOverlay) {
-    closeLightbox();
+function restorePageState(){
+  const storedId = sessionStorage.getItem('activeSectionId');
+  const storedY  = sessionStorage.getItem('scrollY');
+  if(storedId){
+    navItems.forEach(n=>n.classList.remove('active'));
+    pages.forEach(p=>p.classList.remove('active'));
+    document.getElementById(storedId)?.classList.add('active');
+    document.querySelector(`#navList li[data-target="${storedId}"]`)?.classList.add('active');
+    printsNav.classList.toggle('active', storedId==='prints-zine');
   }
-});
+  if(storedY!==null) window.scrollTo(0, parseInt(storedY, 10));
+  updateSubNav();
+}
+window.addEventListener('DOMContentLoaded', restorePageState);
+window.addEventListener('beforeunload',   savePageState);
 
-// 左侧导航点击切换页面
-navItems.forEach(item => {
-  item.addEventListener('click', () => {
-    // 取消所有active
-    navItems.forEach(nav => nav.classList.remove('active'));
-    pages.forEach(pg => pg.classList.remove('active'));
+/***********************************************/
+/* ========== 0.1) 子页 Back / Next 逻辑 ======= */
+const subGroups = {
+  Unit1   : ['sectionA','sectionB','sectionC','sectionD'],
+  Practice: ['Practice-series-1','Practice-series-2','Practice-series-3']
+};
+function getCurrentGroupId(sectionId){
+  for(const key in subGroups){
+    if(subGroups[key].includes(sectionId)) return key;
+  }
+  return null;
+}
+function updateSubNav(){
+  const active = document.querySelector('.page-section.active');
+  const gid    = active ? getCurrentGroupId(active.id) : null;
+  subNav.style.display = gid ? 'flex' : 'none';
+}
+function navigateSub(delta){
+  const active = document.querySelector('.page-section.active');
+  if(!active) return;
+  const gid = getCurrentGroupId(active.id);
+  if(!gid) return;
+  const arr = subGroups[gid];
+  const idx = arr.indexOf(active.id);
+  const nextIdx = (idx + delta + arr.length) % arr.length;
+  const targetId = arr[nextIdx];
+  pages.forEach(p=>p.classList.remove('active'));
+  document.getElementById(targetId)?.classList.add('active');
+  savePageState();
+  updateSubNav();
+  window.scrollTo(0,0);
+}
+btnBackSub?.addEventListener('click', ()=>navigateSub(-1));
+btnNextSub?.addEventListener('click', ()=>navigateSub(1));
 
-    // 当前li和对应页面加active
+/***********************************************/
+/* ========== 1) SIDEBAR NAV SWITCHING ========= */
+function closeLightbox(){
+  lightboxOverlay.classList.remove('active');
+  lightboxImg.src='';
+}
+lightboxOverlay.addEventListener('click', e=>{ if(e.target===lightboxOverlay) closeLightbox(); });
+
+navItems.forEach(item=>{
+  item.addEventListener('click', ()=>{
+    navItems.forEach(n=>n.classList.remove('active'));
+    pages.forEach(p=>p.classList.remove('active'));
     item.classList.add('active');
+
     const targetId = item.dataset.target;
-    document.getElementById(targetId).classList.add('active');
+    document.getElementById(targetId)?.classList.add('active');
+    printsNav.classList.toggle('active', targetId==='prints-zine');
 
-    // 关闭Lightbox
+    window.scrollTo(0,0);
+    savePageState();
+    updateSubNav();
     closeLightbox();
-
-    // 判断prints-zine
-    if (targetId === 'prints-zine') {
-      printsNav.classList.add('active');
-    } else {
-      printsNav.classList.remove('active');
-    }
   });
 });
 
-// 点击左上角标题 -> 回到 landing
-titleLink.addEventListener('click', (e) => {
+titleLink.addEventListener('click', e=>{
   e.preventDefault();
-  navItems.forEach(nav => nav.classList.remove('active'));
-  pages.forEach(pg => pg.classList.remove('active'));
-
-  const landingSection = document.getElementById('landing');
-  landingSection.classList.add('active');
-
+  navItems.forEach(n=>n.classList.remove('active'));
+  pages.forEach(p=>p.classList.remove('active'));
+  document.getElementById('landing')?.classList.add('active');
   printsNav.classList.remove('active');
+  savePageState();
+  updateSubNav();
   closeLightbox();
 });
 
 /***********************************************/
-/* ========== 2) LIGHTBOX FUNCTIONALITY ========== */
-// 这里的 Lightbox 用于点击 .gallery img 弹出大图
-let lightboxIndex = 0;        // 当前图片在画廊中的索引
-let lightboxGallery = [];     // 当前点击的 gallery 所有img
+/* ========== 2) LIGHTBOX FUNCTIONALITY ======== */
+let lightboxIndex = 0;
+let lightboxGallery = [];
+const gallerySelectors = ['.gallery img','.p-gallery img','.viewer-large','.image-block img'];
+const galleryImages    = document.querySelectorAll(gallerySelectors.join(', '));
 
-// 定义所有需要支持灯箱功能的图片选择器
-const gallerySelectors = ['.gallery img', '.p-gallery img', '.viewer-large', '.image-block img'];
-const galleryImages = document.querySelectorAll(gallerySelectors.join(', ')); // 合并选择器
-
-// 给所有选择器中的图片绑定点击事件
-galleryImages.forEach(img => {
-  img.addEventListener('click', (e) => {
-    const parentGallery = e.target.closest('.gallery, .p-gallery, .image-block'); // 找到父容器（适配多个类型）
-    
-    if (parentGallery) {
-      // 从父容器中获取所有图片
-      lightboxGallery = Array.from(parentGallery.querySelectorAll('img'));
-    } else {
-      // 如果没有父容器，比如 .viewer-large，单独处理
-      lightboxGallery = [e.target];
-    }
-
-    lightboxIndex = lightboxGallery.indexOf(e.target); // 获取当前点击图片的索引
-    openLightbox(); // 打开灯箱
+galleryImages.forEach(img=>{
+  img.addEventListener('click', e=>{
+    const parent = e.target.closest('.gallery, .p-gallery, .image-block');
+    lightboxGallery = parent ? Array.from(parent.querySelectorAll('img')) : [e.target];
+    lightboxIndex   = lightboxGallery.indexOf(e.target);
+    openLightbox();
   });
 });
-
-// 打开Lightbox
-function openLightbox() {
-  if (!lightboxGallery[lightboxIndex]) return;
-  const fullSrc = lightboxGallery[lightboxIndex].dataset.full 
-                || lightboxGallery[lightboxIndex].src;
+function openLightbox(){
+  if(!lightboxGallery[lightboxIndex]) return;
+  const fullSrc = lightboxGallery[lightboxIndex].dataset.full || lightboxGallery[lightboxIndex].src;
   lightboxImg.src = fullSrc;
   lightboxOverlay.classList.add('active');
   updateLightboxArrows();
 }
-
-// 更新lightbox箭头状态
-function updateLightboxArrows() {
-  if (lightboxGallery.length <= 1) {
+function updateLightboxArrows(){
+  if(lightboxGallery.length<=1){
     lightboxPrev.classList.add('hidden');
     lightboxNext.classList.add('hidden');
-  } else {
-    lightboxPrev.classList.toggle('hidden', lightboxIndex === 0);
-    lightboxNext.classList.toggle('hidden', lightboxIndex === lightboxGallery.length - 1);
+  }else{
+    lightboxPrev.classList.toggle('hidden', lightboxIndex===0);
+    lightboxNext.classList.toggle('hidden', lightboxIndex===lightboxGallery.length-1);
   }
 }
-
-// 左右切换
-function lightboxShowNext() {
-  if (lightboxIndex < lightboxGallery.length - 1) {
-    lightboxIndex++;
-  } else {
-    // wrap around
-    lightboxIndex = 0;
-  }
-  openLightbox();
-}
-function lightboxShowPrev() {
-  if (lightboxIndex > 0) {
-    lightboxIndex--;
-  } else {
-    // wrap around
-    lightboxIndex = lightboxGallery.length - 1;
-  }
-  openLightbox();
-}
-function updateLightboxArrows() {
-  if (lightboxGallery.length <= 1) {
-    // 只有一张图的时候才隐藏箭头
-    lightboxPrev.classList.add('hidden');
-    lightboxNext.classList.add('hidden');
-  } else {
-    // 多张图就一直显示
-    lightboxPrev.classList.remove('hidden');
-    lightboxNext.classList.remove('hidden');
-  }
-}
-
-// lightbox按钮和键盘事件
+function lightboxShowNext(){ lightboxIndex = (lightboxIndex+1)%lightboxGallery.length; openLightbox(); }
+function lightboxShowPrev(){ lightboxIndex = (lightboxIndex-1+lightboxGallery.length)%lightboxGallery.length; openLightbox(); }
 lightboxClose.addEventListener('click', closeLightbox);
-lightboxPrev.addEventListener('click', lightboxShowPrev);
-lightboxNext.addEventListener('click', lightboxShowNext);
+lightboxPrev .addEventListener('click', lightboxShowPrev);
+lightboxNext .addEventListener('click', lightboxShowNext);
 
-document.addEventListener('keyup', (e) => {
-  if (!lightboxOverlay.classList.contains('active')) return;
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowLeft') lightboxShowPrev();
-  if (e.key === 'ArrowRight') lightboxShowNext();
+document.addEventListener('keyup', e=>{
+  if(!lightboxOverlay.classList.contains('active')) return;
+  if(e.key==='Escape')     closeLightbox();
+  if(e.key==='ArrowLeft')  lightboxShowPrev();
+  if(e.key==='ArrowRight') lightboxShowNext();
 });
 
 /***********************************************/
-/* ========== 4) 三层结构(Top->Middle->Bottom) ========== */
-
-// 通用函数：切换active类
-function toggleActive(elements, targetId) {
-  elements.forEach(el => el.classList.remove('active'));
-  if (targetId) {
-    const targetElement = document.getElementById(targetId);
-    targetElement?.classList.add('active');
-  }
+/* ========== 3) 三层 Gallery 结构 ============ */
+function toggleActive(elements, targetId){
+  elements.forEach(el=>el.classList.remove('active'));
+  if(targetId) document.getElementById(targetId)?.classList.add('active');
 }
-
-// 通用函数：激活某组的图片
-function activateGroupImage(group, idx) {
+function activateGroupImage(group, idx){
   const middleItems = group.querySelectorAll('.middle-item');
   const viewerLarge = group.querySelector('.viewer-large');
-  const btnPrev = group.querySelector('.viewer-prev');
-  const btnNext = group.querySelector('.viewer-next');
+  if(!viewerLarge || !middleItems.length) return;
 
-  if (!viewerLarge || !middleItems.length) return;
-
-  // 更新缩略图高亮
-  middleItems.forEach(mi => mi.classList.remove('active'));
+  middleItems.forEach(mi=>mi.classList.remove('active'));
   middleItems[idx]?.classList.add('active');
-
-  // 更新大图
-  const fullUrl = middleItems[idx]?.dataset.full || '';
-  viewerLarge.src = fullUrl;
-
-  // 更新索引和按钮状态
+  viewerLarge.src = middleItems[idx]?.dataset.full || '';
   group.dataset.currentIndex = idx;
-  if (btnPrev && btnNext) {
-    btnPrev.disabled = idx === 0;
-    btnNext.disabled = idx === middleItems.length - 1;
-  }
+  savePageState();
 }
 
-// 4.1 点击顶部 -> 展开/收起该组
-document.querySelectorAll('.top-item').forEach(top => {
-  top.addEventListener('click', () => {
+document.querySelectorAll('.top-item').forEach(top=>{
+  top.addEventListener('click', ()=>{
     const targetId = top.dataset.target;
     const targetGroup = document.getElementById(targetId);
-    const groups = document.querySelectorAll('.gallery-group');
-
-    if (!targetGroup) return;
-    if (targetGroup.classList.contains('active')) {
-      targetGroup.classList.remove('active');
-    } else {
-      toggleActive(groups); // 关闭其他组
+    if(!targetGroup) return;
+    if(targetGroup.classList.contains('active')) targetGroup.classList.remove('active');
+    else{
+      toggleActive(document.querySelectorAll('.gallery-group'));
       targetGroup.classList.add('active');
-      activateGroupImage(targetGroup, 0); // 默认显示第0张
+      activateGroupImage(targetGroup, 0);
     }
   });
 });
 
-// 4.2 第二层点击 -> 显示第三层的大图
-document.querySelectorAll('.middle-item').forEach(item => {
-  item.addEventListener('click', () => {
+document.querySelectorAll('.middle-item').forEach(item=>{
+  item.addEventListener('click', ()=>{
     const group = item.closest('.gallery-group');
-    const idx = parseInt(item.dataset.index, 10);
-    if (!group || isNaN(idx)) return;
-    activateGroupImage(group, idx);
+    const idx   = parseInt(item.dataset.index, 10);
+    if(group && !isNaN(idx)) activateGroupImage(group, idx);
   });
 });
 
-// 4.3 第三层左右按钮
-document.querySelectorAll('.gallery-group').forEach(group => {
+document.querySelectorAll('.gallery-group').forEach(group=>{
   const btnPrev = group.querySelector('.viewer-prev');
   const btnNext = group.querySelector('.viewer-next');
-  const middleItems = group.querySelectorAll('.middle-item');
-
-  if (!btnPrev || !btnNext || !middleItems.length) return;
-
-  group.dataset.currentIndex = 0; // 初始化索引
-
-  btnPrev.addEventListener('click', () => {
-    const currentIdx = parseInt(group.dataset.currentIndex, 10) || 0;
-    const newIndex = currentIdx > 0 ? currentIdx - 1 : middleItems.length - 1; // 循环到最后一张
-    activateGroupImage(group, newIndex);
+  const middle  = group.querySelectorAll('.middle-item');
+  if(!btnPrev||!btnNext||!middle.length) return;
+  group.dataset.currentIndex = 0;
+  btnPrev.addEventListener('click', ()=>{
+    const cur = parseInt(group.dataset.currentIndex, 10) || 0;
+    const nxt = cur>0 ? cur-1 : middle.length-1;
+    activateGroupImage(group, nxt);
   });
-
-  btnNext.addEventListener('click', () => {
-    const currentIdx = parseInt(group.dataset.currentIndex, 10) || 0;
-    const newIndex = currentIdx < middleItems.length - 1 ? currentIdx + 1 : 0; // 循环到第一张
-    activateGroupImage(group, newIndex);
+  btnNext.addEventListener('click', ()=>{
+    const cur = parseInt(group.dataset.currentIndex, 10) || 0;
+    const nxt = cur<middle.length-1 ? cur+1 : 0;
+    activateGroupImage(group, nxt);
   });
 });
 
 /***********************************************/
-/* ========== 5) Illustration 二级返回示例 ========== */
-
-// 通用返回函数
-function handleBackButton(currentId, targetId) {
+/* ========== 4) Practice 缩略图->二级 ========== */
+function handleBackButton(currentId, targetId){
   document.getElementById(currentId)?.classList.remove('active');
   document.getElementById(targetId)?.classList.add('active');
+  savePageState();
+  updateSubNav();
 }
+btnBackSeries1?.addEventListener('click', ()=>handleBackButton('Practice-series-1','Practice'));
+btnBackSeries2?.addEventListener('click', ()=>handleBackButton('Practice-series-2','Practice'));
 
-// Illustration返回
-if (btnBackSeries1) {
-  btnBackSeries1.addEventListener('click', () => {
-    handleBackButton('illustration-series-1', 'illustration');
-  });
-}
-if (btnBackSeries2) {
-  btnBackSeries2.addEventListener('click', () => {
-    handleBackButton('illustration-series-2', 'illustration');
-  });
-}
-
-/***********************************************/
-/* ========== 6) Illustration缩略图->二级 ========== */
-
-document.querySelectorAll('#illus-series-gallery img').forEach(img => {
-  img.addEventListener('click', () => {
+document.querySelectorAll('#illus-series-gallery img').forEach(img=>{
+  img.addEventListener('click', ()=>{
     const targetId = img.dataset.target;
-    if (!targetId) return;
-    handleBackButton('illustration', targetId);
+    if(targetId) handleBackButton('Practice', targetId);
+  });
+});
+
+document.querySelectorAll('#unitGallery figure').forEach(fig=>{
+  fig.addEventListener('click', ()=>{
+    document.querySelectorAll('#Unit1, #sectionA, #sectionB, #sectionC, #sectionD')
+      .forEach(sec=>sec.classList.remove('active'));
+    const target = fig.dataset.target;
+    document.getElementById(target)?.classList.add('active');
+    savePageState();
+    updateSubNav();
+  });
+});
+document.querySelectorAll('#unitGallery figure').forEach(fig=>{
+  fig.addEventListener('click', ()=>{
+    document.querySelectorAll('#Unit2, #sectionE, #sectionF, #sectionG, #sectionH')
+      .forEach(sec=>sec.classList.remove('active'));
+    const target = fig.dataset.target;
+    document.getElementById(target)?.classList.add('active');
+    savePageState();
+    updateSubNav();
   });
 });
