@@ -336,7 +336,7 @@
     </div>
 
     <p><br>
-    <br>Note:
+    <br>Archive:
     <br>
     </p>
 
@@ -351,11 +351,15 @@
       </figure>
         <figure class="print-figure">
           <img src="static/image/sample3.png" alt="sample3">
-          <figcaption>Wind: Shrouded, lithograph , 18.5 x 27.5cm</figcaption>
+          <figcaption>Track - 3, Etiching, 9 x 17cm</figcaption>
         </figure>
         <figure class="print-figure">
           <img src="static/image/sample4.png" alt="sample4">
-          <figcaption>Wind: Revealed, lithograph with a silkscreen-printed tracing paper overlay, 18.5 x 27.5cm</figcaption>
+          <figcaption>Track - 4, Etiching, 9 x 17cm</figcaption>
+        </figure>
+        <figure class="print-figure">
+          <img src="static/image/sample0.png" alt="sample4">
+          <figcaption>Track - Accordion Strip Codex, 9 x 17cm</figcaption>
         </figure>
 
   </section>
@@ -450,202 +454,29 @@
     <br>
     </p>
 
-    <div class="gallery-complex">
-      <!-- ====== 第一层：大图入口 row ====== -->
-      <div class="gallery-top-row">
-        <!-- 大图入口的模板 -->
-        <div class="top-item" data-target="groupA">
-          <img src="static/image/sun1.jpg" alt="Top A" />
-        </div>
-        <div class="top-item" data-target="groupB">
-          <img src="static/image/ocean1.jpg" alt="Top B" />
-        </div>
-        <div class="top-item" data-target="groupD">
-          <img src="static/image/rain1.jpg" alt="Top D" />
-        </div>
-        <div class="top-item" data-target="groupC">
-          <img src="static/image/embos1.jpg" alt="Top C" />
-        </div>
-        <div class="top-item" data-target="groupE">
-          <img src="static/image/bw7.jpg" alt="Top E" />
-        </div>
+    <div class="gallery-group active">
+
+      <!-- 第二层：图片池，类名要用 middle-item，整行可隐藏 -->
+      <div class="gallery-middle-row thumb-hidden" style="display:none">
+
+        <img class="middle-item active"
+            src="static/thumbs/jx1_tiny.png"     
+            data-full="static/image/jx1.png" alt="jx1">
+        <img class="middle-item"
+            src="static/thumbs/jx2_tiny.png"
+            data-full="static/image/jx2.png" alt="jx2">
+        <img class="middle-item"
+            src="static/thumbs/jx3_tiny.png"
+            data-full="static/image/jx3.png" alt="jx3">
       </div>
-    
-      <!-- ====== Gallery Groups ====== -->
-      <!-- 用循环生成以下结构，可以减少代码冗余 -->
-      <!-- ====== 1 ====== -->
-      <div id="groupA" class="gallery-group">
-        <div class="gallery-middle-row">
-          <div class="middle-item" data-index="0" data-full="static/image/sun1.jpg">
-            <img src="static/image/sun1.jpg" alt="A1_thumb" />
-          </div>
-          <div class="middle-item" data-index="1" data-full="static/image/sun2.jpg">
-            <img src="static/image/sun2.jpg" alt="A2_thumb" />
-          </div>
-          <div class="middle-item" data-index="2" data-full="static/image/sun3.jpg">
-            <img src="static/image/sun3.jpg" alt="A3_thumb" />
-          </div>
-          <div class="middle-item" data-index="3" data-full="static/image/sun4.jpg">
-            <img src="static/image/sun4.jpg" alt="A4_thumb" />
-          </div>
-          <div class="middle-item" data-index="4" data-full="static/image/sun5.jpg">
-            <img src="static/image/sun5.jpg" alt="A5_thumb" />
-          </div>
-          <div class="middle-item" data-index="4" data-full="static/image/sun6.jpg">
-            <img src="static/image/sun6.jpg" alt="A6_thumb" />
-          </div>
-          <div class="middle-item" data-index="4" data-full="static/image/sun7.jpg">
-            <img src="static/image/sun7.jpg" alt="A7_thumb" />
-          </div>
-          <div class="middle-item" data-index="4" data-full="static/image/sun8.jpg">
-            <img src="static/image/sun8.jpg" alt="A8thumb" />
-          </div>
-        </div>
-        <div class="gallery-bottom-row">
-          <button class="viewer-prev">&larr;</button>
-          <img class="viewer-large" src="" alt="Current Large Image" />
-          <button class="viewer-next">&rarr;</button>
-        </div>
+      <!-- 第三层：真正显示的大图，只要一张 -->
+      <div class="gallery-bottom-row">
+        <button class="viewer-prev">&#10094;</button>
+        <!-- 仅此一张！src 设成第一张大图，之后脚本会替换 -->
+        <img class="viewer-large" src="static/image/jx1.png" alt="viewer">
+        <button class="viewer-next">&#10095;</button>
       </div>
-      <!-- ====== 2 ====== -->
-      <div id="groupB" class="gallery-group">
-        <div class="gallery-middle-row">
-          <div class="middle-item" data-index="0" data-full="static/image/ocean1.jpg">
-            <img src="static/image/ocean1.jpg" alt="B1_thumb" />
-          </div>
-          <div class="middle-item" data-index="1" data-full="static/image/ocean2.jpg">
-            <img src="static/image/ocean2.jpg" alt="B2_thumb" />
-          </div>
-          <div class="middle-item" data-index="2" data-full="static/image/ocean3.jpg">
-            <img src="static/image/ocean3.jpg" alt="B3_thumb" />
-          </div>
-          <div class="middle-item" data-index="3" data-full="static/image/ocean4.jpg">
-            <img src="static/image/ocean4.jpg" alt="B4_thumb" />
-          </div>
-          <div class="middle-item" data-index="4" data-full="static/image/ocean5.jpg">
-            <img src="static/image/ocean5.jpg" alt="B5_thumb" />
-          </div>
-          <div class="middle-item" data-index="5" data-full="static/image/ocean6.jpg">
-            <img src="static/image/ocean6.jpg" alt="B6_thumb" />
-          </div>
-          <div class="middle-item" data-index="6" data-full="static/image/ocean7.jpg">
-            <img src="static/image/ocean7.jpg" alt="B7_thumb" />
-          </div>
-        </div>
-        <div class="gallery-bottom-row">
-          <button class="viewer-prev">&larr;</button>
-          <img class="viewer-large" src="" alt="Current Large Image" />
-          <button class="viewer-next">&rarr;</button>
-        </div>
-      </div>
-      <!-- ====== 3 ====== -->
-      <div id="groupC" class="gallery-group">
-        <div class="gallery-middle-row">
-          <div class="middle-item" data-index="0" data-full="static/image/embos1.jpg">
-            <img src="static/image/embos1.jpg" alt="C1_thumb" />
-          </div>
-          <div class="middle-item" data-index="1" data-full="static/image/embos2.jpg">
-            <img src="static/image/embos2.jpg" alt="C2_thumb" />
-          </div>
-          <div class="middle-item" data-index="2" data-full="static/image/embos3.jpg">
-            <img src="static/image/embos3.jpg" alt="C3_thumb" />
-          </div>
-          <div class="middle-item" data-index="3" data-full="static/image/embos4.jpg">
-            <img src="static/image/embos4.jpg" alt="C4_thumb" />
-          </div>
-          <div class="middle-item" data-index="4" data-full="static/image/embos5.jpg">
-            <img src="static/image/embos5.jpg" alt="C5_thumb" />
-          </div>
-          <div class="middle-item" data-index="5" data-full="static/image/embos6.jpg">
-            <img src="static/image/embos6.jpg" alt="C6_thumb" />
-          </div>
-          <div class="middle-item" data-index="6" data-full="static/image/embos7.jpg">
-            <img src="static/image/embos7.jpg" alt="C7_thumb" />
-          </div>
-          <div class="middle-item" data-index="7" data-full="static/image/wr1.jpg">
-            <img src="static/image/wr1.jpg" alt="C8_thumb" />
-          </div>
-          <div class="middle-item" data-index="8" data-full="static/image/wr2.jpg">
-            <img src="static/image/wr2.jpg" alt="C9_thumb" />
-          </div>
-          <div class="middle-item" data-index="9" data-full="static/image/wr3.jpg">
-            <img src="static/image/wr3.jpg" alt="C10_thumb" />
-          </div>
-          <div class="middle-item" data-index="10" data-full="static/image/wr4.jpg">
-            <img src="static/image/wr4.jpg" alt="C11_thumb" />
-          </div>
-        </div>
-        <div class="gallery-bottom-row">
-          <button class="viewer-prev">&larr;</button>
-          <img class="viewer-large" src="" alt="Current Large Image" />
-          <button class="viewer-next">&rarr;</button>
-        </div>
-      </div>
-      <!-- ====== 4 ====== -->
-      <div id="groupD" class="gallery-group">
-        <div class="gallery-middle-row">
-          <div class="middle-item" data-index="0" data-full="static/image/rain1.jpg">
-            <img src="static/image/rain1.jpg" alt="D1_thumb" />
-          </div>
-          <div class="middle-item" data-index="1" data-full="static/image/rain2.jpg">
-            <img src="static/image/rain2.jpg" alt="D2_thumb" />
-          </div>
-          <div class="middle-item" data-index="2" data-full="static/image/rain3.jpg">
-            <img src="static/image/rain3.jpg" alt="D3_thumb" />
-          </div>
-          <div class="middle-item" data-index="3" data-full="static/image/rain4.jpg">
-            <img src="static/image/rain4.jpg" alt="D4_thumb" />
-          </div>
-          <div class="middle-item" data-index="4" data-full="static/image/rain5.jpg">
-            <img src="static/image/rain5.jpg" alt="D5_thumb" />
-          </div>
-          <div class="middle-item" data-index="5" data-full="static/image/rain6.jpg">
-            <img src="static/image/rain6.jpg" alt="D6_thumb" />
-          </div>
-          <div class="middle-item" data-index="6" data-full="static/image/rain7.jpg">
-            <img src="static/image/rain7.jpg" alt="D7_thumb" />
-          </div>
-        </div>
-        <div class="gallery-bottom-row">
-          <button class="viewer-prev">&larr;</button>
-          <img class="viewer-large" src="" alt="Current Large Image" />
-          <button class="viewer-next">&rarr;</button>
-        </div>
-      </div>
-      <!-- ====== 5 ====== -->
-      <div id="groupE" class="gallery-group">
-        <div class="gallery-middle-row">
-          <div class="middle-item" data-index="0" data-full="static/image/bw7.jpg">
-            <img src="static/image/bw7.jpg" alt="E7_thumb" />
-          </div>
-          <div class="middle-item" data-index="1" data-full="static/image/bw1.jpg">
-            <img src="static/image/bw1.jpg" alt="E1_thumb" />
-          </div>
-          <div class="middle-item" data-index="2" data-full="static/image/bw2.jpg">
-            <img src="static/image/bw2.jpg" alt="E2_thumb" />
-          </div>
-          <div class="middle-item" data-index="3" data-full="static/image/bw3.jpg">
-            <img src="static/image/bw3.jpg" alt="E3_thumb" />
-          </div>
-          <div class="middle-item" data-index="4" data-full="static/image/bw4.jpg">
-            <img src="static/image/bw4.jpg" alt="E4_thumb" />
-          </div>
-          <div class="middle-item" data-index="5" data-full="static/image/bw5.jpg">
-            <img src="static/image/bw5.jpg" alt="E5_thumb" />
-          </div>
-          <div class="middle-item" data-index="6" data-full="static/image/bw6.jpg">
-            <img src="static/image/bw6.jpg" alt="E6_thumb" />
-          </div>
-          <div class="middle-item" data-index="7" data-full="static/image/bw9.jpg">
-            <img src="static/image/bw9.jpg" alt="E8_thumb" />
-          </div>
-        </div>
-        <div class="gallery-bottom-row">
-          <button class="viewer-prev">&larr;</button>
-          <img class="viewer-large" src="" alt="Current Large Image" />
-          <button class="viewer-next">&rarr;</button>
-        </div>
-      </div>
+      <figcaption>Gravity, 20 x 35cm</figcaption>
     </div>
 
 
@@ -679,7 +510,6 @@
   </div>
   
 </section>
-
 
   <!-- 二级页面 A) Process 界面 -->
   <section id="sectionA"  class="page-section">
@@ -780,6 +610,7 @@
     </div>
 
   </section>
+
   <!-- 二级页面 B) Critical Reflection 界面 -->
   <section id="sectionB"  class="page-section">
     <h3>Critical Reflection</h3>
@@ -975,6 +806,7 @@
     </p>
 
   </section>
+
   <!-- 二级页面 C) Course Contexts 界面 -->
   <section id="sectionC"  class="page-section">
     <h3>Course Contexts</h3>
@@ -1029,6 +861,7 @@
     
     </div>
   </section>
+
   <!-- 二级页面 D) Pop-up Show 界面 -->
   <section id="sectionD"  class="page-section">
     <h3>Pop-Up Show</h3>
@@ -1061,16 +894,21 @@
 <!-- 3) Unit2 Page -->
 <section id="Unit2" class="page-section" aria-labelledby="Unit2-title">
   <h2 id="Unit2-title">&gt; Unit 2</h2>
-
+  <br>
   <div class="unit-gallery" id="unitGallery">
     <figure class="anchor-21"  data-target="sectionE">
-      <img src="static/image/img160-3.png" alt="Process2">
+      <img src="static/image/2-3.png" alt="Process2">
       <figcaption><p>Process</p></figcaption>
     </figure>
 
     <figure class="anchor-22" data-target="sectionF">
-      <img src="static/image/img160-6.png" alt="Critical2">
+      <img src="static/image/2-2.png" alt="Critical2">
       <figcaption><p>Critical Reflection</p></figcaption>
+    </figure>
+
+        <figure class="anchor-33" data-target="sectionG">
+      <img src="static/image/2-1.png" alt="Context2">
+      <figcaption><p>Contexts</p></figcaption>
     </figure>
 
   </div>
@@ -1090,19 +928,19 @@
     <div class="p2-gallery">
       <figure>
         <img src="static/image/sketch1.jpg" data-full="static/image/sketch1.jpg" alt="P1">
-        <figcaption>Linoleum Print with Peel-Away Layer</figcaption>
+        <figcaption>Sketch</figcaption>
       </figure>
       <figure>
         <img src="static/image/sketch2.jpg" data-full="static/image/sketch2.jpg" alt="P2">
-        <figcaption>The Roc Soaring Beyond the Skies</figcaption>
+        <figcaption>Sketch</figcaption>
       </figure>
       <figure>
         <img src="static/image/sketch3.jpg" data-full="static/image/sketch3.jpg" alt="P3">
-        <figcaption>Crawling Sound Array in Screen Print</figcaption>
+        <figcaption>Sketch</figcaption>
       </figure>
       <figure>
         <img src="static/image/sketch4.jpg" data-full="static/image/sketch4.jpg" alt="P3">
-        <figcaption>Sound-Exploding Mono Print on Tracing Paper</figcaption>
+        <figcaption>Sketch</figcaption>
       </figure>
     </div>
 
@@ -1124,14 +962,31 @@
     <br>Formally, I’m working on translating those rhythms and textures of sound into visual structures—through repetition, interruption, and fragmentation in the composition.<br>
 
     <br>Some of the animals barking frequencies are converted into waveform drawings, then printed using etching or screenprint techniques, turning sound into something tactile: noise as trace, voice as mark.<br>
-
-    <br>I’m also experimenting with layering these sound-based forms to create visual fields that function almost like sonic topographies—each layer becoming a kind of auditory cross-section of a space.<br>
-    <br>
     </p>
+    <div class="p-gallery">
+    <figure>
+      <img src="static/image/p2.png" data-full="static/image/p2.png" alt="p2">
+      <figcaption>Mono Color Demo</figcaption>
+    </figure>
+    <figure>
+      <img src="static/image/p3.png" data-full="static/image/p3.png" alt="p3">
+      <figcaption>Mono Color Demo</figcaption>
+    </figure>
+    </div>
+    <p>
+    <br>I’m also experimenting with layering these sound-based forms to create visual fields that function almost like sonic topographies—each layer becoming a kind of auditory cross-section of a space.<br>
+    </p>
+    <br>
+    <div class="p-gallery">
+    <figure>
+      <img src="static/image/p1.png" data-full="static/image/p1.png" alt="p1">
+      <figcaption>Relief Demo</figcaption>
+    </figure>
+    </div>
 
   </section>
 
-  <!-- 二级页面 F) Critical Reflection 界面 -->
+  <!-- 二级页面 F) Critical Reflection2 界面 -->
   <section id="sectionF"  class="page-section">
     <h3>Critical Reflection</h3>
     <h4 class="subtitle">(Unit 2)</h4>
@@ -1325,6 +1180,61 @@
       <br>
     </p>
 
+  </section>
+  
+    <!-- 二级页面 G) Contexts2 界面 -->
+  <section id="sectionG"  class="page-section">
+    <h3>Contexts</h3>
+    <h4 class="subtitle">(Unit 2)</h4>
+
+    <div class="content-list">
+      <!-- 第1条：图在左、文字在右 -->
+      <br>
+      <div class="content-item">
+        <div class="item-image">
+          <figure>
+            <img src="static/image/SK1.jpg" alt="SK1" data-full="static/image/SK1.jpg">
+            <figcaption>Steffi Klenz,<br>Installation view of the series Tensed Muscles, <br>Hand-drawn coloured pencil drawing on plywood<br>with collaged C-Type prints, 2021<br>Image courtesy of Sid Motion Gallery and the artist.<br>Photo by Andy Keate, 2021</figcaption>
+          </figure>
+        </div>
+        <div class="item-text">
+          <p>
+            My first lecture at Camberwell was given by Steffi Klenz, an artist who combines “social photography” with data-based approaches. I found her formal compositions highly engaging. I often wonder: how can we get viewers to spend more time gazing at a single image? Or, to invert the question, why do I myself linger on certain images? To me, painting is fundamentally driven by visuals—structure, color, texture, and tangible qualities are all decisive factors in holding the viewer’s attention. I have always felt my work lacks a sense of design and compositional rigor, and Steffi’s interplay of points, lines, and planes adds a strong “formal beauty” to her images. She also stressed that her work is very basic in its focus on “communication” and “language,” referencing Freud’s idea that the body speaks. Meanwhile, I recall Wolfgang Tillmans mentioning in a past lecture that “I guess when one talks about art and making art it is by nature language driven. But visual art is not primarily driven by language and there is a dichotomy in that when one is, on the one hand, constantly forced to talk about it, and language seems to favor ideas, and, on the other hand, one also shouldn’t blindly follow any idea that comes to mind. It’s a difficult equilibrium.” <br><br>
+          </p>
+        </div>
+      </div>
+      <!-- 第2条：图在右、文字在左 -->
+      <div class="content-item reverse">
+        <div class="item-image">
+          <figure>
+            <img src="static/image/JL.jpg" alt="JL" data-full="static/image/JL.jpg">
+            <figcaption>Johanna Love, Der Engel Schwieg, <br>installation, laser etching with graphite and ink on paper,<br>individual paper sheets 120cm x 80cm,<br>installation sizes variable</figcaption>
+          </figure>
+        </div>
+        <div class="item-text">
+          <p>
+            Steffi Klenz highlighted the concept of “visual language,” and in her own work seeks a balance between natural language and the visual realm. Whether a piece is abstract or figurative, the final output is always figurative in some sense. Upon seeing it, viewers instinctively resort to “natural language” to identify the subject: “What is this? Why is it depicted in this way?” This relates to the issue of “information load.” If an artwork contains too much information, viewers may identify it in an instant and lose interest. If it contains too little, they might either dismiss it immediately or pause to repeatedly confirm their perceptions. For a creator aiming to resonate with the right audience, the second scenario is often more desirable.
+            Susan Sontag, in her essay Against Interpretation, notes that form and content in an artwork should not be separated, as over-interpretation can obscure the piece’s true essence. This mirrors the questions I contemplated during Johanna Love’s lecture and tutorials: How does one handle the amount of content in an artwork? The dust research creates a lot of content,, while I often find myself torn between pursuing an aesthetic framework or a cognitive one in my own practice.<br><br>
+          </p>
+        </div>
+      </div>
+      <!-- 第3条：图在左、文字在右 -->
+      <div class="content-item">
+        <div class="item-image">
+          <figure>
+            <img src="static/image/AB1.png" alt="AB1" data-full="static/image/AB1.png">
+            <figcaption>Anna Barriball, Afterimage, Pastel, wax, paper,<br>graphite powder, Series of seven drawings,<br>22 x 15.4 cm / 8 5/8 x 6 in (unframed) each, 2021</figcaption>
+          </figure>
+        </div>
+        <div class="item-text">
+          <p>
+            Anna Barriballz’s explorations with various media expanded my perspective considerably. She values the physicality of materials and the aspect of time spent observing them. This made me reflect on how my images might convey these qualities. I was particularly struck by her “After Image” series. I like the feeling of holding a small piece work in one’s hand, and especially the layering of multiple levels of her works. In that series, each underlying graphite drawing becomes more visible with every layer of transparency, reflecting a focus on the drawing process, the materials, the interplay of light and darkness, and an awareness of space and time—all without emphasizing a specific “theme.”
+            I also spent some time experimenting with transparent layers in my own imagery, although I tend to lean toward a more interactive, comic-like style. And those research works don't do a good job of showing the end result. Still, may there is no single standard for how to approach media and imagery; it is an ongoing journey of exploration and revision. At the same time, I hope to avoid “ineffective thinking” and ensure that each attempt contributes to a deeper understanding of imagery and materials.
+          </p>
+        </div>
+      </div>
+    
+    </div>
   </section>
 
 <!-- 5) About page (不默认显示) -->

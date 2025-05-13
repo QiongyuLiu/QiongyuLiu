@@ -135,7 +135,7 @@ body {
   margin-top: 0.4rem;
   padding: 1.5rem;
   flex: 1;
-  max-width: 1300px;
+  max-width: 1400px;
 }
 
 /* ========== PAGE SECTIONS (通用隐藏+激活) ========== */
@@ -207,7 +207,7 @@ body {
   display: block;
   height: auto;
   max-width: 600px;
-  border-radius: 4px;
+  border-radius: 15px;
   border: 1px solid #ccc;
   cursor: pointer;
   object-fit: contain;
@@ -242,7 +242,7 @@ body {
   border-radius: 15px;
 }
 
-/* Unit-1 入口画廊 · 精简并列四图 */
+/* Unit 入口画廊 · 精简并列四图 */
 .unit-gallery{
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 四列平均占位 */
