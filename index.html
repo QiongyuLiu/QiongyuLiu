@@ -22,7 +22,7 @@
       <li data-target="Gallery">Gallery</li>
       <li data-target="Unit1">Unit 1</li>
       <li data-target="Unit2">Unit 2</li>
-      <li data-target="about">Artist Statement</li>
+      <li data-target="about">About</li>
     </ul>
 
     <div class="social">
@@ -44,7 +44,7 @@
 <!-- ===== 主内容区域 (main) ===== -->
 <main class="main-content">
 
-<!-- 1) Landing Page --> 
+<!-- 0) Landing Page --> 
 <section id="landing" class="page-section active" aria-labelledby="landing-title">
   <!-- 这里放你想展示的一堆图 -->
   <div class="gallery">
@@ -60,71 +60,73 @@
   </div>
 </section>
 
+
+
 <!-- 1) Gallery Page --> 
-  <section id="Gallery" class="page-section" aria-labelledby="Gallery-title">
-    <h2>&gt; Sequential Series</h2>
+<section id="Gallery" class="page-section" aria-labelledby="Gallery-title">
+  <h2>&gt; Sequential Series</h2>
 
-    <!-- 缩略图1 -->
-    <div class="button" id="illus-series-gallery">
-      <figure>
-        <img src="static/image/series tittle.jpg" alt="Series 1" data-target="Gallery-series-1">
-        <figcaption>
-          <p>【Unit 1】&nbsp;&nbsp;Track</p>
-          <h4 class="subtitle">(ongoing) Digital Painting, Photopolymer Gravure</h4>
-        </figcaption>
-      </figure>
-      <figure>
-      <img src="static/image/series tittle1.jpg" alt="Series 4" data-target="Gallery-series-4">
+  <!-- 缩略图1 -->
+  <div class="button" id="illus-series-gallery">
+    <figure>
+      <img src="static/image/series tittle.jpg" alt="Series 1" data-target="Gallery-series-1">
       <figcaption>
-        <p>【Unit 2】&nbsp;&nbsp;Gravity of Fallen</p>
-        <h4 class="subtitle">(ongoing) Digital Painting, Screen Photo Etching</h4>
+        <p>【Unit 1】&nbsp;&nbsp;Track</p>
+        <h4 class="subtitle">(ongoing) Digital Painting, Photopolymer Gravure</h4>
       </figcaption>
-      </figure>
-      <!-- 缩略图2 --><br>
-      <figure>
-        <img src="static/image/series tittle2.jpg" alt="Series 2" data-target="Gallery-series-2">
-        <figcaption>
-          <p>Back Home</p>
-          <h4 class="subtitle">Mixed-media</h4>
-        </figcaption>
-      </figure>
-        <!-- 缩略图3 -->
-      <figure>
-        <img src="static/image/step1.jpg" alt="Series 3" data-target="Gallery-series-3">
-        <figcaption>
-          <p>Step-bite practice</p>
-          <h4 class="subtitle">Etching and Pastel</h4>
-        </figcaption>
-      </figure>
-    </div>
+    </figure>
+    <figure>
+    <img src="static/image/series tittle1.jpg" alt="Series 4" data-target="Gallery-series-4">
+    <figcaption>
+      <p>【Unit 2】&nbsp;&nbsp;Gravity of Fallen</p>
+      <h4 class="subtitle">(ongoing) Digital Painting, Screen Photo Etching</h4>
+    </figcaption>
+    </figure>
+    <!-- 缩略图2 --><br>
+    <figure>
+      <img src="static/image/series tittle2.jpg" alt="Series 2" data-target="Gallery-series-2">
+      <figcaption>
+        <p>Back Home</p>
+        <h4 class="subtitle">Mixed-media</h4>
+      </figcaption>
+    </figure>
+      <!-- 缩略图3 -->
+    <figure>
+      <img src="static/image/step1.jpg" alt="Series 3" data-target="Gallery-series-3">
+      <figcaption>
+        <p>Step-bite practice</p>
+        <h4 class="subtitle">Etching and Pastel</h4>
+      </figcaption>
+    </figure>
+  </div>
 
-  <!-- 你可以继续添加更多系列 -->
-    
-    <h2 id="single-pieces-title">&gt; Miscellaneous</h2>
-    <h4 class="subtitle">Exploration and Experimentation with Different Printmaking Mediums</h4>
-    <div class="gallery single-pieces-gallery">
+<!-- 你可以继续添加更多系列 -->
+  
+  <h2 id="single-pieces-title">&gt; Miscellaneous</h2>
+  <h4 class="subtitle">Exploration and Experimentation with Different Printmaking Mediums</h4>
+  <div class="gallery single-pieces-gallery">
+    <figure class="print-figure">
+      <img src="static/image/long.jpg" alt="long">
+      <figcaption>Howling Waves, monoprint and pigment powder, 29 x 42cm</figcaption>
+    </figure>
+    <figure class="print-figure">
+      <img src="static/image/mono1.jpg" alt="mono1">
+      <figcaption>Melt, monoprint,  29 x 42cm</figcaption>
+    </figure>
       <figure class="print-figure">
-        <img src="static/image/long.jpg" alt="long">
-        <figcaption>Howling Waves, monoprint and pigment powder, 29 x 42cm</figcaption>
+        <img src="static/image/W1.jpg" alt="W1">
+        <figcaption>Wind: Shrouded, lithograph , 18.5 x 27.5cm</figcaption>
       </figure>
       <figure class="print-figure">
-        <img src="static/image/mono1.jpg" alt="mono1">
-        <figcaption>Melt, monoprint,  29 x 42cm</figcaption>
+        <img src="static/image/W2.jpg" alt="W2">
+        <figcaption>Wind: Revealed, lithograph with a silkscreen-printed tracing paper overlay, 18.5 x 27.5cm</figcaption>
       </figure>
-        <figure class="print-figure">
-          <img src="static/image/W1.jpg" alt="W1">
-          <figcaption>Wind: Shrouded, lithograph , 18.5 x 27.5cm</figcaption>
-        </figure>
-        <figure class="print-figure">
-          <img src="static/image/W2.jpg" alt="W2">
-          <figcaption>Wind: Revealed, lithograph with a silkscreen-printed tracing paper overlay, 18.5 x 27.5cm</figcaption>
-        </figure>
-        
-      <!-- 更多图... -->
-    </div>
-    
+      
+    <!-- 更多图... -->
+  </div>
+  
 
-  </section>
+</section>
 
   <!-- 二级页面 A：Series 1 的详细页面 -->
   <section id="Gallery-series-1" class="page-section" aria-labelledby="series1-title">
@@ -444,7 +446,7 @@
     </div>  
   </section> 
 
-    <!-- 二级页面 A：Series 4 的详细页面 -->
+    <!-- 二级页面 D：Series 4 的详细页面 -->
   <section id="Gallery-series-4" class="page-section" aria-labelledby="series1-title">
     <h3>Gravity of Fallen 【Unit 2】</h3>
     <h4 class="subtitle">(ongoing) Digital Painting, Screen Photo Etching</h4>
@@ -484,6 +486,7 @@
   </section>
 
 
+
 <!-- 2) Unit1 Page -->
 <section id="Unit1" class="page-section" aria-labelledby="unit-title">
   <h2 id="Unit1-title">&gt; Unit 1</h2>
@@ -504,8 +507,8 @@
     </figure>
 
     <figure class="anchor-center" data-target="sectionD">
-      <img src="static/image/1-4.png" alt="Pop-up">
-      <figcaption><p>Pop-up Show</p></figcaption>
+      <img src="static/image/1-4.png" alt="Statement">
+      <figcaption><p>Artist Statement</p></figcaption>
     </figure>
   </div>
 
@@ -657,6 +660,30 @@
         <figcaption>Over etching & Big ground</figcaption>
       </figure>
     </div>
+
+    <h3><br>&gt; Pop-Up Show</h3>
+    <br>
+    <div class="p-gallery">
+      <img src="static/image/1.jpg" data-full="static/image/1.jpg" alt="S1">
+      <img src="static/image/2.jpg" data-full="static/image/2.jpg" alt="S2">
+      <img src="static/image/4.jpg" data-full="static/image/4.jpg" alt="S4">
+      <img src="static/image/3.jpg" data-full="static/image/3.jpg" alt="S3">
+    </div> 
+  
+    <p>
+      <br>
+      During this process, I discovered many meaningful ways to communicate and exchange ideas. I received a variety of comments on my artwork.<br>
+      <br>The tech teachers provided valuable insights and suggestions regarding the handling of visuals, while my classmates gathered to discuss the amount of information within the compositions and their final structures.<br>
+      <br>I truly enjoyed hearing viewers speculate whether the visuals were related to the audio tracks, as well as their interpretations of the artwork's themes.<br>
+      <br>My work represents "sound," and simultaneously, I received many different “voices” from the audience. This, I believe, is precisely what I hoped to achieve.<br>
+      
+      <br>During the exhibition, Jo and Leo shared their perspectives on displaying, curating, and selecting my work. Their input taught me a great deal, as I had almost no prior knowledge in this area. I also came to realize how crucial the presentation of an exhibition is for delivering an intended experience to the audience—something that cannot be ignored.<br>
+      
+      <br>My smaller pieces were displayed on different walls and in various areas, which, I believe, successfully conveyed the sense of spatiality I aimed for.<br>
+      
+      <br>In another instance, I combined one of my artworks with a classmate’s fabric project and hid it in a separate space. It served as a small interaction and was somehow fun to explore.
+      <br>
+    </p>
 
   </section>
 
@@ -911,34 +938,21 @@
     </div>
   </section>
 
-  <!-- 二级页面 D) Pop-up Show 界面 -->
-  <section id="sectionD"  class="page-section">
-    <h3>Pop-Up Show</h3>
-    <h4 class="subtitle">【Unit 1】&nbsp;&nbsp;Studio</h4>
-    <br>
-    <div class="p-gallery">
-      <img src="static/image/1.jpg" data-full="static/image/1.jpg" alt="S1">
-      <img src="static/image/2.jpg" data-full="static/image/2.jpg" alt="S2">
-      <img src="static/image/4.jpg" data-full="static/image/4.jpg" alt="S4">
-      <img src="static/image/3.jpg" data-full="static/image/3.jpg" alt="S3">
-    </div> 
-  
-    <p>
-      <br>
-      During this process, I discovered many meaningful ways to communicate and exchange ideas. I received a variety of comments on my artwork.<br>
-      <br>The tech teachers provided valuable insights and suggestions regarding the handling of visuals, while my classmates gathered to discuss the amount of information within the compositions and their final structures.<br>
-      <br>I truly enjoyed hearing viewers speculate whether the visuals were related to the audio tracks, as well as their interpretations of the artwork's themes.<br>
-      <br>My work represents "sound," and simultaneously, I received many different “voices” from the audience. This, I believe, is precisely what I hoped to achieve.<br>
-      
-      <br>During the exhibition, Jo and Leo shared their perspectives on displaying, curating, and selecting my work. Their input taught me a great deal, as I had almost no prior knowledge in this area. I also came to realize how crucial the presentation of an exhibition is for delivering an intended experience to the audience—something that cannot be ignored.<br>
-      
-      <br>My smaller pieces were displayed on different walls and in various areas, which, I believe, successfully conveyed the sense of spatiality I aimed for.<br>
-      
-      <br>In another instance, I combined one of my artworks with a classmate’s fabric project and hid it in a separate space. It served as a small interaction and was somehow fun to explore.
-      <br>
+  <!-- 二级页面 D) Statement 界面 -->
+  <section id="sectionD" class="page-section">
+    <br><br>
+    <img src="static/image/head.png" alt="Portrait" class="about-portrait" data-full="static/image/head.png">
+    <p><br>
+      <br>Deeply interested in nature, religion, and Folklore, exploring the connection between humanity and the world in the Anthropocene era.
+      <br>On the one hand, about self-satisfaction - finding a connection to the world as a small individual. On the other hand, it is about imagining a future of coexistence. Nature feels like an anchor for humanity, and perhaps this perceived difference is itself a form of connection.
+      <br>My work revolves around my current state of life and my perception of nature.<br>
+      <br>Drawn to stories of coexistence where each life is both small and significant, revealing the intrinsic patterns and mysteries of life. Open to hearing and sharing stories, and always will be.<br>
+      <br>Striving to explore honest emotions, to discuss the raw self—exposing the red flesh beneath the skin, pressed onto a glass slide. Aspiring to carve entire universes onto the tip of a feather.
+      <br>Balancing different forms of expression as a cartoonist, illustrator, and printmaker, seeking harmony between narrative and expression.<br>
     </p>
-
   </section>
+
+
 
 <!-- 3) Unit2 Page -->
 <section id="Unit2" class="page-section" aria-labelledby="Unit2-title">
@@ -955,9 +969,14 @@
       <figcaption><p>Critical Reflection</p></figcaption>
     </figure>
 
-        <figure class="anchor-33" data-target="sectionG">
+    <figure class="anchor-33" data-target="sectionG">
       <img src="static/image/2-1.png" alt="Context2">
       <figcaption><p>Contexts</p></figcaption>
+    </figure>
+
+    <figure class="anchor-33" data-target="sectionH">
+      <img src="static/image/2-1.png" alt="Statement2">
+      <figcaption><p>Artist Statement</p></figcaption>
     </figure>
 
   </div>
@@ -1038,7 +1057,7 @@
   <!-- 二级页面 F) Critical Reflection2 界面 -->
   <section id="sectionF"  class="page-section">
     <h3>Critical Reflection</h3>
-    <h4 class="subtitle">(Unit 2)</h4>
+    <h4 class="subtitle">【Unit 2】</h4>
 
     <h3><br>&gt; Digesting Presence:</h3>
     <p>
@@ -1200,7 +1219,7 @@
 
   </section>
   
-    <!-- 二级页面 G) Contexts2 界面 -->
+  <!-- 二级页面 G) Contexts2 界面 -->
   <section id="sectionG"  class="page-section">
     <h3>Contexts</h3>
     <h4 class="subtitle">(Unit 2)</h4>
@@ -1255,20 +1274,35 @@
     </div>
   </section>
 
-<!-- 5) About page (不默认显示) -->
+  <!-- 二级页面 H) Statement 界面 -->
+  <section id="sectionH" class="page-section" aria-labelledby="about-title">
+    <br><br>
+    <img src="static/image/head.png" alt="Portrait" class="about-portrait" data-full="static/image/head.png">
+    <p class="about-text"><br>
+      <br>Liu Qiongyu<br>
+      <br>Deeply interested in nature, religion, and Folklore, exploring the connection between humanity and the world in the Anthropocene era.
+      <br>On the one hand, about self-satisfaction - finding a connection to the world as a small individual. On the other hand, it is about imagining a future of coexistence. Nature feels like an anchor for humanity, and perhaps this perceived difference is itself a form of connection.
+      <br>My work revolves around my current state of life and my perception of nature.<br>
+      <br>Drawn to stories of coexistence where each life is both small and significant, revealing the intrinsic patterns and mysteries of life. Open to hearing and sharing stories, and always will be.<br>
+      <br>Striving to explore honest emotions, to discuss the raw self—exposing the red flesh beneath the skin, pressed onto a glass slide. Aspiring to carve entire universes onto the tip of a feather.
+      <br>Balancing different forms of expression as a cartoonist, illustrator, and printmaker, seeking harmony between narrative and expression.<br>
+    </p>
+  </section>
+
+
+
+<!-- 4) About page (不默认显示) -->
 <section id="about" class="page-section" aria-labelledby="about-title">
   <br><br>
   <img src="static/image/head.png" alt="Portrait" class="about-portrait" data-full="static/image/head.png">
   <p class="about-text"><br>
     <br>Liu Qiongyu<br>
-    <br>Deeply interested in nature, religion, and Folklore, exploring the connection between humanity and the world in the Anthropocene era.
-    <br>On the one hand, about self-satisfaction - finding a connection to the world as a small individual. On the other hand, it is about imagining a future of coexistence. Nature feels like an anchor for humanity, and perhaps this perceived difference is itself a form of connection.
-    <br>My work revolves around my current state of life and my perception of nature.<br>
-    <br>Drawn to stories of coexistence where each life is both small and significant, revealing the intrinsic patterns and mysteries of life. Open to hearing and sharing stories, and always will be.<br>
-    <br>Striving to explore honest emotions, to discuss the raw self—exposing the red flesh beneath the skin, pressed onto a glass slide. Aspiring to carve entire universes onto the tip of a feather.
-    <br>Balancing different forms of expression as a cartoonist, illustrator, and printmaker, seeking harmony between narrative and expression.<br>
+    <br><br>
+    <br>Printmaker, illustrator, Cartoonist, and enthusiast of various genres of narratives.<br>
+    <br>Is open to hearing stories and always will be.<br>
   </p>
 </section>
+
 
   </main> <!-- end .main-content -->
 
