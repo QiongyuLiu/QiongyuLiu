@@ -167,8 +167,8 @@ body {
   color: #515151 !important;
 }
 .page-section h2 {
-  font-size: 2.1rem;
-  font-weight: 500;
+  font-size: 2.15rem;
+  font-weight: 530;
   font-family: 'Cargo3', sans-serif;
   margin-bottom: 0.75rem;
   line-height: 1.3;
@@ -185,7 +185,6 @@ body {
   font-size: 0.93rem;
   color: #AAA;
   font-weight: 100;
-  margin-top: -0.45rem;
 }
 .page-section p {
   font-size: 1.5rem;
@@ -233,7 +232,7 @@ body {
   object-fit: cover; 
 }
 #single-pieces-title {
-  margin-top: 3rem;
+  margin-top: 5rem;
 }
 .single-pieces-gallery {
   margin-top: 1.5rem;

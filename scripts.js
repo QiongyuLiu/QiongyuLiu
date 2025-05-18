@@ -18,7 +18,7 @@ const lightboxClose   = document.getElementById('lightboxClose');
 const lightboxPrev    = document.getElementById('lightboxPrev');
 const lightboxNext    = document.getElementById('lightboxNext');
 
-// Practice 二级返回按钮
+// Gallery 二级返回按钮
 const btnBackSeries1 = document.getElementById('btnBackSeries1');
 const btnBackSeries2 = document.getElementById('btnBackSeries2');
 
@@ -49,7 +49,7 @@ window.addEventListener('beforeunload',   savePageState);
 /* ========== 0.1) 子页 Back / Next 逻辑 ======= */
 const subGroups = {
   Unit1   : ['sectionA','sectionB','sectionC','sectionD'],
-  Practice: ['Practice-series-1','Practice-series-2','Practice-series-3']
+  Gallery: ['Gallery-series-1','Gallery-series-2','Gallery-series-3']
 };
 function getCurrentGroupId(sectionId){
   for(const key in subGroups){
@@ -219,20 +219,20 @@ document.querySelectorAll('.gallery-group').forEach(group=>{
 });
 
 /***********************************************/
-/* ========== 4) Practice 缩略图->二级 ========== */
+/* ========== 4) Gallery 缩略图->二级 ========== */
 function handleBackButton(currentId, targetId){
   document.getElementById(currentId)?.classList.remove('active');
   document.getElementById(targetId)?.classList.add('active');
   savePageState();
   updateSubNav();
 }
-btnBackSeries1?.addEventListener('click', ()=>handleBackButton('Practice-series-1','Practice'));
-btnBackSeries2?.addEventListener('click', ()=>handleBackButton('Practice-series-2','Practice'));
+btnBackSeries1?.addEventListener('click', ()=>handleBackButton('Gallery-series-1','Gallery'));
+btnBackSeries2?.addEventListener('click', ()=>handleBackButton('Gallery-series-2','Gallery'));
 
 document.querySelectorAll('#illus-series-gallery img').forEach(img=>{
   img.addEventListener('click', ()=>{
     const targetId = img.dataset.target;
-    if(targetId) handleBackButton('Practice', targetId);
+    if(targetId) handleBackButton('Gallery', targetId);
   });
 });
 
@@ -256,3 +256,5 @@ document.querySelectorAll('#unitGallery figure').forEach(fig=>{
     updateSubNav();
   });
 });
+
+
