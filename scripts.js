@@ -1,14 +1,18 @@
 /***********************************************/
-/* ========= 0) 工具：统一回到页面顶部 ========= */
+/* ========= 0) 工具：统一回到页面顶部 ========= *
+ * 等待一帧，让浏览器先完成布局再跳转，         *
+ * 避免元素高度骤变后又把滚动条推回下方。       */
 function scrollToTop () {
-  /* 1. 视窗本身 */
-  window.scrollTo(0, 0);
-  /* 2. 某些浏览器写到 documentElement 才生效 */
-  document.documentElement.scrollTop = 0;
-  document.body.scrollTop           = 0;
-  /* 3. 如果主区域被设置为可滚动容器，也一并归零 */
-  const mc = document.querySelector('.main-content');
-  if (mc) mc.scrollTop = 0;
+  requestAnimationFrame(() => {
+    /* 1. 视窗本身 */
+    window.scrollTo(0, 0);
+    /* 2. 兼容各类浏览器 */
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop           = 0;
+    /* 3. 若主区域被设为可滚动容器，也归零 */
+    const mc = document.querySelector('.main-content');
+    if (mc) mc.scrollTop = 0;
+  });
 }
 
 /***********************************************/
@@ -33,11 +37,10 @@ const lightboxNext    = document.getElementById('lightboxNext');
 function savePageState () {
   const activeSection = document.querySelector('.page-section.active');
   if (activeSection) sessionStorage.setItem('activeSectionId', activeSection.id);
-  sessionStorage.setItem('scrollY', window.scrollY);
+  sessionStorage.setItem('scrollY', 0);           // 始终存 0，确保刷新后也在顶部
 }
 function restorePageState () {
   const storedId = sessionStorage.getItem('activeSectionId');
-  const storedY  = sessionStorage.getItem('scrollY');
   if (storedId) {
     navItems.forEach(n => n.classList.remove('active'));
     pages.forEach(p => p.classList.remove('active'));
@@ -45,7 +48,8 @@ function restorePageState () {
     document.querySelector(`#navList li[data-target="${storedId}"]`)?.classList.add('active');
     printsNav?.classList.toggle('active', storedId === 'prints-zine');
   }
-  if (storedY !== null) window.scrollTo(0, parseInt(storedY, 10));
+  /* 直接回到顶部，避免加载时位置错乱 */
+  scrollToTop();
   updateSubNav();
 }
 window.addEventListener('DOMContentLoaded', restorePageState);
@@ -59,9 +63,7 @@ const subGroups = {
   Unit2  : ['sectionE', 'sectionF', 'sectionG', 'sectionH'],
 };
 function getCurrentGroupId (sectionId) {
-  for (const key in subGroups) {
-    if (subGroups[key].includes(sectionId)) return key;
-  }
+  for (const key in subGroups) if (subGroups[key].includes(sectionId)) return key;
   return null;
 }
 function updateSubNav () {
@@ -76,8 +78,8 @@ function navigateSub (delta) {
   if (!gid) return;
   const arr = subGroups[gid];
   const idx = arr.indexOf(active.id);
-  const nextIdx   = (idx + delta + arr.length) % arr.length;
-  const targetId  = arr[nextIdx];
+  const nextIdx  = (idx + delta + arr.length) % arr.length;
+  const targetId = arr[nextIdx];
 
   pages.forEach(p => p.classList.remove('active'));
   document.getElementById(targetId)?.classList.add('active');
