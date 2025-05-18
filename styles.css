@@ -157,7 +157,7 @@ body {
   display: flex; /* active 时变成 flex */
 }
 .about-portrait {
-  width: 200px;
+  width: 300px;
   height: auto;
   border-radius: 15px;
 }

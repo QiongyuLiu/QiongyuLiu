@@ -12,3 +12,7 @@ src="$1?width=400&quality=60&format=webp"
 src="([^"]+?\.png)"
 全部替换成
 src="$1?width=400&quality=60&format=webp"
+
+<img([^>]*?)>
+全部替换成
+<img$1 loading="lazy">
