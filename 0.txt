@@ -1,0 +1,14 @@
+src="static/image/
+全部替换成
+src="https://cdn.jsdelivr.net/gh/QiongyuLiu/QiongyuLiu@main/static/image/
+
+
+（搜索框选择 .* 按钮启用正则）
+
+src="([^"]+?\.jpg)"
+全部替换成
+src="$1?width=400&quality=60&format=webp"
+
+src="([^"]+?\.png)"
+全部替换成
+src="$1?width=400&quality=60&format=webp"
