@@ -1,5 +1,8 @@
 name: auto-webp
 
+permissions:          # ← 新增
+  contents: write     # ← 新增，给 GITHUB_TOKEN 写入 repo 的权力
+  
 on:                       # 任何推送都会触发，也可手点 Run workflow
   push:
     branches: [ main ]    # 改成你 Pages 用的分支
