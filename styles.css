@@ -383,20 +383,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
-.p2-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; 
-  align-items: center; 
-  gap: 1rem; 
-}
-.p2-gallery img {
-  max-width: 230px; 
-  height: auto; 
-  border-radius: 15px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-}
+
 
 /* ========== VIDEO WRAPPER ========== */
 .video-wrapper {
