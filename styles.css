@@ -398,6 +398,38 @@ body {
   cursor: pointer;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: center;  /* 水平居中 */
+}
+.p2-gallery {
+  display: grid;
+  grid-template-columns: 0fr 1fr;     /* 左边列宽是右边两倍 */
+  grid-template-rows: auto auto;     /* 两行高度自适应 */
+  gap: 1rem;                         /* 图片间距，根据需要调整 */
+}
+.p2-gallery img {
+  max-width: 500px; 
+  height: auto; 
+  border-radius: 15px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+/* 第一张图 占左侧两行 */
+.p2-gallery figure:nth-child(1) {
+  grid-column: 1;        /* 第 1 列 */
+  grid-row: 1 / span 2;  /* 从第 1 行开始，跨 2 行 */
+}
+/* 第二张图 放右上角 */
+.p2-gallery figure:nth-child(2) {
+  grid-column: 2;        /* 第 2 列 */
+  grid-row: 1;           /* 第 1 行 */
+}
+/* 第三张图 放右下角 */
+.p2-gallery figure:nth-child(3) {
+  grid-column: 2;        /* 第 2 列 */
+  grid-row: 2;           /* 第 2 行 */
+}
 
 /* ========== VIDEO WRAPPER ========== */
 .video-wrapper {
