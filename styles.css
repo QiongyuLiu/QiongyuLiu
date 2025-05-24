@@ -207,7 +207,21 @@ body {
   height: auto;
   max-width: 600px;
   border-radius: 15px;
-  border: 1px solid #ccc;
+  cursor: pointer;
+  object-fit: contain;
+}
+.gallery-2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-top: 1.5rem; 
+}
+.gallery-2 img {
+  display: block;
+  height: auto;
+  max-width: 290px;
+  border-radius: 15px;
   cursor: pointer;
   object-fit: contain;
 }
