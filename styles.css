@@ -210,14 +210,14 @@ body {
   cursor: pointer;
   object-fit: contain;
 }
-.gallery-2 {
+.haofan {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
   align-items: flex-start;
   margin-top: 1.5rem; 
 }
-.gallery-2 img {
+.haofan img {
   display: block;
   height: auto;
   max-width: 290px;
