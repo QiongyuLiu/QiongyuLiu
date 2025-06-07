@@ -84,7 +84,6 @@ body {
 .nav-list li {
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
-  font-family: 'Cargo3';
   cursor: pointer;
   color: #515151;
   transition: color 0.2s ease;

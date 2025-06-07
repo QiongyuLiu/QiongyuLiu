@@ -1,15 +1,22 @@
+/* =============================================
+   Qiongyu (Quoine) Liu – portfolio site script
+   ---------------------------------------------
+   • Vanilla‑JS navigation for single‑page layout
+   • Light‑box viewer & three‑layer gallery logic
+   • State is persisted in sessionStorage
+   ---------------------------------------------
+   2025‑06‑05  — complete revision of the section
+   selector for Unit‑1/2 galleries so that the
+   submenu thumbnails now open correctly.
+   =============================================*/
+
 /***********************************************/
-/* ========= 0) 工具：统一回到页面顶部 ========= *
- * 等待一帧，让浏览器先完成布局再跳转，         *
- * 避免元素高度骤变后又把滚动条推回下方。       */
+/* ========= 0) 工具：统一回到页面顶部 ========= */
 function scrollToTop () {
   requestAnimationFrame(() => {
-    /* 1. 视窗本身 */
     window.scrollTo(0, 0);
-    /* 2. 兼容各类浏览器 */
     document.documentElement.scrollTop = 0;
     document.body.scrollTop           = 0;
-    /* 3. 若主区域被设为可滚动容器，也归零 */
     const mc = document.querySelector('.main-content');
     if (mc) mc.scrollTop = 0;
   });
@@ -33,11 +40,11 @@ const lightboxPrev    = document.getElementById('lightboxPrev');
 const lightboxNext    = document.getElementById('lightboxNext');
 
 /***********************************************/
-/* ========== 0) PAGE-STATE PERSISTENCE ======= */
+/* ========== 0) PAGE‑STATE PERSISTENCE ======= */
 function savePageState () {
   const activeSection = document.querySelector('.page-section.active');
   if (activeSection) sessionStorage.setItem('activeSectionId', activeSection.id);
-  sessionStorage.setItem('scrollY', 0);           // 始终存 0，确保刷新后也在顶部
+  sessionStorage.setItem('scrollY', 0);
 }
 function restorePageState () {
   const storedId = sessionStorage.getItem('activeSectionId');
@@ -48,7 +55,6 @@ function restorePageState () {
     document.querySelector(`#navList li[data-target="${storedId}"]`)?.classList.add('active');
     printsNav?.classList.toggle('active', storedId === 'prints-zine');
   }
-  /* 直接回到顶部，避免加载时位置错乱 */
   scrollToTop();
   updateSubNav();
 }
@@ -101,7 +107,6 @@ lightboxOverlay.addEventListener('click', e => { if (e.target === lightboxOverla
 
 navItems.forEach(item => {
   item.addEventListener('click', () => {
-    /* 激活导航与页面 */
     navItems.forEach(n => n.classList.remove('active'));
     pages.forEach(p => p.classList.remove('active'));
     item.classList.add('active');
@@ -145,6 +150,7 @@ galleryImages.forEach(img => {
     openLightbox();
   });
 });
+
 function openLightbox () {
   if (!lightboxGallery[lightboxIndex]) return;
   const fullSrc = lightboxGallery[lightboxIndex].dataset.full || lightboxGallery[lightboxIndex].src;
@@ -234,28 +240,39 @@ document.querySelectorAll('.gallery-group').forEach(group => {
 });
 
 /***********************************************/
-/* ========== 4) Gallery 缩略图->二级 ========== */
+/* ========== 4) Gallery 缩略图 -> 二级 ========= */
+// 2025‑06‑05  — rewritten so that clicking a series
+// thumbnail in Unit‑1 or Unit‑2 actually navigates.
+
 function handleBackButton (currentId, targetId) {
-  document.getElementById(currentId)?.classList.remove('active');
+  // hide everything first so only the new section is visible
+  pages.forEach(p => p.classList.remove('active'));
+
+  // reveal the requested gallery page
   document.getElementById(targetId)?.classList.add('active');
+
   scrollToTop();
   savePageState();
   updateSubNav();
 }
+
 document.querySelectorAll('#illus-series-gallery img').forEach(img => {
   img.addEventListener('click', () => {
-    const targetId = img.dataset.target;
-    if (targetId) handleBackButton('Gallery', targetId);
+    const targetId      = img.dataset.target;          // e.g. Gallery-series-1
+    const parentSection = img.closest('.page-section');
+
+    if (targetId && parentSection) {
+      handleBackButton(parentSection.id, targetId);
+    }
   });
 });
 
-/* Unit 1/2 thumbnail → 子页 */
+/* Unit 1/2 thumbnail → 子页（保持不变） */
 document.querySelectorAll('#unitGallery figure').forEach(fig => {
   fig.addEventListener('click', () => {
     const target = fig.dataset.target;
     if (!target) return;
 
-    /* 将所属单元及全部子页先关掉 */
     ['Unit1', 'sectionA', 'sectionB', 'sectionC', 'sectionD',
      'Unit2', 'sectionE', 'sectionF', 'sectionG', 'sectionH']
       .forEach(secId => document.getElementById(secId)?.classList.remove('active'));
