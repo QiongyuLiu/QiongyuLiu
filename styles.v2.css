@@ -302,14 +302,19 @@ body {
 }
 .gallery-top-row {
   display: flex;
-  gap: 1rem;
+  gap: 2.5rem;
   margin-bottom: 1rem;
 }
 .top-item {
   cursor: pointer;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* 添加平滑过渡 */
+  transform-origin: center;        /* 设置放大中心点为元素中心 */
+}
+.top-item:hover {
+  transform: scale(1.1);           /* 放大比例 */
 }
 .top-item img {
   width: 200px;
